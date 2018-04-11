@@ -10,8 +10,10 @@ library(ggplot2)
 ###
 ## Preparando dados dos formularios de consulta
 ###
-dados <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqejm8BK7tvPHasgEcNu3BnlGmnT9HxDZlaBsiwuIb04zkKkaY6yrxd6TYTKkZO9jYkuaVFGzljPoH/pub?gid=718358497&single=true&output=csv', stringsAsFactors = FALSE)
-gabarito <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqltencC-1KU1X4nz-CJsANjcne8yAu_9Y4D0aBbr_AA-FX1Y627CpsFEpLdBObmAKpsrITYutPrWg/pub?gid=0&single=true&output=csv', stringsAsFactors = FALSE)
+dados <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqejm8BK7tvPHasgEcNu3BnlGmnT9HxDZlaBsiwuIb04zkKkaY6yrxd6TYTKkZO9jYkuaVFGzljPoH/pub?gid=718358497&single=true&output=csv', 
+                  stringsAsFactors = FALSE, fileEncoding = 'UTF-8')
+gabarito <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqltencC-1KU1X4nz-CJsANjcne8yAu_9Y4D0aBbr_AA-FX1Y627CpsFEpLdBObmAKpsrITYutPrWg/pub?gid=0&single=true&output=csv', 
+                     stringsAsFactors = FALSE, fileEncoding = 'UTF-8')
 
 ## Trocando o nome das colunas para facilitar o uso no R
 names(dados) <- c('data', 'codigo', 'instituicao', 'curso', 'periodo', 'modelo', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10')
@@ -70,6 +72,7 @@ for (i in seq(1:nrow(dados))) {
     dados[i,'nat9'] <- gabaritou_nativa(formAtual$modelo, 9, formAtual$s9)
     dados[i,'nat10'] <- gabaritou_nativa(formAtual$modelo, 10, formAtual$s10)
     
+    # determinar quantos acertos obteve na classificação entre exoticas e nativas
     nativatbl <- c(gabaritou_nativa(formAtual$modelo, 1, formAtual$s1), 
       gabaritou_nativa(formAtual$modelo, 2, formAtual$s2),
       gabaritou_nativa(formAtual$modelo, 3, formAtual$s3),
@@ -126,3 +129,14 @@ dados %>%
     select("Exóticas" = acertou_exoticas, "Nativas" = acertou_nativas) %>% 
     boxplot(main = "Distribuição dos acertos de classificação das espécies",
             xlab = 'Espécies', ylab = 'Número de acertos')
+
+dados %>%
+  select(curso, "Exóticas" = acertou_exoticas, "Nativas" = acertou_nativas) %>% 
+  melt() %>% 
+  ggplot(aes(x = variable, y = value, fill = curso)) +
+  geom_boxplot(show.legend = F) +
+  facet_grid(~curso) +
+  theme_bw() +
+  labs(title = "Distribuição dos acertos de classificação das espécies por curso",
+          x = 'Espécies', y = 'Número de acertos')
+
