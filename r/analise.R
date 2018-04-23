@@ -8,97 +8,127 @@ library(reshape2)
 library(ggplot2)
 
 ###
-## Preparando dados dos formularios de consulta
+## Preparando esup_dados dos formularios de consulta
 ###
-dados <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqejm8BK7tvPHasgEcNu3BnlGmnT9HxDZlaBsiwuIb04zkKkaY6yrxd6TYTKkZO9jYkuaVFGzljPoH/pub?gid=718358497&single=true&output=csv', 
-                  stringsAsFactors = FALSE, fileEncoding = 'UTF-8')
-gabarito <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqltencC-1KU1X4nz-CJsANjcne8yAu_9Y4D0aBbr_AA-FX1Y627CpsFEpLdBObmAKpsrITYutPrWg/pub?gid=0&single=true&output=csv', 
-                     stringsAsFactors = FALSE, fileEncoding = 'UTF-8')
+esup_dados <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqejm8BK7tvPHasgEcNu3BnlGmnT9HxDZlaBsiwuIb04zkKkaY6yrxd6TYTKkZO9jYkuaVFGzljPoH/pub?gid=718358497&single=true&output=csv', stringsAsFactors = FALSE)
+esup_gabarito <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqltencC-1KU1X4nz-CJsANjcne8yAu_9Y4D0aBbr_AA-FX1Y627CpsFEpLdBObmAKpsrITYutPrWg/pub?gid=0&single=true&output=csv', stringsAsFactors = FALSE)
 
 ## Trocando o nome das colunas para facilitar o uso no R
-names(dados) <- c('data', 'codigo', 'instituicao', 'curso', 'periodo', 'modelo', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10')
-names(gabarito) <- c('modelo', 'q', 'r', 's', 'grupo')
+names(esup_dados) <- c('data', 'codigo', 'instituicao', 'curso', 'periodo', 'modelo', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10')
+names(esup_gabarito) <- c('modelo', 'q', 'r', 's', 'grupo')
 
-## Padronizar o campo modelo dos dados
-dados$modelo <- dados$modelo %>% str_replace('Modelo ', '') %>% as.integer()
+## Padronizar o campo modelo dos esup_dados
+esup_dados$modelo <- esup_dados$modelo %>% str_replace('Modelo ', '') %>% as.integer()
 
-## Funcao para validar a resposta no gabarito
-gabaritou_questao <- function(modeloQuestionario, numQuestao, letraResposta) {
-    resposta_no_gabarito <- (gabarito %>% filter(modelo == modeloQuestionario, q == numQuestao))$r
-    return (resposta_no_gabarito == as.character(letraResposta))
+## Remove esup_dados incompletos da importação, caso existir
+esup_dados <- esup_dados[complete.cases(esup_dados),]
+
+
+###
+## Determinar para cada aluno: 
+##      1. A qtde de acertos e erros
+##      2. A qtde de especies acertadas 
+##      3. 
+###
+
+## Funcao para validar a resposta no esup_gabarito
+esup_gabaritou_questao <- function(modeloQuestionario, numQuestao, letraResposta) {
+    resposta_no_esup_gabarito <- (esup_gabarito %>% filter(modelo == modeloQuestionario, q == numQuestao))$r
+    return (resposta_no_esup_gabarito == as.character(letraResposta))
 }
 
 # 1 = Sim, 0 = Não
-gabaritou_nativa <- function(modeloQuestionario, numQuestao, snResposta) {
-    especie_nativa_no_gabarito <- (gabarito %>% filter(modelo == modeloQuestionario, q == numQuestao))$s
+esup_gabaritou_nativa <- function(modeloQuestionario, numQuestao, snResposta) {
+    especie_nativa_no_esup_gabarito <- (esup_gabarito %>% filter(modelo == modeloQuestionario, q == numQuestao))$s
     return (
-        ifelse(especie_nativa_no_gabarito == "Sim",
-               ifelse((especie_nativa_no_gabarito == as.character(snResposta)), 'ns', 'nn'),
-               ifelse((especie_nativa_no_gabarito == as.character(snResposta)), 'es', 'en')
-               )
+        ifelse(especie_nativa_no_esup_gabarito == "Sim",
+               ifelse((especie_nativa_no_esup_gabarito == as.character(snResposta)), 'ns', 'nn'),
+               ifelse((especie_nativa_no_esup_gabarito == as.character(snResposta)), 'es', 'en')
         )
+    )
 }
 
-gabarito_grupo <- function(modeloQuestionario, numQuestao) {
-    grupo_no_gabarito <- (gabarito %>% filter(modelo == modeloQuestionario, q == numQuestao))$g
-    return (grupo_no_gabarito)
+esup_gabarito_grupo <- function(modeloQuestionario, numQuestao) {
+    grupo_no_esup_gabarito <- (esup_gabarito %>% filter(modelo == modeloQuestionario, q == numQuestao))$g
+    return (grupo_no_esup_gabarito)
 }
 
-## aplicar o gabarito nos dados coletados
+## aplicar o esup_gabarito nos esup_dados coletados
 
-for (i in seq(1:nrow(dados))) {
-    formAtual <- dados[i,]
+for (i in seq(1:nrow(esup_dados))) {
+    formAtual <- esup_dados[i,]
     # Determinando acerto ou erro
-    dados[i,'qr1'] <- gabaritou_questao(formAtual$modelo, 1, formAtual$q1)
-    dados[i,'qr2'] <- gabaritou_questao(formAtual$modelo, 2, formAtual$q2)
-    dados[i,'qr3'] <- gabaritou_questao(formAtual$modelo, 3, formAtual$q3)
-    dados[i,'qr4'] <- gabaritou_questao(formAtual$modelo, 4, formAtual$q4)
-    dados[i,'qr5'] <- gabaritou_questao(formAtual$modelo, 5, formAtual$q5)
-    dados[i,'qr6'] <- gabaritou_questao(formAtual$modelo, 6, formAtual$q6)
-    dados[i,'qr7'] <- gabaritou_questao(formAtual$modelo, 7, formAtual$q7)
-    dados[i,'qr8'] <- gabaritou_questao(formAtual$modelo, 8, formAtual$q8)
-    dados[i,'qr9'] <- gabaritou_questao(formAtual$modelo, 9, formAtual$q9)
-    dados[i,'qr10'] <- gabaritou_questao(formAtual$modelo, 10, formAtual$q10)
-
-    # Determinando se especie nativa
-    dados[i,'nat1'] <- gabaritou_nativa(formAtual$modelo, 1, formAtual$s1)
-    dados[i,'nat2'] <- gabaritou_nativa(formAtual$modelo, 2, formAtual$s2)
-    dados[i,'nat3'] <- gabaritou_nativa(formAtual$modelo, 3, formAtual$s3)
-    dados[i,'nat4'] <- gabaritou_nativa(formAtual$modelo, 4, formAtual$s4)
-    dados[i,'nat5'] <- gabaritou_nativa(formAtual$modelo, 5, formAtual$s5)
-    dados[i,'nat6'] <- gabaritou_nativa(formAtual$modelo, 6, formAtual$s6)
-    dados[i,'nat7'] <- gabaritou_nativa(formAtual$modelo, 7, formAtual$s7)
-    dados[i,'nat8'] <- gabaritou_nativa(formAtual$modelo, 8, formAtual$s8)
-    dados[i,'nat9'] <- gabaritou_nativa(formAtual$modelo, 9, formAtual$s9)
-    dados[i,'nat10'] <- gabaritou_nativa(formAtual$modelo, 10, formAtual$s10)
+    esup_dados[i,'qr1'] <- esup_gabaritou_questao(formAtual$modelo, 1, formAtual$q1)
+    esup_dados[i,'qr2'] <- esup_gabaritou_questao(formAtual$modelo, 2, formAtual$q2)
+    esup_dados[i,'qr3'] <- esup_gabaritou_questao(formAtual$modelo, 3, formAtual$q3)
+    esup_dados[i,'qr4'] <- esup_gabaritou_questao(formAtual$modelo, 4, formAtual$q4)
+    esup_dados[i,'qr5'] <- esup_gabaritou_questao(formAtual$modelo, 5, formAtual$q5)
+    esup_dados[i,'qr6'] <- esup_gabaritou_questao(formAtual$modelo, 6, formAtual$q6)
+    esup_dados[i,'qr7'] <- esup_gabaritou_questao(formAtual$modelo, 7, formAtual$q7)
+    esup_dados[i,'qr8'] <- esup_gabaritou_questao(formAtual$modelo, 8, formAtual$q8)
+    esup_dados[i,'qr9'] <- esup_gabaritou_questao(formAtual$modelo, 9, formAtual$q9)
+    esup_dados[i,'qr10'] <- esup_gabaritou_questao(formAtual$modelo, 10, formAtual$q10)
     
-    # determinar quantos acertos obteve na classificação entre exoticas e nativas
-    nativatbl <- c(gabaritou_nativa(formAtual$modelo, 1, formAtual$s1), 
-      gabaritou_nativa(formAtual$modelo, 2, formAtual$s2),
-      gabaritou_nativa(formAtual$modelo, 3, formAtual$s3),
-      gabaritou_nativa(formAtual$modelo, 4, formAtual$s4),
-      gabaritou_nativa(formAtual$modelo, 5, formAtual$s5),
-      gabaritou_nativa(formAtual$modelo, 6, formAtual$s6),
-      gabaritou_nativa(formAtual$modelo, 7, formAtual$s7),
-      gabaritou_nativa(formAtual$modelo, 8, formAtual$s8),
-      gabaritou_nativa(formAtual$modelo, 9, formAtual$s9),
-      gabaritou_nativa(formAtual$modelo, 10, formAtual$s10)
+    # Determinando se especie nativa
+    esup_dados[i,'nat1'] <- esup_gabaritou_nativa(formAtual$modelo, 1, formAtual$s1)
+    esup_dados[i,'nat2'] <- esup_gabaritou_nativa(formAtual$modelo, 2, formAtual$s2)
+    esup_dados[i,'nat3'] <- esup_gabaritou_nativa(formAtual$modelo, 3, formAtual$s3)
+    esup_dados[i,'nat4'] <- esup_gabaritou_nativa(formAtual$modelo, 4, formAtual$s4)
+    esup_dados[i,'nat5'] <- esup_gabaritou_nativa(formAtual$modelo, 5, formAtual$s5)
+    esup_dados[i,'nat6'] <- esup_gabaritou_nativa(formAtual$modelo, 6, formAtual$s6)
+    esup_dados[i,'nat7'] <- esup_gabaritou_nativa(formAtual$modelo, 7, formAtual$s7)
+    esup_dados[i,'nat8'] <- esup_gabaritou_nativa(formAtual$modelo, 8, formAtual$s8)
+    esup_dados[i,'nat9'] <- esup_gabaritou_nativa(formAtual$modelo, 9, formAtual$s9)
+    esup_dados[i,'nat10'] <- esup_gabaritou_nativa(formAtual$modelo, 10, formAtual$s10)
+    
+    nativatbl <- c(esup_gabaritou_nativa(formAtual$modelo, 1, formAtual$s1), 
+                   esup_gabaritou_nativa(formAtual$modelo, 2, formAtual$s2),
+                   esup_gabaritou_nativa(formAtual$modelo, 3, formAtual$s3),
+                   esup_gabaritou_nativa(formAtual$modelo, 4, formAtual$s4),
+                   esup_gabaritou_nativa(formAtual$modelo, 5, formAtual$s5),
+                   esup_gabaritou_nativa(formAtual$modelo, 6, formAtual$s6),
+                   esup_gabaritou_nativa(formAtual$modelo, 7, formAtual$s7),
+                   esup_gabaritou_nativa(formAtual$modelo, 8, formAtual$s8),
+                   esup_gabaritou_nativa(formAtual$modelo, 9, formAtual$s9),
+                   esup_gabaritou_nativa(formAtual$modelo, 10, formAtual$s10)
     ) %>% table
     
-    dados[i,'acertou_exoticas'] <- ifelse(!is.na(nativatbl['es']),nativatbl['es'],0)
-    dados[i,'acertou_nativas'] <- ifelse(!is.na(nativatbl['ns']),nativatbl['ns'],0)
+    esup_dados[i,'acertou_exoticas'] <- ifelse(!is.na(nativatbl['es']),nativatbl['es'],0)
+    esup_dados[i,'acertou_nativas'] <- ifelse(!is.na(nativatbl['ns']),nativatbl['ns'],0)
     
     # Determinando grupo das especies
-    dados[i,'g1'] <- gabarito_grupo(formAtual$modelo, 1)
-    dados[i,'g2'] <- gabarito_grupo(formAtual$modelo, 2)
-    dados[i,'g3'] <- gabarito_grupo(formAtual$modelo, 3)
-    dados[i,'g4'] <- gabarito_grupo(formAtual$modelo, 4)
-    dados[i,'g5'] <- gabarito_grupo(formAtual$modelo, 5)
-    dados[i,'g6'] <- gabarito_grupo(formAtual$modelo, 6)
-    dados[i,'g7'] <- gabarito_grupo(formAtual$modelo, 7)
-    dados[i,'g8'] <- gabarito_grupo(formAtual$modelo, 8)
-    dados[i,'g9'] <- gabarito_grupo(formAtual$modelo, 9)
-    dados[i,'g10'] <- gabarito_grupo(formAtual$modelo, 10)
+    esup_dados[i,'g1'] <- esup_gabarito_grupo(formAtual$modelo, 1)
+    esup_dados[i,'g2'] <- esup_gabarito_grupo(formAtual$modelo, 2)
+    esup_dados[i,'g3'] <- esup_gabarito_grupo(formAtual$modelo, 3)
+    esup_dados[i,'g4'] <- esup_gabarito_grupo(formAtual$modelo, 4)
+    esup_dados[i,'g5'] <- esup_gabarito_grupo(formAtual$modelo, 5)
+    esup_dados[i,'g6'] <- esup_gabarito_grupo(formAtual$modelo, 6)
+    esup_dados[i,'g7'] <- esup_gabarito_grupo(formAtual$modelo, 7)
+    esup_dados[i,'g8'] <- esup_gabarito_grupo(formAtual$modelo, 8)
+    esup_dados[i,'g9'] <- esup_gabarito_grupo(formAtual$modelo, 9)
+    esup_dados[i,'g10'] <- esup_gabarito_grupo(formAtual$modelo, 10)
+    
+    animaisAcertos <- data.frame("animal" = unique(esup_gabarito$grupo)
+                                 , "acertos" = rep(0, length(unique(esup_gabarito$grupo)))
+                                 , "erros" = rep(0, length(unique(esup_gabarito$grupo)))
+    )
+    for (questao in seq(1:10)) {
+        grupoAnimal <- esup_gabarito_grupo(formAtual$modelo, questao)
+        if (esup_gabaritou_questao(formAtual$modelo, questao, formAtual$q1)) {
+            message(paste("+1 para", grupoAnimal))
+            animaisAcertos[animaisAcertos$animal == grupoAnimal, ]$acertos <- 
+                animaisAcertos[animaisAcertos$animal == grupoAnimal, ]$acertos + 1
+            #aux <- esup_dados[i, grupoAnimal]
+            #if(is.null(aux))
+            #    aux <- 0
+            #esup_dados[i, esup_gabarito_grupo(formAtual$modelo, questao)] <- aux + 1
+        } else {
+            message(paste("-1 para", grupoAnimal))
+            animaisAcertos[animaisAcertos$animal == grupoAnimal, ]$erros <- 
+                animaisAcertos[animaisAcertos$animal == grupoAnimal, ]$erros + 1
+        }
+    }
+    # print(animaisAcertos)
 }
 
 
@@ -107,14 +137,15 @@ for (i in seq(1:nrow(dados))) {
 ## Gerando graficos
 ###
 
+
 acertostbl <- 
-    dados %>%
-        select(acertou_exoticas:acertou_nativas) %>%
-        colSums() %>%
-        melt() 
-    #group_by(variable) %>%
-    #summarise(total = sum(value)) %>%
-    #ungroup()
+    esup_dados %>%
+    select(acertou_exoticas:acertou_nativas) %>%
+    colSums() %>%
+    melt() 
+#group_by(variable) %>%
+#summarise(total = sum(value)) %>%
+#ungroup()
 
 acertostbl["acerto" ] <- rownames(acertostbl)
 
@@ -125,18 +156,44 @@ ggplot(acertostbl, aes(x = acerto, y = value)) +
 
 
 # Determinando a distribuição dos acertos dentre a turma
-dados %>%
+esup_dados %>%
     select("Exóticas" = acertou_exoticas, "Nativas" = acertou_nativas) %>% 
     boxplot(main = "Distribuição dos acertos de classificação das espécies",
             xlab = 'Espécies', ylab = 'Número de acertos')
 
-dados %>%
-  select(curso, "Exóticas" = acertou_exoticas, "Nativas" = acertou_nativas) %>% 
-  melt() %>% 
-  ggplot(aes(x = variable, y = value, fill = curso)) +
-  geom_boxplot(show.legend = F) +
-  facet_grid(~curso) +
-  theme_bw() +
-  labs(title = "Distribuição dos acertos de classificação das espécies por curso",
-          x = 'Espécies', y = 'Número de acertos')
+analise1a <- 
+    rbind(
+        esup_dados %>%
+            select(instituicao, curso, periodo, "acertos" = acertou_exoticas) %>% 
+            #mutate(tipo = "exoticas")
+            group_by(instituicao, curso, periodo, acertos) %>%
+            summarise(qtde = n(), tipo = "exoticas")
+        
+        ,
+        esup_dados %>%
+            select(instituicao, curso, periodo, "acertos" = acertou_nativas) %>% 
+            #mutate(tipo = "nativas")
+            group_by(instituicao, curso, periodo, acertos) %>%
+            summarise(qtde = n(), tipo = "nativas")
+    ) %>%
+    select(instituicao, curso, periodo, tipo, acertos, qtde) %>%
+    inner_join(
+        analise1a %>%
+            group_by(instituicao, curso) %>%
+            summarise(tot = sum(qtde))
+    ) %>%
+    mutate(fr = qtde * 100 / tot)
 
+analise1a %>%    
+    ggplot(aes(acertos, fr, fill = tipo)) +
+    facet_grid(curso+instituicao~tipo+periodo) +
+    geom_col() +
+    scale_x_continuous(breaks = 0:5) +
+    theme_bw()
+
+
+table(esup_dados$instituicao, esup_dados$curso)
+table(esup_dados$curso, esup_dados$periodo)
+
+ggplot(aes(curso, n(), fill = tipo)) +
+    geom_col() 
