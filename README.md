@@ -8,13 +8,13 @@ Titulo: **Percepção sobre espécies exóticas e nativas do Brasil por alunos e
 
 1. Formulário do questionário ([link](https://docs.google.com/forms/d/e/1FAIpQLSc_i09_vD5WPo2AMgvhdwrQCC4Xc9CXcEJgqZgeA8MRB03MZQ/viewform))
 2. Tabulação das respostas dos questionários ([link](https://docs.google.com/spreadsheets/d/1qXSKB9V_4Tfw_xdh16FHR6ZSASdUmko6T6IkglkSCzQ/edit#gid=22182984))
-3. Gabarito das respostas dos questionários ([link]())
+
 
 ### Jogo de imagens
 
 1. Formulário do jogo de imagens ([link](https://docs.google.com/forms/d/e/1FAIpQLSfLYh9YiV4P1snpBWzvvk1IpLwC3pTaDjTGTZTrQV4XP89-Hw/viewform))
 2. Tabulação das respostas do jogo de imagens ([link](https://docs.google.com/spreadsheets/d/16kdAPaHx-HdrNNvMG1LzhPGrRVg2TtFEgXi7LpALedY/edit#gid=652230162))
-3. Gabarito das respostas do jogo de imagens ([link]())
+3. Gabarito das respostas do jogo de imagens ([link](https://docs.google.com/spreadsheets/d/1YICkihH_gbHLH_-qhFCeTBuSroa5Ar-SWgl5OjrS6ic/edit#gid=0))
 
 ## Ensino Superior
 
