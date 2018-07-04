@@ -1,0 +1,368 @@
+"codigo";"municipio";"escola";"modelo";"turmas";"exoticas";"nativas";"exotica_aves";"exotica_invertebrado";"exotica_mamifero";"exotica_peixe";"exotica_reptil";"nativa_aves";"nativa_invertebrado";"nativa_mamifero";"nativa_peixe";"nativa_reptil"
+1;"Silvânia";"Particular";1;1;5;2;1;1;1;1;1;1;0;1;0;0
+2;"Silvânia";"Particular";1;1;4;3;1;1;1;1;0;1;1;1;0;0
+3;"Silvânia";"Particular";1;1;4;3;1;1;1;1;0;1;1;1;0;0
+4;"Silvânia";"Particular";1;1;5;2;1;1;1;1;1;1;0;1;0;0
+5;"Silvânia";"Particular";2;1;4;4;1;0;1;1;1;1;1;1;0;1
+6;"Silvânia";"Particular";2;1;3;3;1;0;1;0;1;1;1;0;0;1
+7;"Silvânia";"Particular";2;1;2;3;1;0;1;0;0;1;1;0;0;1
+8;"Silvânia";"Particular";3;1;2;3;0;0;0;1;1;1;1;1;0;0
+9;"Silvânia";"Particular";3;1;3;3;0;0;1;1;1;0;1;1;1;0
+10;"Silvânia";"Particular";3;1;4;4;1;0;1;1;1;1;1;1;1;0
+11;"Silvânia";"Particular";3;1;2;3;0;0;0;1;1;1;0;1;1;0
+12;"Silvânia";"Particular";4;1;5;2;1;1;1;1;1;0;0;0;1;1
+13;"Silvânia";"Particular";4;1;4;3;1;0;1;1;1;0;1;0;1;1
+14;"Silvânia";"Particular";4;1;5;2;1;1;1;1;1;0;1;0;1;0
+15;"Silvânia";"Pública";1;2;3;2;1;1;1;0;0;1;0;1;0;0
+16;"Silvânia";"Pública";1;2;2;2;1;0;1;0;0;1;0;1;0;0
+17;"Silvânia";"Pública";1;2;3;2;0;1;1;1;0;1;0;1;0;0
+18;"Silvânia";"Pública";1;2;5;3;1;1;1;1;1;1;1;1;0;0
+19;"Silvânia";"Pública";1;2;3;2;0;1;1;1;0;1;0;1;0;0
+20;"Silvânia";"Pública";1;2;4;3;1;1;1;0;1;1;1;1;0;0
+21;"Silvânia";"Pública";1;2;2;3;0;1;0;1;0;1;1;1;0;0
+22;"Silvânia";"Pública";1;2;5;2;1;1;1;1;1;1;0;1;0;0
+23;"Silvânia";"Pública";1;2;4;4;1;1;1;1;0;1;1;1;0;1
+24;"Silvânia";"Pública";1;2;4;2;1;1;1;1;0;1;0;1;0;0
+25;"Silvânia";"Pública";1;2;1;3;1;0;0;0;0;1;1;1;0;0
+26;"Silvânia";"Pública";1;2;5;2;1;1;1;1;1;1;0;1;0;0
+27;"Silvânia";"Pública";1;2;3;2;0;1;1;1;0;1;0;1;0;0
+28;"Silvânia";"Pública";1;2;5;2;1;1;1;1;1;1;0;1;0;0
+29;"Silvânia";"Pública";1;2;4;2;1;1;1;0;1;1;0;1;0;0
+30;"Silvânia";"Pública";1;2;4;2;1;1;1;1;0;1;0;1;0;0
+31;"Silvânia";"Pública";1;2;2;3;1;0;1;0;0;1;1;1;0;0
+32;"Silvânia";"Pública";1;2;4;3;1;1;1;1;0;1;0;1;0;1
+33;"Silvânia";"Pública";2;3;4;4;1;0;1;1;1;1;1;1;0;1
+34;"Silvânia";"Pública";2;3;2;3;1;0;0;1;0;1;0;1;0;1
+36;"Silvânia";"Pública";2;3;3;4;1;0;1;0;1;1;1;1;0;1
+37;"Silvânia";"Pública";2;3;4;4;1;0;1;1;1;1;1;1;0;1
+38;"Silvânia";"Pública";2;3;4;3;1;0;1;1;1;1;1;1;0;0
+39;"Silvânia";"Pública";2;3;2;3;0;0;1;1;0;1;1;0;0;1
+40;"Silvânia";"Pública";2;3;3;4;1;0;1;1;0;1;1;1;0;1
+41;"Silvânia";"Pública";2;3;4;2;1;0;1;1;1;1;1;0;0;0
+42;"Silvânia";"Pública";2;3;4;3;1;0;1;1;1;1;1;0;0;1
+43;"Silvânia";"Pública";2;3;3;4;1;0;1;0;1;1;1;1;0;1
+44;"Silvânia";"Pública";2;3;3;5;1;0;1;1;0;1;1;1;1;1
+45;"Silvânia";"Pública";2;3;3;3;1;0;1;0;1;1;1;0;0;1
+46;"Silvânia";"Pública";2;3;2;4;1;0;1;0;0;1;1;1;0;1
+47;"Silvânia";"Pública";2;3;2;4;1;0;1;0;0;1;1;1;0;1
+48;"Silvânia";"Pública";2;3;2;4;1;0;1;0;0;1;1;1;0;1
+49;"Silvânia";"Pública";2;3;3;4;1;0;1;1;0;1;1;1;0;1
+50;"Silvânia";"Pública";2;3;3;4;1;0;1;1;0;1;1;1;0;1
+51;"Silvânia";"Pública";2;3;4;3;1;0;1;1;1;1;1;0;0;1
+52;"Silvânia";"Pública";3;4;4;5;1;0;1;1;1;1;1;1;1;1
+53;"Silvânia";"Pública";3;4;4;4;1;1;0;1;1;1;1;1;0;1
+54;"Silvânia";"Pública";3;4;4;4;1;0;1;1;1;1;1;0;1;1
+55;"Silvânia";"Pública";3;4;4;3;1;1;0;1;1;1;1;1;0;0
+56;"Silvânia";"Pública";3;4;5;5;1;1;1;1;1;1;1;1;1;1
+57;"Silvânia";"Pública";3;4;3;4;0;0;1;1;1;1;0;1;1;1
+58;"Silvânia";"Pública";3;4;1;4;0;1;0;0;0;1;1;1;1;0
+59;"Silvânia";"Pública";3;4;3;3;1;0;1;0;1;1;1;1;0;0
+60;"Silvânia";"Pública";3;4;5;5;1;1;1;1;1;1;1;1;1;1
+61;"Silvânia";"Pública";3;4;2;4;0;0;0;1;1;1;1;1;1;0
+62;"Silvânia";"Pública";3;4;2;4;1;0;0;0;1;1;1;1;0;1
+63;"Silvânia";"Pública";3;4;4;1;1;1;1;0;1;0;0;1;0;0
+64;"Silvânia";"Pública";3;4;3;3;0;1;0;1;1;1;0;1;1;0
+65;"Silvânia";"Pública";3;4;3;3;1;1;1;0;0;1;0;1;1;0
+66;"Silvânia";"Pública";3;4;3;4;0;0;1;1;1;1;0;1;1;1
+67;"Silvânia";"Pública";3;4;4;4;1;0;1;1;1;0;1;1;1;1
+68;"Silvânia";"Pública";3;4;3;5;1;0;1;1;0;1;1;1;1;1
+69;"Silvânia";"Pública";3;4;2;3;0;0;0;1;1;1;0;1;1;0
+70;"Silvânia";"Pública";4;5;5;2;1;1;1;1;1;0;0;0;1;1
+71;"Silvânia";"Pública";4;5;5;2;1;1;1;1;1;0;0;0;1;1
+72;"Silvânia";"Pública";4;5;5;3;1;1;1;1;1;0;0;1;1;1
+73;"Silvânia";"Pública";4;5;5;3;1;1;1;1;1;0;1;1;1;0
+74;"Silvânia";"Pública";4;5;5;3;1;1;1;1;1;0;0;1;1;1
+75;"Silvânia";"Pública";4;5;5;3;1;1;1;1;1;0;1;1;1;0
+76;"Silvânia";"Pública";4;5;4;3;1;0;1;1;1;0;1;0;1;1
+77;"Silvânia";"Pública";4;5;3;2;1;1;0;1;0;0;1;0;0;1
+78;"Silvânia";"Pública";4;5;5;3;1;1;1;1;1;0;1;0;1;1
+79;"Silvânia";"Pública";4;5;5;4;1;1;1;1;1;0;1;1;1;1
+80;"Silvânia";"Pública";4;5;4;1;1;1;1;1;0;0;0;0;1;0
+81;"Silvânia";"Pública";4;5;5;2;1;1;1;1;1;0;0;1;1;0
+82;"Silvânia";"Pública";4;5;4;2;0;1;1;1;1;0;1;0;1;0
+83;"Silvânia";"Pública";4;5;5;3;1;1;1;1;1;0;0;1;1;1
+84;"Silvânia";"Pública";4;5;5;3;1;1;1;1;1;0;0;1;1;1
+85;"Silvânia";"Pública";4;5;5;2;1;1;1;1;1;0;0;0;1;1
+86;"Silvânia";"Particular";1;6;5;2;1;1;1;1;1;1;0;1;0;0
+87;"Silvânia";"Particular";1;6;3;2;1;0;1;1;0;1;0;1;0;0
+88;"Silvânia";"Particular";1;6;2;4;1;1;0;0;0;1;1;1;1;0
+89;"Silvânia";"Particular";1;6;3;3;0;1;1;1;0;1;1;1;0;0
+90;"Silvânia";"Particular";1;6;5;2;1;1;1;1;1;1;0;1;0;0
+91;"Silvânia";"Particular";1;6;5;2;1;1;1;1;1;1;0;1;0;0
+92;"Silvânia";"Particular";1;6;4;2;1;1;1;1;0;1;0;1;0;0
+93;"Silvânia";"Particular";1;6;4;3;1;1;1;1;0;1;0;1;0;1
+94;"Silvânia";"Particular";1;6;4;2;0;1;1;1;1;1;0;1;0;0
+95;"Silvânia";"Particular";1;6;4;1;1;1;1;1;0;0;0;1;0;0
+96;"Silvânia";"Particular";1;6;4;3;1;1;1;1;0;1;0;1;0;1
+97;"Silvânia";"Particular";1;6;5;2;1;1;1;1;1;1;0;1;0;0
+98;"Silvânia";"Particular";1;6;4;3;0;1;1;1;1;1;1;1;0;0
+99;"Silvânia";"Particular";1;6;3;3;1;0;1;1;0;1;1;1;0;0
+100;"Silvânia";"Particular";1;6;2;1;0;1;0;1;0;0;0;1;0;0
+101;"Silvânia";"Particular";1;6;4;3;1;1;1;1;0;1;1;1;0;0
+102;"Silvânia";"Particular";1;6;2;1;0;0;1;1;0;0;0;1;0;0
+103;"Silvânia";"Particular";1;6;5;3;1;1;1;1;1;1;1;1;0;0
+104;"Silvânia";"Particular";1;6;4;2;1;1;1;1;0;1;0;1;0;0
+105;"Silvânia";"Particular";1;6;3;2;0;1;1;1;0;1;0;1;0;0
+106;"Silvânia";"Particular";1;6;4;3;1;1;1;1;0;1;0;1;0;1
+107;"Silvânia";"Particular";1;6;4;3;1;1;0;1;1;1;1;1;0;0
+108;"Silvânia";"Particular";1;6;4;3;1;1;1;1;0;1;1;1;0;0
+109;"Silvânia";"Particular";1;6;1;2;0;0;1;0;0;1;0;1;0;0
+110;"Silvânia";"Particular";1;6;5;2;1;1;1;1;1;0;1;1;0;0
+111;"Silvânia";"Particular";1;6;3;3;1;1;1;0;0;1;1;1;0;0
+112;"Silvânia";"Particular";1;6;4;4;1;1;1;1;0;1;1;1;0;1
+113;"Silvânia";"Particular";2;7;4;4;1;0;1;1;1;1;1;1;0;1
+114;"Silvânia";"Particular";2;7;4;4;1;0;1;1;1;1;1;1;0;1
+115;"Silvânia";"Particular";2;7;3;4;1;0;1;1;0;1;1;1;0;1
+117;"Silvânia";"Particular";2;7;3;2;1;0;1;1;0;1;0;0;0;1
+118;"Silvânia";"Particular";2;7;4;3;1;0;1;1;1;1;1;0;0;1
+119;"Silvânia";"Particular";2;7;3;3;1;0;1;1;0;1;0;1;0;1
+120;"Silvânia";"Particular";2;7;3;3;1;0;1;1;0;1;1;0;1;0
+121;"Silvânia";"Particular";2;7;4;4;1;0;1;1;1;1;1;1;0;1
+122;"Silvânia";"Particular";2;7;3;4;1;0;1;0;1;1;1;1;0;1
+123;"Silvânia";"Particular";2;7;3;3;1;0;1;1;0;1;1;1;0;0
+124;"Silvânia";"Particular";2;7;4;4;1;0;1;1;1;1;1;1;0;1
+125;"Silvânia";"Particular";2;7;4;4;1;0;1;1;1;1;1;1;0;1
+126;"Silvânia";"Particular";2;7;2;3;1;0;1;0;0;1;0;1;0;1
+127;"Silvânia";"Particular";2;7;3;4;1;0;1;0;1;1;1;1;0;1
+128;"Silvânia";"Particular";2;7;3;4;1;0;1;1;0;1;1;1;0;1
+129;"Silvânia";"Particular";2;7;4;4;1;0;1;1;1;1;1;1;0;1
+130;"Silvânia";"Particular";2;7;4;3;1;0;1;1;1;1;1;0;0;1
+131;"Silvânia";"Particular";2;7;3;4;1;0;1;1;0;1;1;1;0;1
+132;"Silvânia";"Particular";2;7;3;4;1;0;1;0;1;1;1;1;0;1
+133;"Silvânia";"Particular";2;7;3;4;1;0;1;1;0;1;1;1;0;1
+134;"Silvânia";"Particular";2;7;4;4;1;0;1;1;1;1;1;1;0;1
+135;"Silvânia";"Particular";3;8;3;4;1;0;0;1;1;1;1;1;0;1
+136;"Silvânia";"Particular";3;8;2;2;0;0;0;1;1;0;0;1;0;1
+138;"Silvânia";"Particular";3;8;3;4;0;0;1;1;1;1;1;1;0;1
+139;"Silvânia";"Particular";3;8;4;5;1;1;0;1;1;1;1;1;1;1
+140;"Silvânia";"Particular";3;8;4;4;1;1;0;1;1;1;1;1;1;0
+141;"Silvânia";"Particular";3;8;4;5;0;1;1;1;1;1;1;1;1;1
+142;"Silvânia";"Particular";3;8;2;2;0;0;0;1;1;1;0;1;0;0
+143;"Silvânia";"Particular";3;8;4;5;0;1;1;1;1;1;1;1;1;1
+144;"Silvânia";"Particular";3;8;2;3;0;0;0;1;1;1;1;0;1;0
+145;"Silvânia";"Particular";3;8;4;5;1;0;1;1;1;1;1;1;1;1
+146;"Silvânia";"Particular";3;8;3;3;1;0;0;1;1;1;1;0;0;1
+147;"Silvânia";"Particular";3;8;4;4;1;0;1;1;1;0;1;1;1;1
+148;"Silvânia";"Particular";3;8;3;3;0;1;0;1;1;0;1;1;1;0
+149;"Silvânia";"Particular";3;8;4;5;1;0;1;1;1;1;1;1;1;1
+150;"Silvânia";"Particular";3;8;3;5;1;0;0;1;1;1;1;1;1;1
+151;"Silvânia";"Particular";3;8;2;4;0;0;1;0;1;1;1;1;0;1
+152;"Silvânia";"Particular";3;8;4;1;1;1;1;1;0;1;0;0;0;0
+153;"Silvânia";"Particular";3;8;5;4;1;1;1;1;1;1;1;0;1;1
+154;"Silvânia";"Particular";3;8;3;5;0;0;1;1;1;1;1;1;1;1
+155;"Silvânia";"Particular";3;8;1;2;0;0;0;1;0;0;1;1;0;0
+156;"Silvânia";"Particular";3;8;3;4;0;1;0;1;1;0;1;1;1;1
+157;"Silvânia";"Particular";3;8;5;5;1;1;1;1;1;1;1;1;1;1
+158;"Silvânia";"Particular";3;8;1;3;0;0;0;0;1;1;1;0;1;0
+159;"Silvânia";"Particular";3;8;2;3;0;0;0;1;1;1;1;1;0;0
+160;"Silvânia";"Particular";3;8;4;3;1;1;0;1;1;1;0;1;1;0
+161;"Silvânia";"Particular";3;8;4;5;1;0;1;1;1;1;1;1;1;1
+162;"Silvânia";"Particular";3;8;2;2;0;0;0;1;1;1;0;1;0;0
+163;"Silvânia";"Particular";4;9;3;3;1;1;1;0;0;0;1;0;1;1
+164;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;1;0;1;1
+165;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;0;1;1;1
+166;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;0;1;1;1
+167;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;0;1;1;1
+168;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;1;0;1;1
+169;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;1;0;1;1
+170;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;0;1;1;1
+171;"Silvânia";"Particular";4;9;4;2;1;0;1;1;1;0;1;0;1;0
+172;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;0;1;1;1
+173;"Silvânia";"Particular";4;9;5;3;1;1;1;1;1;0;1;0;1;1
+174;"Silvânia";"Particular";4;9;2;2;0;1;1;0;0;0;0;1;1;0
+175;"Silvânia";"Particular";4;9;4;2;1;0;1;1;1;0;0;0;1;1
+176;"Silvânia";"Particular";4;9;4;3;1;0;1;1;1;0;0;1;1;1
+177;"Silvânia";"Particular";4;9;3;4;0;0;1;1;1;0;1;1;1;1
+178;"Silvânia";"Particular";4;9;4;2;0;1;1;1;1;0;0;0;1;1
+179;"Silvânia";"Particular";4;9;4;2;1;0;1;1;1;0;0;0;1;1
+180;"Silvânia";"Particular";4;9;4;1;0;1;1;1;1;0;0;0;1;0
+181;"Silvânia";"Particular";4;9;4;2;0;1;1;1;1;0;1;1;0;0
+182;"Silvânia";"Particular";4;9;4;3;1;0;1;1;1;0;1;0;1;1
+183;"Silvânia";"Particular";4;9;4;0;1;1;1;1;0;0;0;0;0;0
+184;"Silvânia";"Particular";4;9;3;2;1;0;1;1;0;0;0;0;1;1
+185;"Silvânia";"Particular";4;9;5;2;1;1;1;1;1;0;0;1;0;1
+186;"Bela Vista de Goiás";"Particular";1;10;2;2;0;1;1;0;0;1;0;1;0;0
+187;"Bela Vista de Goiás";"Particular";1;10;4;4;1;1;1;1;0;1;1;1;0;1
+188;"Bela Vista de Goiás";"Particular";1;10;5;3;1;1;1;1;1;1;0;1;1;0
+189;"Bela Vista de Goiás";"Particular";1;10;4;2;1;1;1;0;1;1;0;1;0;0
+190;"Bela Vista de Goiás";"Particular";1;10;4;2;1;1;1;0;1;1;0;1;0;0
+191;"Bela Vista de Goiás";"Particular";1;10;4;2;1;1;1;1;0;1;0;1;0;0
+192;"Bela Vista de Goiás";"Particular";1;10;4;2;0;1;1;1;1;1;0;1;0;0
+193;"Bela Vista de Goiás";"Particular";1;10;4;2;1;1;1;1;0;1;0;1;0;0
+194;"Bela Vista de Goiás";"Particular";1;10;4;2;1;1;1;1;0;1;0;1;0;0
+195;"Bela Vista de Goiás";"Particular";1;10;3;2;1;1;1;0;0;0;0;1;0;1
+196;"Bela Vista de Goiás";"Particular";1;10;4;2;1;1;1;1;0;1;0;1;0;0
+197;"Bela Vista de Goiás";"Particular";1;10;4;4;1;1;1;0;1;1;1;1;0;1
+198;"Bela Vista de Goiás";"Particular";2;10;4;4;1;0;1;1;1;1;1;1;0;1
+199;"Bela Vista de Goiás";"Particular";2;10;2;4;0;0;1;1;0;1;1;1;0;1
+200;"Bela Vista de Goiás";"Particular";2;10;3;4;1;0;1;0;1;1;1;1;0;1
+201;"Bela Vista de Goiás";"Particular";2;10;3;3;1;0;1;1;0;1;1;0;0;1
+202;"Bela Vista de Goiás";"Particular";2;10;4;4;1;0;1;1;1;1;1;1;0;1
+203;"Bela Vista de Goiás";"Particular";2;10;4;4;1;0;1;1;1;1;1;1;0;1
+204;"Bela Vista de Goiás";"Particular";2;10;4;4;1;0;1;1;1;1;1;1;0;1
+205;"Bela Vista de Goiás";"Particular";2;10;4;4;1;0;1;1;1;1;1;1;0;1
+206;"Bela Vista de Goiás";"Particular";2;10;4;4;1;0;1;1;1;1;1;1;0;1
+207;"Bela Vista de Goiás";"Particular";2;10;4;4;1;0;1;1;1;1;1;1;0;1
+208;"Bela Vista de Goiás";"Particular";3;11;4;5;0;1;1;1;1;1;1;1;1;1
+209;"Bela Vista de Goiás";"Particular";3;11;2;4;0;1;0;0;1;1;1;1;0;1
+210;"Bela Vista de Goiás";"Particular";3;11;3;3;0;1;0;1;1;1;0;1;0;1
+211;"Bela Vista de Goiás";"Particular";3;11;5;5;1;1;1;1;1;1;1;1;1;1
+212;"Bela Vista de Goiás";"Particular";3;11;3;5;1;0;0;1;1;1;1;1;1;1
+213;"Bela Vista de Goiás";"Particular";3;11;3;5;0;1;0;1;1;1;1;1;1;1
+214;"Bela Vista de Goiás";"Particular";3;11;3;4;0;0;1;1;1;1;1;1;1;0
+215;"Bela Vista de Goiás";"Particular";3;11;3;5;0;1;0;1;1;1;1;1;1;1
+216;"Bela Vista de Goiás";"Particular";3;11;3;4;1;1;0;0;1;1;1;1;0;1
+217;"Bela Vista de Goiás";"Particular";3;11;4;5;1;1;0;1;1;1;1;1;1;1
+218;"Bela Vista de Goiás";"Particular";3;11;5;5;1;1;1;1;1;1;1;1;1;1
+219;"Bela Vista de Goiás";"Particular";4;11;3;3;0;0;1;1;1;0;1;0;1;1
+220;"Bela Vista de Goiás";"Particular";4;11;4;2;1;0;1;1;1;0;1;0;0;1
+221;"Bela Vista de Goiás";"Particular";4;11;5;3;1;1;1;1;1;0;0;1;1;1
+222;"Bela Vista de Goiás";"Particular";4;11;5;2;1;1;1;1;1;0;0;0;1;1
+223;"Bela Vista de Goiás";"Particular";4;11;5;4;1;1;1;1;1;0;1;1;1;1
+224;"Bela Vista de Goiás";"Particular";4;11;4;2;1;0;1;1;1;0;0;0;1;1
+225;"Bela Vista de Goiás";"Particular";4;11;5;2;1;1;1;1;1;0;0;0;1;1
+226;"Bela Vista de Goiás";"Particular";4;11;3;2;1;0;0;1;1;0;0;0;1;1
+227;"Bela Vista de Goiás";"Particular";4;11;5;3;1;1;1;1;1;0;1;0;1;1
+228;"Bela Vista de Goiás";"Particular";4;11;5;3;1;1;1;1;1;0;1;0;1;1
+229;"Bela Vista de Goiás";"Particular";4;11;5;3;1;1;1;1;1;0;1;0;1;1
+230;"Bela Vista de Goiás";"Particular";4;11;4;2;0;1;1;1;1;0;0;0;1;1
+231;"Bela Vista de Goiás";"Pública";1;12;4;1;1;1;1;1;0;0;0;1;0;0
+232;"Bela Vista de Goiás";"Pública";1;12;4;3;1;1;1;1;0;1;0;1;0;1
+233;"Bela Vista de Goiás";"Pública";1;12;3;0;1;1;1;0;0;0;0;0;0;0
+234;"Bela Vista de Goiás";"Pública";1;12;5;2;1;1;1;1;1;1;0;1;0;0
+235;"Bela Vista de Goiás";"Pública";1;12;3;2;1;0;1;1;0;1;0;1;0;0
+236;"Bela Vista de Goiás";"Pública";1;12;4;3;1;1;1;1;0;1;1;1;0;0
+237;"Bela Vista de Goiás";"Pública";1;12;5;2;1;1;1;1;1;1;0;1;0;0
+238;"Bela Vista de Goiás";"Pública";1;12;2;2;0;1;0;1;0;1;0;1;0;0
+239;"Bela Vista de Goiás";"Pública";1;12;4;2;1;1;1;0;1;1;0;1;0;0
+240;"Bela Vista de Goiás";"Pública";1;12;4;2;1;1;1;0;1;1;0;1;0;0
+241;"Bela Vista de Goiás";"Pública";1;12;4;2;1;1;1;1;0;1;0;1;0;0
+242;"Bela Vista de Goiás";"Pública";1;12;4;3;1;1;1;1;0;1;1;1;0;0
+243;"Bela Vista de Goiás";"Pública";1;12;2;2;1;1;0;0;0;1;0;1;0;0
+244;"Bela Vista de Goiás";"Pública";1;12;4;3;1;1;1;1;0;1;1;1;0;0
+245;"Bela Vista de Goiás";"Pública";1;12;5;4;1;1;1;1;1;1;1;1;1;0
+246;"Bela Vista de Goiás";"Pública";1;12;4;2;1;1;1;1;0;0;0;1;1;0
+247;"Bela Vista de Goiás";"Pública";1;12;4;5;1;1;1;1;0;1;1;1;1;1
+248;"Bela Vista de Goiás";"Pública";1;12;5;3;1;1;1;1;1;1;1;1;0;0
+249;"Bela Vista de Goiás";"Pública";1;12;4;2;1;1;1;1;0;1;0;1;0;0
+250;"Bela Vista de Goiás";"Pública";1;12;4;2;1;0;1;1;1;1;0;1;0;0
+251;"Bela Vista de Goiás";"Pública";2;13;3;5;1;0;1;1;0;1;1;1;1;1
+252;"Bela Vista de Goiás";"Pública";2;13;3;2;1;0;1;1;0;0;1;0;0;1
+253;"Bela Vista de Goiás";"Pública";2;13;3;4;1;0;1;1;0;1;1;1;0;1
+254;"Bela Vista de Goiás";"Pública";2;13;4;3;1;0;1;1;1;1;1;0;0;1
+255;"Bela Vista de Goiás";"Pública";2;13;0;3;0;0;0;0;0;1;1;0;1;0
+256;"Bela Vista de Goiás";"Pública";2;13;2;3;1;0;1;0;0;1;1;0;0;1
+257;"Bela Vista de Goiás";"Pública";2;13;3;4;1;0;1;1;0;1;1;1;0;1
+259;"Bela Vista de Goiás";"Pública";2;13;2;3;1;0;0;1;0;1;1;1;0;0
+260;"Bela Vista de Goiás";"Pública";2;13;4;4;1;0;1;1;1;1;1;1;0;1
+261;"Bela Vista de Goiás";"Pública";2;13;4;3;1;0;1;1;1;1;1;0;0;1
+262;"Bela Vista de Goiás";"Pública";2;13;3;3;1;0;0;1;1;0;1;1;0;1
+263;"Bela Vista de Goiás";"Pública";2;13;4;2;1;0;1;1;1;0;1;0;0;1
+264;"Bela Vista de Goiás";"Pública";2;13;4;2;1;0;1;1;1;0;1;0;0;1
+265;"Bela Vista de Goiás";"Pública";2;13;2;3;1;0;1;0;0;0;1;0;1;1
+266;"Bela Vista de Goiás";"Pública";2;13;4;3;1;0;1;1;1;0;1;1;0;1
+267;"Bela Vista de Goiás";"Pública";2;13;4;3;1;0;1;1;1;0;1;1;0;1
+268;"Bela Vista de Goiás";"Pública";2;13;2;4;1;0;1;0;0;0;1;1;1;1
+270;"Bela Vista de Goiás";"Pública";2;13;4;3;1;0;1;1;1;0;1;1;0;1
+272;"Bela Vista de Goiás";"Pública";2;13;4;3;1;0;1;1;1;0;1;1;0;1
+273;"Bela Vista de Goiás";"Pública";2;13;2;2;0;0;0;1;1;0;1;0;0;1
+275;"Bela Vista de Goiás";"Pública";2;13;3;2;1;0;1;0;1;0;1;0;0;1
+277;"Bela Vista de Goiás";"Pública";3;14;4;3;0;1;1;1;1;1;1;1;0;0
+278;"Bela Vista de Goiás";"Pública";3;14;4;4;1;0;1;1;1;1;1;1;0;1
+279;"Bela Vista de Goiás";"Pública";3;14;3;3;1;0;0;1;1;1;0;1;0;1
+280;"Bela Vista de Goiás";"Pública";3;14;4;1;1;1;1;0;1;1;0;0;0;0
+281;"Bela Vista de Goiás";"Pública";3;14;4;3;1;0;1;1;1;1;1;1;0;0
+282;"Bela Vista de Goiás";"Pública";3;14;4;4;1;1;0;1;1;1;0;1;1;1
+283;"Bela Vista de Goiás";"Pública";3;14;2;2;1;0;0;0;1;1;0;0;1;0
+284;"Bela Vista de Goiás";"Pública";3;14;3;4;1;0;0;1;1;1;1;0;1;1
+285;"Bela Vista de Goiás";"Pública";3;14;3;5;1;0;0;1;1;1;1;1;1;1
+286;"Bela Vista de Goiás";"Pública";3;14;3;3;1;0;0;1;1;1;1;0;0;1
+287;"Bela Vista de Goiás";"Pública";3;14;3;5;1;0;0;1;1;1;1;1;1;1
+288;"Bela Vista de Goiás";"Pública";3;14;3;5;1;0;0;1;1;1;1;1;1;1
+289;"Bela Vista de Goiás";"Pública";3;14;3;4;1;1;1;0;0;1;1;0;1;1
+290;"Bela Vista de Goiás";"Pública";3;14;2;3;0;0;0;1;1;1;1;1;0;0
+291;"Bela Vista de Goiás";"Pública";3;14;3;4;0;0;1;1;1;1;1;1;1;0
+292;"Bela Vista de Goiás";"Pública";4;15;3;3;1;0;1;1;0;0;1;0;1;1
+293;"Bela Vista de Goiás";"Pública";4;15;5;2;1;1;1;1;1;0;0;0;1;1
+294;"Bela Vista de Goiás";"Pública";4;15;5;2;1;1;1;1;1;0;0;0;1;1
+295;"Bela Vista de Goiás";"Pública";4;15;3;1;1;0;1;0;1;0;0;0;1;0
+296;"Bela Vista de Goiás";"Pública";4;15;4;3;1;0;1;1;1;0;0;1;1;1
+297;"Bela Vista de Goiás";"Pública";4;15;5;3;1;1;1;1;1;0;1;0;1;1
+298;"Bela Vista de Goiás";"Pública";4;15;3;2;1;0;1;1;0;0;1;0;0;1
+299;"Bela Vista de Goiás";"Pública";4;15;3;2;0;0;1;1;1;0;1;1;0;0
+300;"Bela Vista de Goiás";"Pública";4;15;4;1;1;0;1;1;1;0;1;0;0;0
+301;"Bela Vista de Goiás";"Pública";4;15;5;2;1;1;1;1;1;0;0;0;1;1
+302;"Bela Vista de Goiás";"Pública";4;15;5;2;1;1;1;1;1;0;0;0;1;1
+303;"Bela Vista de Goiás";"Pública";4;15;5;2;1;1;1;1;1;0;0;0;1;1
+304;"Bela Vista de Goiás";"Pública";4;15;5;2;1;1;1;1;1;0;1;0;0;1
+305;"Bela Vista de Goiás";"Pública";4;15;5;3;1;1;1;1;1;0;1;0;1;1
+306;"Bela Vista de Goiás";"Pública";4;15;5;3;1;1;1;1;1;0;1;0;1;1
+307;"Bela Vista de Goiás";"Pública";4;15;4;1;0;1;1;1;1;0;0;0;0;1
+308;"Bela Vista de Goiás";"Pública";4;15;5;1;1;1;1;1;1;0;0;0;1;0
+309;"Bela Vista de Goiás";"Pública";4;15;5;2;1;1;1;1;1;0;1;0;1;0
+310;"Bela Vista de Goiás";"Pública";4;15;4;1;1;1;1;1;0;0;1;0;0;0
+311;"Bela Vista de Goiás";"Pública";4;15;5;3;1;1;1;1;1;0;1;0;1;1
+312;"Bela Vista de Goiás";"Pública";4;15;5;3;1;1;1;1;1;0;1;0;1;1
+313;"Bela Vista de Goiás";"Pública";4;15;5;1;1;1;1;1;1;0;0;0;1;0
+314;"Bela Vista de Goiás";"Pública";4;15;5;3;1;1;1;1;1;0;0;1;1;1
+315;"Bela Vista de Goiás";"Pública";4;15;4;2;0;1;1;1;1;0;0;1;0;1
+316;"Bela Vista de Goiás";"Pública";4;15;5;2;1;1;1;1;1;0;0;0;1;1
+317;"Bela Vista de Goiás";"Pública";1;16;4;2;1;1;1;1;0;1;0;1;0;0
+318;"Bela Vista de Goiás";"Pública";1;16;4;2;1;1;1;1;0;1;0;1;0;0
+319;"Bela Vista de Goiás";"Pública";1;16;4;2;1;1;1;1;0;0;1;1;0;0
+320;"Bela Vista de Goiás";"Pública";1;16;4;1;1;1;1;1;0;0;0;1;0;0
+321;"Bela Vista de Goiás";"Pública";1;16;5;3;1;1;1;1;1;1;0;1;0;1
+322;"Bela Vista de Goiás";"Pública";1;16;5;3;1;1;1;1;1;1;1;1;0;0
+323;"Bela Vista de Goiás";"Pública";1;16;5;3;1;1;1;1;1;1;1;1;0;0
+324;"Bela Vista de Goiás";"Pública";1;16;4;2;1;1;1;1;0;1;0;1;0;0
+325;"Bela Vista de Goiás";"Pública";1;16;4;2;1;1;1;1;0;1;0;1;0;0
+326;"Bela Vista de Goiás";"Pública";1;16;4;1;1;1;1;1;0;0;0;1;0;0
+327;"Bela Vista de Goiás";"Pública";1;16;4;2;1;1;1;1;0;1;0;1;0;0
+328;"Bela Vista de Goiás";"Pública";1;16;5;2;1;1;1;1;1;0;1;1;0;0
+329;"Bela Vista de Goiás";"Pública";1;16;5;2;1;1;1;1;1;0;1;1;0;0
+330;"Bela Vista de Goiás";"Pública";1;16;5;3;1;1;1;1;1;1;1;1;0;0
+331;"Bela Vista de Goiás";"Pública";4;16;5;3;1;1;1;1;1;0;1;0;1;1
+332;"Bela Vista de Goiás";"Pública";4;16;4;4;1;1;1;0;1;0;1;1;1;1
+333;"Bela Vista de Goiás";"Pública";4;16;5;4;1;1;1;1;1;0;1;1;1;1
+334;"Bela Vista de Goiás";"Pública";4;16;5;3;1;1;1;1;1;0;1;0;1;1
+335;"Bela Vista de Goiás";"Pública";4;16;5;3;1;1;1;1;1;0;1;0;1;1
+336;"Bela Vista de Goiás";"Pública";4;16;5;1;1;1;1;1;1;0;0;0;0;1
+337;"Bela Vista de Goiás";"Pública";4;16;4;2;1;1;1;1;0;0;0;0;1;1
+338;"Bela Vista de Goiás";"Pública";4;16;5;3;1;1;1;1;1;0;1;0;1;1
+339;"Bela Vista de Goiás";"Pública";4;16;4;1;0;1;1;1;1;1;0;0;0;0
+340;"Bela Vista de Goiás";"Pública";4;16;4;2;1;1;1;1;0;0;0;0;1;1
+341;"Bela Vista de Goiás";"Pública";1;17;4;3;1;1;1;1;0;1;1;1;0;0
+342;"Bela Vista de Goiás";"Pública";1;17;5;2;1;1;1;1;1;1;0;1;0;0
+343;"Bela Vista de Goiás";"Pública";2;17;4;4;1;0;1;1;1;1;1;1;0;1
+344;"Bela Vista de Goiás";"Pública";2;17;4;3;1;0;1;1;1;0;1;0;1;1
+345;"Bela Vista de Goiás";"Pública";2;17;3;3;1;0;0;1;1;0;1;1;0;1
+346;"Bela Vista de Goiás";"Pública";2;17;4;3;1;0;1;1;1;0;1;1;0;1
+347;"Bela Vista de Goiás";"Pública";2;17;4;3;1;0;1;1;1;0;1;1;0;1
+348;"Bela Vista de Goiás";"Pública";2;17;4;3;1;0;1;1;1;0;1;1;0;1
+349;"Bela Vista de Goiás";"Pública";2;17;3;2;0;0;1;1;1;0;1;0;0;1
+350;"Bela Vista de Goiás";"Pública";2;17;3;2;0;0;1;1;1;0;1;0;0;1
+351;"Bela Vista de Goiás";"Pública";2;17;4;4;1;0;1;1;1;0;1;1;1;1
+352;"Bela Vista de Goiás";"Pública";2;17;2;2;1;0;1;0;0;0;0;1;0;1
+353;"Bela Vista de Goiás";"Pública";2;17;2;2;1;0;1;0;0;0;0;1;0;1
+354;"Bela Vista de Goiás";"Pública";2;17;4;3;1;0;1;1;1;0;1;1;0;1
+355;"Bela Vista de Goiás";"Pública";2;17;3;3;1;0;1;1;0;0;1;1;0;1
+356;"Bela Vista de Goiás";"Pública";2;17;4;3;1;0;1;1;1;0;1;1;0;1
+357;"Bela Vista de Goiás";"Pública";3;17;3;4;1;0;1;0;1;1;1;1;0;1
+358;"Bela Vista de Goiás";"Pública";3;17;2;4;0;0;0;1;1;0;1;1;1;1
+359;"Bela Vista de Goiás";"Pública";3;17;3;5;0;0;1;1;1;1;1;1;1;1
+360;"Bela Vista de Goiás";"Pública";3;17;2;3;0;0;0;1;1;0;0;1;1;1
+361;"Bela Vista de Goiás";"Pública";3;17;3;4;1;0;0;1;1;1;1;0;1;1
+362;"Bela Vista de Goiás";"Pública";3;17;1;2;1;0;0;0;0;0;1;0;0;1
+363;"Bela Vista de Goiás";"Pública";3;17;3;5;0;0;1;1;1;1;1;1;1;1
+364;"Bela Vista de Goiás";"Pública";3;17;3;4;1;0;1;0;1;1;1;1;0;1
+365;"Bela Vista de Goiás";"Pública";3;17;3;5;0;0;1;1;1;1;1;1;1;1
+366;"Bela Vista de Goiás";"Pública";3;17;3;3;1;0;0;1;1;1;0;0;1;1
+367;"Bela Vista de Goiás";"Pública";3;17;5;4;1;1;1;1;1;1;1;1;1;0
+368;"Bela Vista de Goiás";"Pública";3;17;3;3;1;0;0;1;1;1;0;1;0;1
+369;"Bela Vista de Goiás";"Pública";4;17;5;2;1;1;1;1;1;0;0;1;1;0
+370;"Bela Vista de Goiás";"Pública";4;17;5;3;1;1;1;1;1;0;0;1;1;1
+371;"Bela Vista de Goiás";"Pública";4;17;4;3;0;1;1;1;1;1;1;0;1;0
+372;"Bela Vista de Goiás";"Pública";4;17;5;3;1;1;1;1;1;0;0;1;1;1
+373;"Bela Vista de Goiás";"Pública";4;17;4;1;1;0;1;1;1;0;1;0;0;0
+374;"Bela Vista de Goiás";"Pública";4;17;5;3;1;1;1;1;1;0;1;0;1;1
+375;"Bela Vista de Goiás";"Pública";4;17;5;4;1;1;1;1;1;0;1;1;1;1

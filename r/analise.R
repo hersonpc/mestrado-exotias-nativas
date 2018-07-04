@@ -351,3 +351,5 @@ dev.off()
 # 
 # ggplot(aes(curso, n(), fill = tipo)) +
 #     geom_col() 
+
+
