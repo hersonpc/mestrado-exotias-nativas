@@ -1,0 +1,348 @@
+---
+title: "Mestrado Biologia"
+author: "Herson Melo"
+date: "28/06/2018"
+output: html_notebook
+---
+
+```{r, echo=FALSE, warning=FALSE, error=FALSE}
+library(lubridate)
+library(dplyr)
+library(stringr)
+library(reshape2)
+library(ggplot2)
+library("ggpubr")
+library(grid)
+library(gridExtra)
+library(nortest)
+library(knitr)
+library(kableExtra)
+
+options(scipen = 999, digits = 4)
+#options("scipen"=-100, "digits"=10)
+```
+
+## Análise do Jogo de Imagens aplicadas no Ensino médio
+
+Roteiro de análise:
+
+1. Amostra dos dados da pesquisa realizada
+2. Determinar normalidade
+3. Determinar 
+4. Histograma
+
+### Amostra dos dados da pesquisa realizada
+
+Tabulação do número de acertos dos itens do jogo de imagens.
+
+```{r, echo=FALSE}
+desc_colunas <- data.frame(
+    "Coluna" = c("Exoticas", "Nativas"),
+    "Descrição" = c("Número de acertos dentre todas as imagens exibidas do tipo exótica, valor experado é 5.",
+                    "Número de acertos dentre todas as imagens exibidas do tipo nativa, valor experado é 5.")
+    )
+desc_colunas %>%
+  kable() %>%
+  kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE)
+
+```
+
+
+```{r}
+head(jogo.dados.em.limpo)
+```
+
+#### Determinado a taxa de percepção
+
+Entende-se por taxa de percepção o fator determinado pela quantidade média de acertos dentre as questões apresentadas aos alunos, em relação a turma em que o questionario foi aplicado.
+
+```{r}
+jogo.dados.em.p <- jogo.dados.em.limpo %>% 
+    group_by(municipio, turmas) %>%
+    summarise(qtde = n(),
+              total_acertos_esperado = qtde * 5,
+              p_exoticas = sum(exoticas) / total_acertos_esperado,
+              p_nativas = sum(nativas) / total_acertos_esperado,
+              p_origem_exoticas = sum(origem_exoticas) / total_acertos_esperado,
+              p_origem_nativas = sum(origem_nativas) / total_acertos_esperado) %>%
+    ungroup()
+
+print(jogo.dados.em.p)
+```
+
+### Teste de normalidade
+
+Para determinar a normalidade nas distribuiçoes das respostas do jogo de imagens.
+
+```{r, fig.width=9, fig.height=5, echo=FALSE}
+d1 <- jogo.dados.em.p1 %>% 
+    ggdensity("p_nativas", fill = "green",
+      main = "Acerto de espécies Nativas",
+      xlab = "Percentual de acertos")
+
+d2 <- jogo.dados.em.p %>% 
+    ggdensity("p_exoticas", fill = "red", 
+      main = "Acerto de espécies Exoticas",
+      xlab = "Percentual de acertos")
+
+d3 <- jogo.dados.em.p %>% 
+    ggdensity("p_origem_nativas", fill = "darkgreen",
+      main = "Acerto das origens das espécies Nativas",
+      xlab = "Percentual de acertos")
+
+d4 <- jogo.dados.em.p %>% 
+    ggdensity("p_origem_exoticas", fill = "darkred",
+      main = "Acerto das origens das Exoticas",
+      xlab = "Percentual de acertos")
+
+normalidade <- function(x) {
+    t1 <- shapiro.test(x)
+    t2 <- sf.test(x)
+    t3 <- lillie.test(x)
+    t4 <- ad.test(x)
+    t5 <- cvm.test(x)
+    return( data.frame(
+        Algoritmo = c(t1$method, t2$method, 
+                   t3$method, t4$method, 
+                   t5$method),
+        p.valor = c(t1$p.value, t2$p.value, 
+                    t3$p.value, t4$p.value, 
+                    t5$p.value),
+        Normalidade = c(t1$p.value > .05, t2$p.value > .05, 
+                      t3$p.value > .05, t4$p.value > .05, 
+                      t5$p.value > .05)
+    ))
+}
+# normalidade(jogo.dados.em.p$p_nativas)
+
+# teste <- shapiro.test(jogo.dados.em.p$p_nativas)
+# d1t <- ggtexttable(paste0(teste$method, "\np-valor: ", teste$p.value), 
+#                   rows = NULL, theme = ttheme("mOrange"))
+d1t <- ggtexttable(normalidade(jogo.dados.em.p$p_nativas), 
+                  rows = NULL, theme = ttheme("mOrange"))
+
+# teste <- shapiro.test(jogo.dados.em.p$p_exoticas)
+# d2t <- ggtexttable(paste0(teste$method, "\np-valor: ", teste$p.value), 
+#                   rows = NULL, theme = ttheme("mOrange"))
+d2t <- ggtexttable(normalidade(jogo.dados.em.p$p_exoticas), 
+                  rows = NULL, theme = ttheme("mOrange"))
+# teste <- shapiro.test(jogo.dados.em.p$p_origem_nativas)
+# d3t <- ggtexttable(paste0(teste$method, "\np-valor: ", teste$p.value), 
+#                   rows = NULL, theme = ttheme("mOrange"))
+d3t <- ggtexttable(normalidade(jogo.dados.em.p$p_origem_nativas), 
+                  rows = NULL, theme = ttheme("mOrange"))
+# teste <- shapiro.test(jogo.dados.em.p$p_origem_exoticas)
+# d4t <- ggtexttable(paste0(teste$method, "\np-valor: ", teste$p.value), 
+#                   rows = NULL, theme = ttheme("mOrange"))
+d4t <- ggtexttable(normalidade(jogo.dados.em.p$p_origem_exoticas), 
+                  rows = NULL, theme = ttheme("mOrange"))
+
+grid.arrange(d1, d2, 
+             d1t, d2t,
+             d3, d4,
+             d3t, d4t,
+             ncol = 2,
+             heights = c(4,3,4,3),
+             top = textGrob("Densidade dos percentuais de percepção entre as\nespecies e suas origens\n",                             gp = gpar(fontsize = 20, font = 2))
+             )
+```
+
+### Q-Q Test
+
+```{r, fig.width=8, fig.height=4}
+qqplot.data <- function (vec, titulo) # argument: vector of numbers
+{
+  # following four lines from base R's qqline()
+  y <- quantile(vec[!is.na(vec)], c(0.25, 0.75))
+  x <- qnorm(c(0.25, 0.75))
+  slope <- diff(y)/diff(x)
+  int <- y[1L] - slope * x[1L]
+
+  d <- data.frame(resids = vec)
+
+  ggplot(d, aes(sample = resids)) + 
+      stat_qq() + 
+      geom_abline(slope = slope, intercept = int, col = "red") +
+      theme_bw() +
+      labs(
+        title = titulo
+    )
+
+
+}
+q1 <- qqplot.data(jogo.dados.em.p$p_nativas, "Acerto Nativas")
+q2 <- qqplot.data(jogo.dados.em.p$p_exoticas, "Acerto Exoticas")
+q3 <- qqplot.data(jogo.dados.em.p$p_origem_nativas, "Acerto Origem Nativas")
+q4 <- qqplot.data(jogo.dados.em.p$p_origem_exoticas, "Acerto Origem Exoticas")
+
+grid.arrange(q1, q2, 
+             q3, q4,
+             ncol = 2,
+             heights = c(3,3),
+             top = textGrob("Normal Q-Q Plot\n", 
+                            gp = gpar(fontsize = 20, font = 2))
+             )
+```
+
+### Teste de variância
+
+Para determinar a variância
+
+```{r}
+var.test(jogo.dados.em.p$p_nativas, jogo.dados.em.p$p_exoticas, alternative = "two.sided")
+```
+
+```{r}
+var.test(jogo.dados.em.p$p_origem_nativas, jogo.dados.em.p$p_origem_exoticas, alternative = "two.sided")
+```
+
+### Testes de hipoteses
+
+1. Os alunos itendificam mais os nomes dos animais de espécies exóticas que os animais de espécies nativas.
+
+**TEST T-student**  
+H0 = Tident(exoticas) = Tident(nativas)  
+H1 = Tident(exoticas) > Tident(nativas)
+
+```{r}
+## Hipotese 1
+t.test(jogo.dados.em.p$p_nativas, jogo.dados.em.p$p_exoticas, 
+       alternative = "two.sided", paired = F, var.equal = T)
+```
+
+2. Os alunos identificam mais espécies de origem exótica que as de origem nativa.
+
+**TEST T-student**  
+H0 = Tident(origem.exoticas) = Tident(origem.nativas)  
+H1 = Tident(origem.exoticas) > Tident(origem.nativas)
+
+```{r}
+## Hipotese 2
+t.test(jogo.dados.em.p$p_origem_nativas, jogo.dados.em.p$p_origem_exoticas, 
+       alternative = "two.sided", paired = F, var.equal = T)
+```
+
+3. Os alunos identificam mais as espécies exóticas (nome dos animais e origem) que espécies nativas.
+
+**ANOVA**  
+
+```{r}
+# t.anova <- aov(g2$proporcao ~ g2$especie + g2$tipo)
+# summary(t.anova)
+```
+
+4. Os alunos reconhecem mais mamíferos do que os demais grupos taxonómicos.
+
+**ANOVA**  
+
+
+```{r}
+## Hipotese 3
+t.test(jogo.dados.em.p$p_nativas, jogo.dados.em.p$p_origem_nativas, 
+       alternative = "two.sided", paired = F, var.equal = T)
+```
+
+5. 
+
+```{r}
+## Hipotese 4
+t.test(jogo.dados.em.p$p_exoticas, jogo.dados.em.p$p_origem_exoticas, 
+       alternative = "two.sided", paired = F, var.equal = T)
+```
+
+6. Estudantes que residem na Cidade 1 (com UC) identificam mais espécies nativas do que estudantes que residem na Cidade 2 (sem UC).
+
+```{r}
+nat_silvania <-
+    jogo.dados.em.p[jogo.dados.em.p$municipio == "Silvânia", ]$p_nativas
+nat_belavista <- 
+    jogo.dados.em.p[jogo.dados.em.p$municipio == "Bela Vista de Goiás", ]$p_nativas
+#cbind(nat_silvania, nat_belavista)
+#boxplot(nat_silvania, nat_belavista)
+#summary(nat_silvania)
+#summary(nat_belavista)
+#var.test(nat_silvania, nat_belavista, alternative = "two.sided")
+
+t.test(nat_silvania, nat_belavista,
+       alternative = "two.sided", paired = F, var.equal = T)
+```
+
+7. Estudantes que residem em área rural tem maior conhecimento sobre as espécies nativas.
+
+**ANOVA**
+
+#### Dados
+
+Dados são agrupados por Municipio, turmas e área de residência:
+
+```{r}
+jogo.dados.em.p1 <- jogo.dados.em.limpo %>% 
+    group_by(municipio, turmas, area) %>%
+    summarise(qtde = n(),
+              total_acertos_esperado = qtde * 5,
+              p_exoticas = sum(exoticas) / total_acertos_esperado,
+              p_nativas = sum(nativas) / total_acertos_esperado,
+              p_origem_exoticas = sum(origem_exoticas) / total_acertos_esperado,
+              p_origem_nativas = sum(origem_nativas) / total_acertos_esperado) %>%
+    ungroup()
+
+# jogo.dados.em.p1 <- jogo.dados.em.p1 %>% 
+#     select(area, p_nativas, p_exoticas)
+
+print(jogo.dados.em.p1)
+
+nat_rual <-
+    jogo.dados.em.p1[jogo.dados.em.p1$area == "Rural", ]$p_nativas
+nat_urbana <- 
+    jogo.dados.em.p1[jogo.dados.em.p1$area == "Urbana", ]$p_nativas
+summary(nat_rual)
+summary(nat_urbana)
+boxplot(nat_rual, nat_urbana)
+
+t.test(nat_rual, nat_urbana, 
+       alternative = "two.sided", paired = F, var.equal = T)
+
+
+# shapiro.test(jogo.dados.em.p1$p_nativas)
+# shapiro.test(jogo.dados.em.p1$p_exoticas)
+
+area.anova <- aov(jogo.dados.em.p1$p_nativas ~ jogo.dados.em.p1$municipio + jogo.dados.em.p1$area)
+summary(area.anova)
+
+# area.anova <- aov(jogo.dados.em.p1$p_exoticas ~ jogo.dados.em.p1$municipio + jogo.dados.em.p1$area)
+# summary(area.anova)
+
+```
+
+
+8.
+
+9.
+
+10. Estudantes da Cidade 1 (com UC) tem maior número de acertos de espécies nativas.
+
+```{r}
+jogo.dados.em.p2 <- jogo.dados.em.limpo %>% 
+    filter(municipio == "Silvânia") %>%
+    group_by(turmas, flona) %>%
+    summarise(qtde = n(),
+              total_acertos_esperado = qtde * 5,
+              p_exoticas = sum(exoticas) / total_acertos_esperado,
+              p_nativas = sum(nativas) / total_acertos_esperado,
+              p_origem_exoticas = sum(origem_exoticas) / total_acertos_esperado,
+              p_origem_nativas = sum(origem_nativas) / total_acertos_esperado) %>%
+    ungroup()
+
+print(jogo.dados.em.p2)
+
+nat_uc <-
+    jogo.dados.em.p2[jogo.dados.em.p2$flona == "Sim", ]$p_nativas
+nat_nao_uc <- 
+    jogo.dados.em.p2[jogo.dados.em.p2$flona == "Não", ]$p_nativas
+boxplot(nat_uc, nat_nao_uc)
+
+t.test(nat_uc, nat_nao_uc, 
+       alternative = "two.sided", paired = F, var.equal = T)
+
+```
