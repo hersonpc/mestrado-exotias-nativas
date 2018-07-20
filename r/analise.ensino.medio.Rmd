@@ -2,7 +2,8 @@
 title: "Mestrado Biologia"
 author: "Herson Melo"
 date: "28/06/2018"
-output: html_notebook
+output: 
+  html_notebook
 ---
 
 ```{r, echo=FALSE, warning=FALSE, error=FALSE, include = FALSE}
@@ -14,18 +15,17 @@ library(ggplot2)
 library(ggpubr)
 library(grid)
 library(gridExtra)
-library(nortest)
 library(knitr)
 library(kableExtra)
-library(stats)
 library(nortest)
+library(stats)
 library(multcompView)
 
 suppressWarnings(Sys.setlocale("LC_ALL", 'en_US.UTF-8'))
 options(scipen = 999, digits = 4)
 #options("scipen"=-100, "digits"=10)
-
-load("/Users/hersonmelo/Desktop/mestrado-exoticas-nativas/r/dados.RData")
+# getwd()
+load("dados.RData")
 ```
 
 ## Análise do Jogo de Imagens aplicadas no Ensino médio
@@ -64,7 +64,7 @@ head(pos_gabarito$dados, 10)
 Entende-se por taxa de percepção o fator determinado pela quantidade média de acertos dentre as questões apresentadas aos alunos, em relação a turma em que o questionario foi aplicado.
 
 ```{r}
-print(pos_gabarito$proporcoes)
+print(pos_gabarito$proporcoes$por_turma)
 ```
 
 ### Teste de normalidade
@@ -93,7 +93,7 @@ normalidade <- function(x) {
 
 grafico_densidade <- function(variavel, cor, titulo) {
     plot <- 
-        pos_gabarito$proporcoes %>% 
+        pos_gabarito$proporcoes$por_turma %>% 
         ggdensity(x = variavel, fill = cor,
           main = titulo,
           xlab = "Percentual de acertos") + 
@@ -101,8 +101,8 @@ grafico_densidade <- function(variavel, cor, titulo) {
         ylim(0, 8)
     nomalidade <- 
         ggtexttable(
-            normalidade(pos_gabarito$proporcoes[[variavel]]), 
-            rows = NULL, theme = ttheme("mOrange")
+            normalidade(pos_gabarito$proporcoes$por_turma[[variavel]]), 
+            rows = NULL, theme = ttheme(base_style = "mOrange", base_size = 8)
         )
     
     resultado <- list(
@@ -122,13 +122,13 @@ t6 <- grafico_densidade("p_indice_exoticas", "orangered", "Indice de reconhecime
 
 #### Identificação médio das turmas (nomes das espécies & origens)
 
-```{r fig.width=9, fig.height=5}
+```{r fig.width=8, fig.height=5}
 grid.arrange(t1$plot, t2$plot,
              t1$normalidade, t2$normalidade,
              t3$plot, t4$plot,
              t3$normalidade, t4$normalidade,
              ncol = 2,
-             heights = c(4,3,4,3),
+             heights = c(3,2,3,2),
              top = textGrob("Densidade de identificação média das turmas entre \nespecies e suas origens\n",
                             gp = gpar(fontsize = 20, font = 2))
              )
@@ -136,7 +136,7 @@ grid.arrange(t1$plot, t2$plot,
 
 #### Indice de reconhecimento médio das turmas
 
-```{r fig.width=9, fig.height=3, }
+```{r fig.width=8, fig.height=3}
 grid.arrange(t5$plot, t6$plot,
              t5$normalidade, t6$normalidade,
              ncol = 2,
@@ -149,7 +149,7 @@ grid.arrange(t5$plot, t6$plot,
 
 ### Q-Q Test
 
-```{r, fig.width=6, fig.height=3}
+```{r, fig.width=6, fig.height=4}
 qqplot.data <- function (vec, titulo) {
   # following four lines from base R's qqline()
   y <- quantile(vec[!is.na(vec)], c(0.25, 0.75))
@@ -170,12 +170,12 @@ qqplot.data <- function (vec, titulo) {
     )
 }
 
-q1 <- qqplot.data(pos_gabarito$proporcoes$p_nativas, "Identificação do nome das espécies de origem Nativas")
-q2 <- qqplot.data(pos_gabarito$proporcoes$p_exoticas, "Identificação do nome das espécies de origem Exoticas")
-q3 <- qqplot.data(pos_gabarito$proporcoes$p_origem_nativas, "Identificação de origem Nativas")
-q4 <- qqplot.data(pos_gabarito$proporcoes$p_origem_exoticas, "Identificação de origem Exoticas")
-q5 <- qqplot.data(pos_gabarito$proporcoes$p_indice_nativas, "Indice de reconhecimento Nativas (origens + espécies)")
-q6 <- qqplot.data(pos_gabarito$proporcoes$p_indice_exoticas, "Indice de reconhecimento Exoticas (origens + espécies)")
+q1 <- qqplot.data(pos_gabarito$proporcoes$por_turma$p_nativas, "Identificação do nome das espécies de origem Nativas")
+q2 <- qqplot.data(pos_gabarito$proporcoes$por_turma$p_exoticas, "Identificação do nome das espécies de origem Exoticas")
+q3 <- qqplot.data(pos_gabarito$proporcoes$por_turma$p_origem_nativas, "Identificação de origem Nativas")
+q4 <- qqplot.data(pos_gabarito$proporcoes$por_turma$p_origem_exoticas, "Identificação de origem Exoticas")
+q5 <- qqplot.data(pos_gabarito$proporcoes$por_turma$p_indice_nativas, "Indice de reconhecimento Nativas (origens + espécies)")
+q6 <- qqplot.data(pos_gabarito$proporcoes$por_turma$p_indice_exoticas, "Indice de reconhecimento Exoticas (origens + espécies)")
 
 grid.arrange(q1, q2, 
              q3, q4,
@@ -193,34 +193,39 @@ Para determinar a variância
 ```{r}
 variancia <- data.frame(
     Algoritmo = c("F test to compare two variances"),
-    Teste = c(
-        "Indice de reconhecimento: Nativas x Exóticas",
-        "Identificação do nome das espécies de origem: Nativas x Exóticas",
-        "Identificação de origem: Nativas x Exóticas"
+    "Comparação" = c("Nativas x Exóticas"),
+    "Variável" = c(
+        "Indice de reconhecimento",
+        "Identificação do nome das espécies",
+        "Identificação da origem"
     ),
     "p_valor" = c(
-        var.test(pos_gabarito$proporcoes$p_indice_nativas, 
-                 pos_gabarito$proporcoes$p_indice_exoticas, 
+        var.test(pos_gabarito$proporcoes$por_turma$p_indice_nativas, 
+                 pos_gabarito$proporcoes$por_turma$p_indice_exoticas, 
                  alternative = "two.sided")$p.value,
-        var.test(pos_gabarito$proporcoes$p_nativas, 
-                 pos_gabarito$proporcoes$p_exoticas, 
+        var.test(pos_gabarito$proporcoes$por_turma$p_nativas, 
+                 pos_gabarito$proporcoes$por_turma$p_exoticas, 
                  alternative = "two.sided")$p.value,
-        var.test(pos_gabarito$proporcoes$p_origem_nativas, 
-                 pos_gabarito$proporcoes$p_origem_exoticas, 
+        var.test(pos_gabarito$proporcoes$por_turma$p_origem_nativas, 
+                 pos_gabarito$proporcoes$por_turma$p_origem_exoticas, 
                  alternative = "two.sided")$p.value
     )
 )
 
 variancia <- variancia %>%
     mutate(
-        variancia = p_valor > 0.05
+        variancia = p_valor > 0.05,
+        p_valor = cell_spec(round(p_valor, 4), bold = T, color = "black", align = "right"),
+        variancia = cell_spec(variancia, bold = variancia,
+                       color= ifelse(variancia, "white", "black"), 
+                       background = ifelse(variancia, "green", "#CCCCCC"))
     )
 
 variancia %>%
-  kable() %>%
+  kable(escape = F) %>%
   kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
-  column_spec(1, bold = TRUE)
-
+  column_spec(1, bold = TRUE) %>%
+  collapse_rows(columns = 1:2, valign = "top") 
 ```
 
 ### Analises descritivas
@@ -231,7 +236,7 @@ head(pos_gabarito$especies, 10)
 
 #### Indice de identificação por Origem
 
-```{r, fig.width=7, fig.height=4}
+```{r, fig.width=8, fig.height=4}
 pos_gabarito$especie %>% 
     ggplot(aes(especieDesc, fr, fill = grupo)) + 
     geom_bar(stat="identity") +
@@ -251,7 +256,7 @@ pos_gabarito$especie %>%
 
 #### Indice de identificação por Espécie
 
-```{r, fig.width=7, fig.height=4}
+```{r, fig.width=8, fig.height=4}
 pos_gabarito$especie %>% 
     ggplot(aes(especieDesc, fr, fill = origem)) + 
     geom_bar(stat="identity") +
@@ -280,49 +285,68 @@ Esperado p-valor <= 0.05 no teste de hipotese (espera-se H1)
 H0 = Tident(exoticas) = Tident(nativas)  
 H1 = Tident(exoticas) > Tident(nativas)
 
-```{r}
+```{r, fig.width=8, fig.height=3}
 ## Hipotese 1
-boxplot(pos_gabarito$proporcoes$p_indice_nativas, pos_gabarito$proporcoes$p_indice_exoticas)
-boxplot(pos_gabarito$proporcoes$p_nativas, pos_gabarito$proporcoes$p_exoticas)
-boxplot(pos_gabarito$proporcoes$p_origem_nativas, pos_gabarito$proporcoes$p_origem_exoticas)
+tmp <- pos_gabarito$proporcoes$por_turma %>%
+  select(turmas, p_nome_exoticas = p_exoticas, p_nome_nativas = p_nativas, p_origem_exoticas:p_indice_nativas) %>%
+  melt(id = "turmas")
 
-t.test(pos_gabarito$proporcoes$p_indice_nativas, 
-       pos_gabarito$proporcoes$p_indice_exoticas, 
-       alternative = "two.sided", paired = F, var.equal = T)
+cbind(tmp, colsplit(tmp$variable, "_", c("p", "indicador", "origem"))) %>%
+  select(turmas, indicador, origem, value) %>%
+  ggplot() + 
+  geom_boxplot(aes(x = origem, y = value, fill = origem), show.legend = F) + 
+  scale_y_continuous(limits = c(0,1), labels = scales::percent) +
+  facet_wrap(~indicador) +
+  theme_bw() +
+  labs(title = "Boxplot de identificação dos critérios estabelecidos",
+       y = "Percentual de identificação", x = "")
 ```
 
 ```{r}
-t1 <- t.test(pos_gabarito$proporcoes$p_indice_nativas, 
-       pos_gabarito$proporcoes$p_indice_exoticas, 
+t1 <- t.test(pos_gabarito$proporcoes$por_turma$p_indice_nativas, 
+       pos_gabarito$proporcoes$por_turma$p_indice_exoticas, 
        alternative = "two.sided", paired = F, var.equal = T)
-t2 <- t.test(pos_gabarito$proporcoes$p_nativas, 
-       pos_gabarito$proporcoes$p_exoticas, 
+t2 <- t.test(pos_gabarito$proporcoes$por_turma$p_nativas, 
+       pos_gabarito$proporcoes$por_turma$p_exoticas, 
        alternative = "two.sided", paired = F, var.equal = T)
-t3 <- t.test(pos_gabarito$proporcoes$p_origem_nativas, 
-       pos_gabarito$proporcoes$p_origem_exoticas, 
+t3 <- t.test(pos_gabarito$proporcoes$por_turma$p_origem_nativas, 
+       pos_gabarito$proporcoes$por_turma$p_origem_exoticas, 
        alternative = "two.sided", paired = F, var.equal = T)
 
 data.frame(
     Algoritmo = c(t1$method, t2$method, t3$method),
-    Teste = c(
-        "Indice de reconhecimento: Nativas x Exóticas",
-        "Identificação do nome das espécies de origem: Nativas x Exóticas",
-        "Identificação de origem: Nativas x Exóticas"
+    "Comparação" = c("Nativas x Exóticas"),
+    "Variável" = c(
+        "Indice de reconhecimento",
+        "Identificação do nome das espécies",
+        "Identificação da origem"
     ),
     p_valor = c(t1$p.value, t2$p.value, t3$p.value),
     H0 = c(t1$p.value >= 0.05, t2$p.value >= 0.05, t3$p.value >= 0.05),
     H1 = c(t1$p.value < 0.05, t2$p.value < 0.05, t3$p.value < 0.05),
-    "Confianca 95%" = c(
+    "Confiança" = c(
         paste(paste0(round(t1$conf.int * 100, 2), "%"), collapse = " ~ "),
         paste(paste0(round(t2$conf.int * 100, 2), "%"), collapse = " ~ "),
         paste(paste0(round(t3$conf.int * 100, 2), "%"), collapse = " ~ ")
     )
 ) %>%
-  kable() %>%
+  mutate(
+    p_valor = cell_spec(round(p_valor, 4), bold = T, color = "black", align = "right"),
+    H0 = cell_spec(H0, bold = H0,
+                   color= ifelse(H0, "white", "black"), 
+                   background = ifelse(H0, "green", "#CCCCCC")),
+    H1 = cell_spec(H1, bold = H1, 
+                   color = ifelse(H1, "white", "black"), 
+                   background = ifelse(H1, "green", "#CCCCCC"))
+  ) %>%
+  kable(escape = F) %>%
   kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
-  column_spec(1, bold = TRUE)
-
-
+  column_spec(1, bold = TRUE) %>%
+#  column_spec(4, bold = T, color = "darkblue") %>%
+  collapse_rows(columns = 1:2, valign = "top") %>%
+  footnote(general = "Intervalo de confiança 95%",
+           general_title = "\nObs.: ",
+           footnote_as_chunk = T)
 ```
 
 
@@ -340,8 +364,8 @@ H1 = Tident(origem.exoticas) > Tident(origem.nativas)
 
 ```{r}
 ## Hipotese 2
-t.test(pos_gabarito$proporcoes$p_origem_nativas, 
-       pos_gabarito$proporcoes$p_origem_exoticas, 
+t.test(pos_gabarito$proporcoes$por_turma$p_origem_nativas, 
+       pos_gabarito$proporcoes$por_turma$p_origem_exoticas, 
        alternative = "two.sided", paired = F, var.equal = T)
 ```
 
@@ -361,7 +385,7 @@ t.test(pos_gabarito$proporcoes$p_origem_nativas,
 **ANOVA**  
 
 
-```{r, fig.width=7, fig.height=4}
+```{r, fig.width=8, fig.height=5}
 ## Hipotese 4
 dadosANOVA <- 
     pos_gabarito$taxonomicos %>%
@@ -389,7 +413,7 @@ ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.01, 0.05, 1),
     
 ```
 
-```{r, fig.width=7, fig.height=8}
+```{r, fig.width=8, fig.height=8}
 ## Hipotese 4
 dadosANOVA <- 
     pos_gabarito$taxonomicos %>%
@@ -432,7 +456,7 @@ ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.01, 0.05, 1),
 proporcoesPorMunicipio <-
     merge(
         pos_gabarito$dados %>% select(turmas, municipio) %>% unique(),
-        pos_gabarito$proporcoes
+        pos_gabarito$proporcoes$por_turma
     ) 
 
 nat_silvania <-
