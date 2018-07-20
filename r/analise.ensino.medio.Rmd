@@ -9,6 +9,7 @@ output:
 ```{r, echo=FALSE, warning=FALSE, error=FALSE, include = FALSE}
 library(lubridate)
 library(dplyr)
+library(tidyr)
 library(stringr)
 library(reshape2)
 library(ggplot2)
@@ -286,7 +287,6 @@ H0 = Tident(exoticas) = Tident(nativas)
 H1 = Tident(exoticas) > Tident(nativas)
 
 ```{r, fig.width=8, fig.height=3}
-## Hipotese 1
 tmp <- pos_gabarito$proporcoes$por_turma %>%
   select(turmas, p_nome_exoticas = p_exoticas, p_nome_nativas = p_nativas, p_origem_exoticas:p_indice_nativas) %>%
   melt(id = "turmas")
@@ -363,7 +363,6 @@ H0 = Tident(origem.exoticas) = Tident(origem.nativas)
 H1 = Tident(origem.exoticas) > Tident(origem.nativas)
 
 ```{r}
-## Hipotese 2
 t.test(pos_gabarito$proporcoes$por_turma$p_origem_nativas, 
        pos_gabarito$proporcoes$por_turma$p_origem_exoticas, 
        alternative = "two.sided", paired = F, var.equal = T)
@@ -386,7 +385,6 @@ t.test(pos_gabarito$proporcoes$por_turma$p_origem_nativas,
 
 
 ```{r, fig.width=8, fig.height=5}
-## Hipotese 4
 dadosANOVA <- 
     pos_gabarito$taxonomicos %>%
     select(turmas, grupos = grupo, valor)
@@ -414,7 +412,6 @@ ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.01, 0.05, 1),
 ```
 
 ```{r, fig.width=8, fig.height=8}
-## Hipotese 4
 dadosANOVA <- 
     pos_gabarito$taxonomicos %>%
     mutate(grupos = paste(grupo, "@", origem)) %>%
@@ -456,8 +453,14 @@ ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.01, 0.05, 1),
 proporcoesPorMunicipio <-
     merge(
         pos_gabarito$dados %>% select(turmas, municipio) %>% unique(),
-        pos_gabarito$proporcoes$por_turma
-    ) 
+        pos_gabarito$proporcoes$por_turma_sexo
+    ) %>%
+    select(municipio, p_nativas) %>%
+    tbl_df()
+
+# tmp <- dcast(proporcoesPorMunicipio, formula = municipio)
+# names(tmp) <- c("valor", "bela_vista", "silvania")
+# boxplot(tmp$valor, tmp$bela_vista)
 
 nat_silvania <-
     (proporcoesPorMunicipio %>%
@@ -467,7 +470,7 @@ nat_belavista <-
         filter(municipio == "Bela Vista de Goiás"))$p_nativas
     
 #cbind(nat_silvania, nat_belavista)
-#boxplot(nat_silvania, nat_belavista)
+boxplot(nat_silvania, nat_belavista)
 #summary(nat_silvania)
 #summary(nat_belavista)
 #var.test(nat_silvania, nat_belavista, alternative = "two.sided")

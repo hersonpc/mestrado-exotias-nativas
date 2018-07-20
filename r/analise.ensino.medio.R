@@ -49,7 +49,6 @@ validar_questionario_no_gabarito <- function(data) {
         message("* Baixando o gabarito...                         ")
         url.gabarito <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqltencC-1KU1X4nz-CJsANjcne8yAu_9Y4D0aBbr_AA-FX1Y627CpsFEpLdBObmAKpsrITYutPrWg/pub?gid=0&single=true&output=csv'
         gabarito <<- read.csv(file = url.gabarito, stringsAsFactors = FALSE, encoding = "UTF-8")
-        #names(gabarito) <<- c('modelo', 'questao', 'resposta', 'nativo_sn', 'grupo', 'especie')
         gabarito <<- gabarito %>% mutate(nativo_sn = substr(nativo_sn, 1, 1)) %>% tbl_df()
     }
     inc <- function(x) {eval.parent(substitute(x <- x + 1))}
