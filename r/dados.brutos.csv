@@ -1,368 +1,368 @@
-"codigo";"municipio";"escola";"modelo";"turmas";"sexo";"idade";"temp.residencia";"area";"bairro";"nome.escola";"frequencia";"fez.aula";"flona";"exoticas";"nativas";"origem_exoticas";"origem_nativas";"indice_exoticas";"indice_nativas";"exotica_aves";"exotica_invertebrado";"exotica_mamifero";"exotica_peixe";"exotica_reptil";"nativa_aves";"nativa_invertebrado";"nativa_mamifero";"nativa_peixe";"nativa_reptil"
-1;"Silvânia";"Particular";1;1;"Feminino";17;"";"Urbana";"";"Ginásio Anchieta";"Ás vezes";"Sim";"Não";5;2;3;4;3;2;1;1;1;1;1;1;0;1;0;0
-2;"Silvânia";"Particular";1;1;"Feminino";17;"17";"Urbana";"pedrinhas";"Ginásio Anchieta";"Ás vezes";"Sim";"Sim";4;3;4;5;4;3;1;1;1;1;0;1;1;1;0;0
-3;"Silvânia";"Particular";1;1;"Masculino";17;"17";"Urbana";"são sebastião 7";"Ginásio Anchieta";"Frequentemente";"Sim";"Sim";4;3;4;5;4;3;1;1;1;1;0;1;1;1;0;0
-4;"Silvânia";"Particular";1;1;"Masculino";17;"17";"Urbana";"parque anchieta";"Ginásio Anchieta";"Frequentemente";"Não";"Não";5;2;3;4;3;2;1;1;1;1;1;1;0;1;0;0
-5;"Silvânia";"Particular";2;1;"Feminino";17;"17";"Rural";"centro";"Ginásio Anchieta";"Frequentemente";"Não";"Não";4;1;0;5;0;1;1;1;1;1;0;0;0;0;1;0
-6;"Silvânia";"Particular";2;1;"Feminino";17;"15";"Rural";"";"Ginásio Anchieta";"Sempre";"Sim";"Não";2;1;2;4;0;0;1;0;1;0;0;0;0;1;0;0
-7;"Silvânia";"Particular";2;1;"Masculino";18;"3";"Urbana";"res. anhanguera";"Ginásio Anchieta";"Sempre";"Não";"Não";3;1;2;5;1;1;1;1;1;0;0;0;0;1;0;0
-8;"Silvânia";"Particular";3;1;"Feminino";16;"8";"Rural";"";"Ginásio Anchieta";"Sempre";"Não";"Sim";3;2;2;4;1;2;1;0;0;1;1;1;0;0;1;0
-9;"Silvânia";"Particular";3;1;"Masculino";16;"";"Urbana";"anhanguera";"Ginásio Anchieta";"Ás vezes";"Não";"Sim";4;0;2;3;2;0;1;0;1;1;1;0;0;0;0;0
-10;"Silvânia";"Particular";3;1;"Feminino";17;"17";"Urbana";"Leonides cotrim";"Ginásio Anchieta";"Frequentemente";"Sim";"Não";3;1;3;3;2;1;0;0;1;1;1;1;0;0;0;0
-11;"Silvânia";"Particular";3;1;"Masculino";17;"3,5";"Urbana";"setor sul";"Ginásio Anchieta";"Sempre";"Não";"Não";2;1;1;3;1;0;0;0;0;1;1;1;0;0;0;0
-12;"Silvânia";"Particular";4;1;"Masculino";16;"16";"Urbana";"";"Ginásio Anchieta";"Frequentemente";"Não";"Sim";5;2;4;4;4;2;1;1;1;1;1;0;0;0;1;1
-13;"Silvânia";"Particular";4;1;"Feminino";16;"16";"Urbana";"vianopolis";"Ginásio Anchieta";"Raramente";"Sim";"Não";4;3;3;4;2;3;1;0;1;1;1;0;1;0;1;1
-14;"Silvânia";"Particular";4;1;"Feminino";17;"17";"Urbana";"são sebastião";"Ginásio Anchieta";"Ás vezes";"Não";"Sim";5;2;2;3;2;2;1;1;1;1;1;0;1;0;1;0
-15;"Silvânia";"Pública";1;2;"Masculino";16;"16";"Urbana";"nossa senhora de fatima";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";3;2;4;3;3;2;1;1;1;0;0;1;0;1;0;0
-16;"Silvânia";"Pública";1;2;"Feminino";17;"10";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";2;2;3;3;1;1;1;0;1;0;0;1;0;1;0;0
-17;"Silvânia";"Pública";1;2;"Masculino";18;"";"Rural";"";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";3;2;3;4;3;2;0;1;1;1;0;1;0;1;0;0
-18;"Silvânia";"Pública";1;2;"Masculino";17;"8";"Urbana";"pedrinha";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;1;1;1;0;0
-19;"Silvânia";"Pública";1;2;"Masculino";17;"17";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";3;2;2;4;2;2;0;1;1;1;0;1;0;1;0;0
-20;"Silvânia";"Pública";1;2;"Feminino";17;"8";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Raramente";"Não";"Não";4;3;2;5;2;3;1;1;1;0;1;1;1;1;0;0
-21;"Silvânia";"Pública";1;2;"Feminino";19;"";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Não";2;3;3;5;1;3;0;1;0;1;0;1;1;1;0;0
-22;"Silvânia";"Pública";1;2;"Feminino";17;"7";"Urbana";"Baú";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Não";5;2;5;3;5;2;1;1;1;1;1;1;0;1;0;0
-23;"Silvânia";"Pública";1;2;"Feminino";18;"17";"Urbana";"são sebastião 2";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Não";4;4;1;5;1;4;1;1;1;1;0;1;1;1;0;1
-24;"Silvânia";"Pública";1;2;"Masculino";18;"10";"Rural";"";"Colégio Prof. José Pascoal";"Ás vezes";"Não";"Não";4;2;1;4;1;2;1;1;1;1;0;1;0;1;0;0
-25;"Silvânia";"Pública";1;2;"Feminino";NA;"0,5";"Urbana";"nossa senhora de fatima";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Não";1;3;3;2;1;1;1;0;0;0;0;1;1;1;0;0
-26;"Silvânia";"Pública";1;2;"Masculino";17;"17";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";5;2;2;4;2;2;1;1;1;1;1;1;0;1;0;0
-27;"Silvânia";"Pública";1;2;"Feminino";18;"18";"Urbana";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";3;2;2;5;1;2;0;1;1;1;0;1;0;1;0;0
-28;"Silvânia";"Pública";1;2;"Masculino";NA;"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";5;2;4;3;4;2;1;1;1;1;1;1;0;1;0;0
-29;"Silvânia";"Pública";1;2;"Feminino";20;"18";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";4;2;4;4;3;2;1;1;1;0;1;1;0;1;0;0
-30;"Silvânia";"Pública";1;2;"Feminino";20;"20";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Não";4;2;4;5;3;2;1;1;1;1;0;1;0;1;0;0
-31;"Silvânia";"Pública";1;2;"Masculino";17;"17";"Urbana";"";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";2;3;4;4;2;3;1;0;1;0;0;1;1;1;0;0
-32;"Silvânia";"Pública";1;2;"Masculino";17;"17";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";4;3;3;4;3;3;1;1;1;1;0;1;0;1;0;1
-33;"Silvânia";"Pública";2;3;"Masculino";17;"17";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";4;0;3;4;3;0;1;1;1;1;0;0;0;0;0;0
-34;"Silvânia";"Pública";2;3;"Masculino";NA;"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";2;0;2;5;2;0;1;0;0;1;0;0;0;0;0;0
-36;"Silvânia";"Pública";2;3;"Feminino";17;"4";"Urbana";"deco correa";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";2;0;0;5;0;0;1;0;1;0;0;0;0;0;0;0
-37;"Silvânia";"Pública";2;3;"Feminino";17;"17";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";3;0;2;5;1;0;1;0;1;1;0;0;0;0;0;0
-38;"Silvânia";"Pública";2;3;"Feminino";17;"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";4;1;2;5;1;1;1;1;1;1;0;0;0;0;0;1
-39;"Silvânia";"Pública";2;3;"Feminino";17;"2";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";3;1;2;4;2;1;0;1;1;1;0;0;0;1;0;0
-40;"Silvânia";"Pública";2;3;"Feminino";17;"";"Urbana";"santo antonio";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";4;0;0;5;0;0;1;0;1;1;1;0;0;0;0;0
-41;"Silvânia";"Pública";2;3;"Feminino";16;"11";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";4;2;4;4;3;1;1;1;1;1;0;0;0;1;0;1
-42;"Silvânia";"Pública";2;3;"Masculino";NA;"";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";3;1;3;4;2;1;1;0;1;1;0;0;0;1;0;0
-43;"Silvânia";"Pública";2;3;"Feminino";18;"2";"Urbana";"nossa senhora de fatima";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Não";3;0;2;5;1;0;1;1;1;0;0;0;0;0;0;0
-44;"Silvânia";"Pública";2;3;"Masculino";17;"6";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Não";4;0;5;3;4;0;1;0;1;1;1;0;0;0;0;0
-45;"Silvânia";"Pública";2;3;"Feminino";17;"5";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";3;1;2;3;0;0;1;1;1;0;0;0;0;1;0;0
-46;"Silvânia";"Pública";2;3;"Feminino";18;"18";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Ás vezes";"Não";"Não";3;0;2;4;1;0;1;0;1;0;1;0;0;0;0;0
-47;"Silvânia";"Pública";2;3;"Feminino";16;"16";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Sim";3;0;2;4;1;0;1;1;1;0;0;0;0;0;0;0
-48;"Silvânia";"Pública";2;3;"Feminino";16;"10";"Urbana";"deco correa";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";3;0;3;3;2;0;1;1;1;0;0;0;0;0;0;0
-49;"Silvânia";"Pública";2;3;"Masculino";19;"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";3;0;2;5;1;0;1;0;1;1;0;0;0;0;0;0
-50;"Silvânia";"Pública";2;3;"Feminino";17;"17";"Urbana";"jardim ipe";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";4;0;2;4;2;0;1;1;1;1;0;0;0;0;0;0
-51;"Silvânia";"Pública";2;3;"Masculino";17;"17";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";3;1;1;4;1;0;1;0;1;1;0;0;0;1;0;0
-52;"Silvânia";"Pública";3;4;"Masculino";16;"16";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";3;2;5;3;3;2;0;0;1;1;1;1;0;0;0;1
-53;"Silvânia";"Pública";3;4;"Feminino";17;"17";"Urbana";"baú";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";3;3;1;5;1;3;0;1;0;1;1;1;0;0;1;1
-54;"Silvânia";"Pública";3;4;"Masculino";17;"11";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";3;2;2;5;2;2;0;0;1;1;1;1;0;0;0;1
-55;"Silvânia";"Pública";3;4;"Feminino";17;"17";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Raramente";"Sim";"Sim";3;1;3;2;2;1;0;1;0;1;1;1;0;0;0;0
-56;"Silvânia";"Pública";3;4;"Masculino";18;"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";4;2;2;4;2;2;0;1;1;1;1;1;0;0;0;1
-57;"Silvânia";"Pública";3;4;"Masculino";17;"17";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Raramente";"Sim";"Sim";3;2;2;4;2;2;0;0;1;1;1;1;0;0;0;1
-58;"Silvânia";"Pública";3;4;"Feminino";17;"7";"Urbana";"leonildes cotrim";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Não";1;1;2;3;0;1;0;1;0;0;0;1;0;0;0;0
-59;"Silvânia";"Pública";3;4;"Masculino";16;"16";"Urbana";"santo antonio";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";2;2;3;5;2;2;0;0;1;0;1;1;0;0;1;0
-60;"Silvânia";"Pública";3;4;"Feminino";17;"";"Urbana";"sao sebastiao";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Sim";4;2;2;5;2;2;0;1;1;1;1;1;0;0;0;1
-61;"Silvânia";"Pública";3;4;"Feminino";16;"16";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Não";2;1;1;5;1;1;0;0;0;1;1;1;0;0;0;0
-62;"Silvânia";"Pública";3;4;"Feminino";16;"12";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Não";1;2;1;3;1;1;0;0;0;0;1;1;0;0;0;1
-63;"Silvânia";"Pública";3;4;"Masculino";17;"";"Urbana";"nossa senhora de fatima";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";3;0;2;3;2;0;0;1;1;0;1;0;0;0;0;0
-64;"Silvânia";"Pública";3;4;"Feminino";18;"";"Urbana";"centro";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Não";3;2;1;5;1;2;0;1;0;1;1;1;1;0;0;0
-65;"Silvânia";"Pública";3;4;"Masculino";17;"17";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";2;2;2;3;1;1;0;1;1;0;0;1;1;0;0;0
-66;"Silvânia";"Pública";3;4;"Masculino";NA;"";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";4;3;2;4;2;3;1;0;1;1;1;1;1;0;0;1
-67;"Silvânia";"Pública";3;4;"Feminino";16;"16";"Urbana";"sao sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";3;1;4;4;2;1;0;0;1;1;1;0;0;0;0;1
-68;"Silvânia";"Pública";3;4;"Feminino";16;"16";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Não";2;2;3;4;1;2;0;0;1;1;0;1;0;0;0;1
-69;"Silvânia";"Pública";3;4;"Feminino";17;"17";"Urbana";"sao sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";2;1;1;5;1;1;0;0;0;1;1;1;0;0;0;0
-70;"Silvânia";"Pública";4;5;"Masculino";17;"11";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";5;2;3;5;3;2;1;1;1;1;1;0;0;0;1;1
-71;"Silvânia";"Pública";4;5;"Masculino";17;"17";"Urbana";"";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";5;2;3;5;3;2;1;1;1;1;1;0;0;0;1;1
-72;"Silvânia";"Pública";4;5;"Feminino";17;"";"Rural";"";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";5;3;2;5;2;3;1;1;1;1;1;0;0;1;1;1
-73;"Silvânia";"Pública";4;5;"Feminino";16;"9";"Urbana";"sete de setembro";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;1;1;1;0
-74;"Silvânia";"Pública";4;5;"Feminino";17;"17";"Urbana";"centro";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;0;1;1;1
-75;"Silvânia";"Pública";4;5;"Feminino";19;"19";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";5;3;0;5;0;3;1;1;1;1;1;0;1;1;1;0
-76;"Silvânia";"Pública";4;5;"Feminino";16;"8";"Rural";"josé seneca lobo";"Colégio Prof. José Pascoal";"Ás vezes";"Sim";"Sim";4;3;5;5;4;3;1;0;1;1;1;0;1;0;1;1
-77;"Silvânia";"Pública";4;5;"Masculino";NA;"";"Urbana";"";"Colégio Prof. José Pascoal";"Raramente";"Não";"Não";3;2;4;4;2;2;1;1;0;1;0;0;1;0;0;1
-78;"Silvânia";"Pública";4;5;"Masculino";17;"17";"Urbana";"leonides cotrim";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;1;0;1;1
-79;"Silvânia";"Pública";4;5;"Masculino";16;"16";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Não";"Sim";5;4;3;5;3;4;1;1;1;1;1;0;1;1;1;1
-80;"Silvânia";"Pública";4;5;"Feminino";16;"16";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";4;1;2;5;2;1;1;1;1;1;0;0;0;0;1;0
-81;"Silvânia";"Pública";4;5;"Masculino";NA;"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";5;2;4;2;4;1;1;1;1;1;1;0;0;1;1;0
-82;"Silvânia";"Pública";4;5;"Feminino";18;"15";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Sim";4;2;3;5;3;2;0;1;1;1;1;0;1;0;1;0
-83;"Silvânia";"Pública";4;5;"Feminino";17;"13";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim";"Não";5;3;2;4;2;3;1;1;1;1;1;0;0;1;1;1
-84;"Silvânia";"Pública";4;5;"Masculino";16;"16";"Urbana";"jorge barroso";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";5;3;5;3;5;2;1;1;1;1;1;0;0;1;1;1
-85;"Silvânia";"Pública";4;5;"Feminino";17;"17";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Sim";"Sim";5;2;5;2;5;2;1;1;1;1;1;0;0;0;1;1
-86;"Silvânia";"Particular";1;6;"Masculino";17;"17";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;2;3;4;3;2;1;1;1;1;1;1;0;1;0;0
-87;"Silvânia";"Particular";1;6;"Feminino";17;"17";"Urbana";"centro";"Instituto Auxiliadora";"Raramente";"Sim";"Sim";3;2;3;4;2;2;1;0;1;1;0;1;0;1;0;0
-88;"Silvânia";"Particular";1;6;"Masculino";16;"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";2;4;3;4;1;3;1;1;0;0;0;1;1;1;1;0
-89;"Silvânia";"Particular";1;6;"Feminino";17;"4";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Não";"Sim";3;3;2;5;2;3;0;1;1;1;0;1;1;1;0;0
-90;"Silvânia";"Particular";1;6;"Masculino";17;"17";"Urbana";"setor sul";"Instituto Auxiliadora";"Raramente";"Não";"Sim";5;2;1;4;1;2;1;1;1;1;1;1;0;1;0;0
-91;"Silvânia";"Particular";1;6;"Feminino";16;"";"Urbana";"parque anchieta";"Instituto Auxiliadora";"Frequentemente";"Não";"Sim";5;2;4;4;4;2;1;1;1;1;1;1;0;1;0;0
-92;"Silvânia";"Particular";1;6;"Feminino";16;"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;2;4;4;4;2;1;1;1;1;0;1;0;1;0;0
-93;"Silvânia";"Particular";1;6;"Feminino";17;"17";"Rural";"";"Instituto Auxiliadora";"Sempre";"Não";"Sim";4;3;2;3;2;2;1;1;1;1;0;1;0;1;0;1
-94;"Silvânia";"Particular";1;6;"Masculino";17;"17";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;2;4;4;3;2;0;1;1;1;1;1;0;1;0;0
-95;"Silvânia";"Particular";1;6;"Feminino";17;"17";"Urbana";"parque anchieta";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;1;3;3;3;1;1;1;1;1;0;0;0;1;0;0
-96;"Silvânia";"Particular";1;6;"Masculino";17;"12";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;3;4;5;4;3;1;1;1;1;0;1;0;1;0;1
-97;"Silvânia";"Particular";1;6;"Feminino";16;"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Não";"Não";5;2;3;3;3;2;1;1;1;1;1;1;0;1;0;0
-98;"Silvânia";"Particular";1;6;"Feminino";17;"17";"Rural";"jorge barroso";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;3;3;4;3;2;0;1;1;1;1;1;1;1;0;0
-99;"Silvânia";"Particular";1;6;"Masculino";17;"16";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Frequentemente";"Não";"Não";3;3;4;4;3;2;1;0;1;1;0;1;1;1;0;0
-100;"Silvânia";"Particular";1;6;"Masculino";16;"13";"Urbana";"michelle";"Instituto Auxiliadora";"Ás vezes";"Sim";"Não";2;1;2;4;1;1;0;1;0;1;0;0;0;1;0;0
-101;"Silvânia";"Particular";1;6;"Masculino";17;"17";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;3;3;4;3;3;1;1;1;1;0;1;1;1;0;0
-102;"Silvânia";"Particular";1;6;"Masculino";16;"16";"Urbana";"leonides cotrim";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";2;1;2;5;2;1;0;0;1;1;0;0;0;1;0;0
-103;"Silvânia";"Particular";1;6;"Feminino";17;"";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";5;3;4;5;4;3;1;1;1;1;1;1;1;1;0;0
-104;"Silvânia";"Particular";1;6;"Feminino";19;"";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";4;2;4;5;4;2;1;1;1;1;0;1;0;1;0;0
-105;"Silvânia";"Particular";1;6;"Feminino";17;"11";"Urbana";"bau";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";3;2;2;4;2;2;0;1;1;1;0;1;0;1;0;0
-106;"Silvânia";"Particular";1;6;"Feminino";17;"";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;3;3;3;3;2;1;1;1;1;0;1;0;1;0;1
-107;"Silvânia";"Particular";1;6;"Feminino";16;"7";"Urbana";"parque anchieta";"Instituto Auxiliadora";"Frequentemente";"Não";"Não";4;3;3;4;3;3;1;1;0;1;1;1;1;1;0;0
-108;"Silvânia";"Particular";1;6;"Masculino";NA;"5";"Rural";"";"Instituto Auxiliadora";"Sempre";"Sim";"Sim";4;3;3;5;3;3;1;1;1;1;0;1;1;1;0;0
-109;"Silvânia";"Particular";1;6;"Feminino";17;"17";"Urbana";"michelly";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";1;2;2;3;1;1;0;0;1;0;0;1;0;1;0;0
-110;"Silvânia";"Particular";1;6;"Masculino";18;"18";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim";"Não";5;2;2;5;2;2;1;1;1;1;1;0;1;1;0;0
-111;"Silvânia";"Particular";1;6;"Masculino";17;"17";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";3;3;3;5;2;3;1;1;1;0;0;1;1;1;0;0
-112;"Silvânia";"Particular";1;6;"Feminino";16;"15";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;4;3;4;3;3;1;1;1;1;0;1;1;1;0;1
-113;"Silvânia";"Particular";2;7;"Masculino";NA;"2";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Não";"Não";4;0;4;4;3;0;1;1;1;1;0;0;0;0;0;0
-114;"Silvânia";"Particular";2;7;"Feminino";17;"17";"Urbana";"conselheiro caetano";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;0;3;4;3;0;1;1;1;1;0;0;0;0;0;0
-115;"Silvânia";"Particular";2;7;"Masculino";17;"17";"Urbana";"conselheiro caetano";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;1;1;5;1;1;1;1;1;1;1;0;0;0;1;0
-117;"Silvânia";"Particular";2;7;"Feminino";17;"17";"Urbana";"jose senica lobo";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;1;4;3;4;0;1;1;1;1;1;0;0;1;0;0
-118;"Silvânia";"Particular";2;7;"Feminino";17;"17";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;2;1;5;1;2;1;1;1;1;0;0;0;1;1;0
-119;"Silvânia";"Particular";2;7;"Masculino";17;"17";"Rural";"";"Instituto Auxiliadora";"Sempre";"Sim";"Não";5;0;5;3;5;0;1;1;1;1;1;0;0;0;0;0
-120;"Silvânia";"Particular";2;7;"Masculino";17;"17";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;1;5;3;4;0;1;1;1;1;0;0;0;1;0;0
-121;"Silvânia";"Particular";2;7;"Feminino";17;"17";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Ás vezes";"Não";"Sim";4;0;4;3;4;0;1;1;1;1;0;0;0;0;0;0
-122;"Silvânia";"Particular";2;7;"Feminino";17;"10";"Urbana";"conselheiro caetano";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";3;0;4;4;2;0;1;1;1;0;0;0;0;0;0;0
-123;"Silvânia";"Particular";2;7;"Feminino";16;"";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;0;5;2;5;0;1;1;1;1;1;0;0;0;0;0
-124;"Silvânia";"Particular";2;7;"Masculino";16;"16";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";3;1;4;5;2;1;1;0;1;1;0;0;0;0;1;0
-125;"Silvânia";"Particular";2;7;"Feminino";16;"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Não";"Não";4;0;4;4;3;0;1;1;1;1;0;0;0;0;0;0
-126;"Silvânia";"Particular";2;7;"Masculino";NA;"4";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Não";"Sim";3;0;4;4;3;0;1;1;1;0;0;0;0;0;0;0
-127;"Silvânia";"Particular";2;7;"Feminino";16;"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";3;0;0;5;0;0;1;1;1;0;0;0;0;0;0;0
-128;"Silvânia";"Particular";2;7;"Masculino";16;"16";"Urbana";"";"Instituto Auxiliadora";"Ás vezes";"Sim";"Não";5;0;4;4;4;0;1;1;1;1;1;0;0;0;0;0
-129;"Silvânia";"Particular";2;7;"Masculino";17;"17";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;0;3;4;2;0;1;1;1;1;0;0;0;0;0;0
-130;"Silvânia";"Particular";2;7;"Masculino";16;"16";"Urbana";"sao judas tadeu";"Instituto Auxiliadora";"Raramente";"Sim";"Sim";4;1;4;3;3;0;1;1;1;1;0;0;0;1;0;0
-131;"Silvânia";"Particular";2;7;"Feminino";17;"3";"Rural";"";"Instituto Auxiliadora";"Sempre";"Não";"Não";4;0;4;4;4;0;1;1;1;1;0;0;0;0;0;0
-132;"Silvânia";"Particular";2;7;"Masculino";16;"16";"Rural";"";"Instituto Auxiliadora";"Sempre";"Sim";"Sim";3;1;4;4;3;1;1;1;1;0;0;0;0;0;1;0
-133;"Silvânia";"Particular";2;7;"Feminino";16;"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;0;4;4;4;0;1;1;1;1;0;0;0;0;0;0
-134;"Silvânia";"Particular";2;7;"Feminino";17;"4";"Rural";"";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";4;0;4;4;3;0;1;1;1;1;0;0;0;0;0;0
-135;"Silvânia";"Particular";3;8;"Masculino";16;"16";"Urbana";"";"Instituto Auxiliadora";"Sempre";"Não";"Sim";2;2;1;5;1;2;0;0;0;1;1;1;0;0;0;1
-136;"Silvânia";"Particular";3;8;"Feminino";17;"17";"Urbana";"sao sebastião";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";2;2;1;4;1;2;0;0;0;1;1;0;1;0;0;1
-138;"Silvânia";"Particular";3;8;"Feminino";17;"17";"Urbana";"vianopolis";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;3;3;3;3;2;1;0;1;1;1;1;0;0;1;1
-139;"Silvânia";"Particular";3;8;"Masculino";17;"4";"Urbana";"centro";"Instituto Auxiliadora";"Sempre";"Não";"Sim";3;2;1;3;1;2;0;1;0;1;1;1;0;0;0;1
-140;"Silvânia";"Particular";3;8;"Feminino";17;"17";"Urbana";"santo antonio";"Instituto Auxiliadora";"Sempre";"Sim";"Sim";3;1;1;5;1;1;0;1;0;1;1;1;0;0;0;0
-141;"Silvânia";"Particular";3;8;"Masculino";17;"15";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";5;2;2;4;2;2;1;1;1;1;1;1;0;0;0;1
-142;"Silvânia";"Particular";3;8;"Feminino";16;"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";2;1;1;2;1;0;0;0;0;1;1;1;0;0;0;0
-143;"Silvânia";"Particular";3;8;"Masculino";17;"16";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Sempre";"Sim";"Sim";5;2;2;4;2;2;1;1;1;1;1;1;0;0;0;1
-144;"Silvânia";"Particular";3;8;"Feminino";18;"18";"Urbana";"deco correa";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";2;1;2;2;1;1;0;0;0;1;1;1;0;0;0;0
-145;"Silvânia";"Particular";3;8;"Feminino";16;"16";"Urbana";"sao sebastião";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";3;2;2;4;2;2;0;0;1;1;1;1;0;0;0;1
-146;"Silvânia";"Particular";3;8;"Masculino";17;"17";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Sim";"Não";2;3;1;5;1;3;0;0;0;1;1;1;0;0;1;1
-147;"Silvânia";"Particular";3;8;"Masculino";18;"18";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";3;1;2;2;2;1;0;0;1;1;1;0;0;0;0;1
-148;"Silvânia";"Particular";3;8;"Feminino";16;"16";"Urbana";"bonfinopolis";"Instituto Auxiliadora";"Frequentemente";"Não";"Não";4;0;1;3;1;0;1;1;0;1;1;0;0;0;0;0
-149;"Silvânia";"Particular";3;8;"Feminino";19;"";"Urbana";"vianopolis";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";3;2;3;4;2;2;0;0;1;1;1;1;0;0;0;1
-150;"Silvânia";"Particular";3;8;"Masculino";16;"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";2;2;2;4;1;2;0;0;0;1;1;1;0;0;0;1
-151;"Silvânia";"Particular";3;8;"Feminino";17;"17";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";2;2;2;5;2;2;0;0;1;0;1;1;0;0;0;1
-152;"Silvânia";"Particular";3;8;"Feminino";17;"11";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";3;1;2;3;2;1;0;1;1;1;0;1;0;0;0;0
-153;"Silvânia";"Particular";3;8;"Feminino";17;"17";"Urbana";"bonfim";"Instituto Auxiliadora";"Ás vezes";"Não";"Sim";4;2;2;5;2;2;0;1;1;1;1;1;0;0;0;1
-154;"Silvânia";"Particular";3;8;"Feminino";16;"16";"Urbana";"vianopolis";"Instituto Auxiliadora";"Ás vezes";"Não";"Sim";4;2;2;5;2;2;1;0;1;1;1;1;0;0;0;1
-155;"Silvânia";"Particular";3;8;"Feminino";16;"12";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Ás vezes";"Sim";"Não";2;1;1;2;1;1;1;0;0;1;0;0;0;0;1;0
-156;"Silvânia";"Particular";3;8;"Feminino";17;"15";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";3;1;1;4;1;1;0;1;0;1;1;0;0;0;0;1
-157;"Silvânia";"Particular";3;8;"Feminino";17;"8";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;2;3;4;3;2;0;1;1;1;1;1;0;0;0;1
-158;"Silvânia";"Particular";3;8;"Masculino";17;"6";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";2;1;3;2;1;1;1;0;0;0;1;1;0;0;0;0
-159;"Silvânia";"Particular";3;8;"Feminino";16;"13";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim";"Não";2;2;2;3;1;2;0;0;0;1;1;1;0;0;1;0
-160;"Silvânia";"Particular";3;8;"Feminino";16;"16";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";3;1;1;2;1;1;0;1;0;1;1;1;0;0;0;0
-161;"Silvânia";"Particular";3;8;"Feminino";16;"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Ás vezes";"Não";"Sim";3;2;2;5;2;2;0;0;1;1;1;1;0;0;0;1
-162;"Silvânia";"Particular";3;8;"Masculino";16;"1";"Urbana";"";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";2;1;2;4;1;1;0;0;0;1;1;1;0;0;0;0
-163;"Silvânia";"Particular";4;9;"Masculino";NA;"";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";3;3;3;4;1;2;1;1;1;0;0;0;1;0;1;1
-164;"Silvânia";"Particular";4;9;"Feminino";16;"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;3;3;3;3;3;1;1;1;1;1;0;1;0;1;1
-165;"Silvânia";"Particular";4;9;"Masculino";17;"15";"Urbana";"alonso batista";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;0;1;1;1
-166;"Silvânia";"Particular";4;9;"Masculino";16;"16";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;3;4;5;4;3;1;1;1;1;1;0;0;1;1;1
-167;"Silvânia";"Particular";4;9;"Masculino";17;"17";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Não";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;0;1;1;1
-168;"Silvânia";"Particular";4;9;"Masculino";16;"16";"Urbana";"deco correa";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;3;4;4;4;3;1;1;1;1;1;0;1;0;1;1
-169;"Silvânia";"Particular";4;9;"Feminino";16;"16";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Sempre";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;1;0;1;1
-170;"Silvânia";"Particular";4;9;"Feminino";17;"17";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;3;4;5;4;3;1;1;1;1;1;0;0;1;1;1
-171;"Silvânia";"Particular";4;9;"Feminino";17;"17";"Urbana";"anchieta";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;2;1;4;1;2;1;0;1;1;1;0;1;0;1;0
-172;"Silvânia";"Particular";4;9;"Feminino";16;"16";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";5;3;4;5;4;3;1;1;1;1;1;0;0;1;1;1
-173;"Silvânia";"Particular";4;9;"Feminino";16;"";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Sempre";"Sim";"Sim";5;3;3;4;3;3;1;1;1;1;1;0;1;0;1;1
-174;"Silvânia";"Particular";4;9;"Feminino";17;"17";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";2;2;3;4;1;2;0;1;1;0;0;0;0;1;1;0
-175;"Silvânia";"Particular";4;9;"Masculino";16;"16";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim";"Sim";4;2;3;5;3;2;1;0;1;1;1;0;0;0;1;1
-176;"Silvânia";"Particular";4;9;"Masculino";17;"14";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Raramente";"Sim";"Sim";4;3;2;4;2;2;1;0;1;1;1;0;0;1;1;1
-177;"Silvânia";"Particular";4;9;"Feminino";16;"";"Urbana";"beira lago";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";3;4;1;5;1;4;0;0;1;1;1;0;1;1;1;1
-178;"Silvânia";"Particular";4;9;"Feminino";17;"16";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;2;3;4;3;2;0;1;1;1;1;0;0;0;1;1
-179;"Silvânia";"Particular";4;9;"Feminino";15;"15";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim";"Não";4;2;4;5;4;2;1;0;1;1;1;0;0;0;1;1
-180;"Silvânia";"Particular";4;9;"Masculino";17;"13";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Sim";"Não";4;1;0;5;0;1;0;1;1;1;1;0;0;0;1;0
-181;"Silvânia";"Particular";4;9;"Feminino";16;"15";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim";"Sim";4;2;4;3;4;1;0;1;1;1;1;0;1;1;0;0
-182;"Silvânia";"Particular";4;9;"Feminino";16;"16";"Rural";"maria de lourdes";"Instituto Auxiliadora";"Ás vezes";"Não";"Sim";4;3;5;4;4;2;1;0;1;1;1;0;1;0;1;1
-183;"Silvânia";"Particular";4;9;"Feminino";16;"14";"Rural";"leopoldo de bulhoes";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";4;0;1;4;1;0;1;1;1;1;0;0;0;0;0;0
-184;"Silvânia";"Particular";4;9;"Feminino";16;"16";"Urbana";"santo antonio";"Instituto Auxiliadora";"Ás vezes";"Não";"Não";3;2;3;3;2;1;1;0;1;1;0;0;0;0;1;1
-185;"Silvânia";"Particular";4;9;"Masculino";18;"2";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Não";"Sim";5;2;2;4;2;1;1;1;1;1;1;0;0;1;0;1
-186;"Bela Vista de Goiás";"Particular";1;10;"Masculino";16;"16";"Urbana";"santa cruz";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";2;2;2;4;1;2;0;1;1;0;0;1;0;1;0;0
-187;"Bela Vista de Goiás";"Particular";1;10;"Masculino";17;"";"Rural";"";"Colégio Exodo";"Sempre";"Não";"Não se aplica";4;4;2;4;2;4;1;1;1;1;0;1;1;1;0;1
-188;"Bela Vista de Goiás";"Particular";1;10;"Feminino";17;"12";"Urbana";"portal sul";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";5;3;3;5;3;3;1;1;1;1;1;1;0;1;1;0
-189;"Bela Vista de Goiás";"Particular";1;10;"Masculino";16;"16";"Urbana";"portal sul";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";4;2;4;4;3;2;1;1;1;0;1;1;0;1;0;0
-190;"Bela Vista de Goiás";"Particular";1;10;"Masculino";17;"17";"Urbana";"vereda dos buritis";"Colégio Exodo";"Sempre";"Sim";"Não se aplica";4;2;4;4;3;2;1;1;1;0;1;1;0;1;0;0
-191;"Bela Vista de Goiás";"Particular";1;10;"Feminino";15;"15";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";4;2;3;5;3;2;1;1;1;1;0;1;0;1;0;0
-192;"Bela Vista de Goiás";"Particular";1;10;"Masculino";16;"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";4;2;4;5;3;2;0;1;1;1;1;1;0;1;0;0
-193;"Bela Vista de Goiás";"Particular";1;10;"Masculino";16;"16";"Rural";"";"Colégio Exodo";"Sempre";"Não";"Não se aplica";4;2;4;5;4;2;1;1;1;1;0;1;0;1;0;0
-194;"Bela Vista de Goiás";"Particular";1;10;"Masculino";16;"16";"Urbana";"sao jorge";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";4;2;3;4;2;2;1;1;1;1;0;1;0;1;0;0
-195;"Bela Vista de Goiás";"Particular";1;10;"Feminino";15;"15";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";3;2;1;5;1;2;1;1;1;0;0;0;0;1;0;1
-196;"Bela Vista de Goiás";"Particular";1;10;"Masculino";16;"8";"Urbana";"via flores";"Colégio Exodo";"Ás vezes";"Sim";"Não se aplica";4;2;0;5;0;2;1;1;1;1;0;1;0;1;0;0
-197;"Bela Vista de Goiás";"Particular";1;10;"Feminino";NA;"8";"Urbana";"";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";4;4;1;5;1;4;1;1;1;0;1;1;1;1;0;1
-198;"Bela Vista de Goiás";"Particular";2;10;"Masculino";17;"1";"Urbana";"";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";4;0;4;4;4;0;1;1;1;1;0;0;0;0;0;0
-199;"Bela Vista de Goiás";"Particular";2;10;"Masculino";NA;"10";"Urbana";"perola do sul";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";3;0;3;4;3;0;0;1;1;1;0;0;0;0;0;0
-200;"Bela Vista de Goiás";"Particular";2;10;"Feminino";16;"16";"Urbana";"centro";"Colégio Exodo";"Ás vezes";"Sim";"Não se aplica";3;0;4;3;2;0;1;1;1;0;0;0;0;0;0;0
-201;"Bela Vista de Goiás";"Particular";2;10;"Masculino";15;"15";"Urbana";"vila multirao";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";3;0;2;4;2;0;1;0;1;1;0;0;0;0;0;0
-202;"Bela Vista de Goiás";"Particular";2;10;"Feminino";16;"6";"Urbana";"maria nadir";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";4;0;3;4;3;0;1;1;1;1;0;0;0;0;0;0
-203;"Bela Vista de Goiás";"Particular";2;10;"Feminino";16;"13";"Urbana";"sao geraldo";"Colégio Exodo";"Ás vezes";"Sim";"Não se aplica";3;0;3;3;1;0;1;0;1;1;0;0;0;0;0;0
-204;"Bela Vista de Goiás";"Particular";2;10;"Feminino";16;"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";4;0;4;4;3;0;1;1;1;1;0;0;0;0;0;0
-205;"Bela Vista de Goiás";"Particular";2;10;"Masculino";16;"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";4;0;3;5;3;0;1;1;1;1;0;0;0;0;0;0
-206;"Bela Vista de Goiás";"Particular";2;10;"Masculino";16;"16";"Urbana";"sao geraldo";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";4;0;4;3;4;0;1;1;1;1;0;0;0;0;0;0
-207;"Bela Vista de Goiás";"Particular";2;10;"Masculino";16;"";"Urbana";"sao jorge";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";4;0;3;5;2;0;1;1;1;1;0;0;0;0;0;0
-208;"Bela Vista de Goiás";"Particular";3;11;"Feminino";17;"13";"Urbana";"";"Colégio Exodo";"Sempre";"Não";"Não se aplica";5;2;2;5;2;2;1;1;1;1;1;1;0;0;0;1
-209;"Bela Vista de Goiás";"Particular";3;11;"Masculino";16;"16";"Urbana";"centro";"Colégio Exodo";"Raramente";"Sim";"Não se aplica";3;2;2;3;1;1;1;1;0;0;1;1;0;0;0;1
-210;"Bela Vista de Goiás";"Particular";3;11;"Masculino";17;"17";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";3;3;2;3;2;2;0;1;0;1;1;1;1;0;0;1
-211;"Bela Vista de Goiás";"Particular";3;11;"Feminino";17;"17";"Urbana";"las vegas";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";4;2;2;5;2;2;0;1;1;1;1;1;0;0;0;1
-212;"Bela Vista de Goiás";"Particular";3;11;"Feminino";16;"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";2;2;2;4;2;2;0;0;0;1;1;1;0;0;0;1
-213;"Bela Vista de Goiás";"Particular";3;11;"Masculino";16;"16";"Urbana";"";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";3;2;1;4;1;1;0;1;0;1;1;1;0;0;0;1
-214;"Bela Vista de Goiás";"Particular";3;11;"Masculino";16;"16";"Urbana";"";"Colégio Exodo";"Ás vezes";"Sim";"Não se aplica";4;1;2;5;2;1;1;0;1;1;1;1;0;0;0;0
-215;"Bela Vista de Goiás";"Particular";3;11;"Feminino";15;"7";"Urbana";"perola do sul";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";4;2;1;5;1;2;1;1;0;1;1;1;0;0;0;1
-216;"Bela Vista de Goiás";"Particular";3;11;"Feminino";16;"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";2;2;1;4;1;2;0;1;0;0;1;1;0;0;0;1
-217;"Bela Vista de Goiás";"Particular";3;11;"Masculino";17;"17";"Urbana";"sao jorge";"Colégio Exodo";"Sempre";"Sim";"Não se aplica";3;2;2;3;1;1;0;1;0;1;1;1;0;0;0;1
-218;"Bela Vista de Goiás";"Particular";3;11;"Masculino";16;"1";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";4;2;2;4;2;2;0;1;1;1;1;1;0;0;0;1
-219;"Bela Vista de Goiás";"Particular";4;11;"Masculino";16;"8";"Urbana";"centro";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";3;3;2;5;2;3;0;0;1;1;1;0;1;0;1;1
-220;"Bela Vista de Goiás";"Particular";4;11;"Masculino";16;"";"Rural";"portal sul";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";4;2;3;3;3;1;1;0;1;1;1;0;1;0;0;1
-221;"Bela Vista de Goiás";"Particular";4;11;"Feminino";16;"16";"Urbana";"dona benedita";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";5;3;2;5;2;3;1;1;1;1;1;0;0;1;1;1
-223;"Bela Vista de Goiás";"Particular";4;11;"Feminino";15;"5";"Urbana";"ulisses guimaraes";"Colégio Exodo";"Ás vezes";"Sim";"Não se aplica";5;4;5;5;5;4;1;1;1;1;1;0;1;1;1;1
-223;"Bela Vista de Goiás";"Particular";4;11;"Masculino";16;"16";"Urbana";"sao geraldo";"Colégio Exodo";"Sempre";"Sim";"Não se aplica";5;4;5;5;5;4;1;1;1;1;1;0;1;1;1;1
-224;"Bela Vista de Goiás";"Particular";4;11;"Feminino";16;"12";"Urbana";"centro";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";4;2;1;3;1;2;1;0;1;1;1;0;0;0;1;1
-225;"Bela Vista de Goiás";"Particular";4;11;"Feminino";15;"15";"Urbana";"";"Colégio Exodo";"Ás vezes";"Sim";"Não se aplica";5;2;3;5;3;2;1;1;1;1;1;0;0;0;1;1
-226;"Bela Vista de Goiás";"Particular";4;11;"Feminino";17;"17";"Urbana";"são geraldo";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";3;2;3;5;2;2;1;0;0;1;1;0;0;0;1;1
-227;"Bela Vista de Goiás";"Particular";4;11;"Feminino";17;"17";"Urbana";"maria nadira";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";5;3;1;4;1;3;1;1;1;1;1;0;1;0;1;1
-228;"Bela Vista de Goiás";"Particular";4;11;"Masculino";16;"12";"Urbana";"las vegas";"Colégio Exodo";"Frequentemente";"Não";"Não se aplica";5;3;2;5;2;3;1;1;1;1;1;0;1;0;1;1
-229;"Bela Vista de Goiás";"Particular";4;11;"Feminino";16;"16";"Urbana";"primavera";"Colégio Exodo";"Ás vezes";"Não";"Não se aplica";5;3;0;5;0;3;1;1;1;1;1;0;1;0;1;1
-230;"Bela Vista de Goiás";"Particular";4;11;"Masculino";16;"16";"Urbana";"luci";"Colégio Exodo";"Frequentemente";"Sim";"Não se aplica";4;2;4;3;3;1;0;1;1;1;1;0;0;0;1;1
-231;"Bela Vista de Goiás";"Pública";1;12;"Feminino";16;"";"Urbana";"alphaville";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";4;1;3;4;3;1;1;1;1;1;0;0;0;1;0;0
-232;"Bela Vista de Goiás";"Pública";1;12;"Masculino";15;"8";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";4;3;4;4;4;3;1;1;1;1;0;1;0;1;0;1
-233;"Bela Vista de Goiás";"Pública";1;12;"Masculino";16;"";"Urbana";"";"Colégio Pedro Viera Januário";"Nunca";"Sim";"Não se aplica";3;0;3;4;3;0;1;1;1;0;0;0;0;0;0;0
-234;"Bela Vista de Goiás";"Pública";1;12;"Masculino";18;"";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não";5;2;3;5;3;2;1;1;1;1;1;1;0;1;0;0
-235;"Bela Vista de Goiás";"Pública";1;12;"Masculino";NA;"";"Urbana";"vila";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";3;2;3;4;2;2;1;0;1;1;0;1;0;1;0;0
-236;"Bela Vista de Goiás";"Pública";1;12;"Masculino";16;"16";"Urbana";"dona clotilde";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;3;4;5;4;3;1;1;1;1;0;1;1;1;0;0
-237;"Bela Vista de Goiás";"Pública";1;12;"Feminino";18;"2";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;2;3;4;3;2;1;1;1;1;1;1;0;1;0;0
-238;"Bela Vista de Goiás";"Pública";1;12;"Masculino";17;"11";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";2;2;3;3;1;2;0;1;0;1;0;1;0;1;0;0
-239;"Bela Vista de Goiás";"Pública";1;12;"Feminino";19;"";"Urbana";"flamboyant";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";4;2;3;4;2;2;1;1;1;0;1;1;0;1;0;0
-240;"Bela Vista de Goiás";"Pública";1;12;"Feminino";15;"15";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;2;3;4;2;2;1;1;1;0;1;1;0;1;0;0
-241;"Bela Vista de Goiás";"Pública";1;12;"Masculino";16;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";4;2;1;5;1;2;1;1;1;1;0;1;0;1;0;0
-242;"Bela Vista de Goiás";"Pública";1;12;"Masculino";16;"16";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;3;3;4;3;3;1;1;1;1;0;1;1;1;0;0
-243;"Bela Vista de Goiás";"Pública";1;12;"Feminino";16;"";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";2;2;1;3;1;2;1;1;0;0;0;1;0;1;0;0
-244;"Bela Vista de Goiás";"Pública";1;12;"Feminino";16;"16";"Rural";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";4;3;3;3;3;2;1;1;1;1;0;1;1;1;0;0
-245;"Bela Vista de Goiás";"Pública";1;12;"Feminino";17;"17";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";5;4;1;4;1;3;1;1;1;1;1;1;1;1;1;0
-246;"Bela Vista de Goiás";"Pública";1;12;"Feminino";16;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";4;2;0;2;0;2;1;1;1;1;0;0;0;1;1;0
-247;"Bela Vista de Goiás";"Pública";1;12;"Feminino";17;"4";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";4;5;5;5;4;5;1;1;1;1;0;1;1;1;1;1
-248;"Bela Vista de Goiás";"Pública";1;12;"Masculino";16;"11";"Urbana";"ulisses guimaraes";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";5;3;4;4;4;3;1;1;1;1;1;1;1;1;0;0
-249;"Bela Vista de Goiás";"Pública";1;12;"Feminino";NA;"5";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";4;2;2;3;2;2;1;1;1;1;0;1;0;1;0;0
-250;"Bela Vista de Goiás";"Pública";1;12;"Feminino";16;"7";"Urbana";"barcelona";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";4;2;3;4;3;2;1;0;1;1;1;1;0;1;0;0
-251;"Bela Vista de Goiás";"Pública";2;13;"Feminino";15;"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";3;0;2;5;2;0;1;0;1;1;0;0;0;0;0;0
-252;"Bela Vista de Goiás";"Pública";2;13;"Feminino";18;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";4;2;2;3;2;1;1;1;1;1;0;1;0;1;0;0
-253;"Bela Vista de Goiás";"Pública";2;13;"Masculino";15;"";"Urbana";"";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";4;0;1;5;1;0;1;0;1;1;1;0;0;0;0;0
-254;"Bela Vista de Goiás";"Pública";2;13;"Masculino";17;"4";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;1;2;4;2;0;1;1;1;1;0;0;0;1;0;0
-255;"Bela Vista de Goiás";"Pública";2;13;"Masculino";16;"16";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";2;1;3;3;0;1;0;1;0;0;1;0;0;0;0;1
-256;"Bela Vista de Goiás";"Pública";2;13;"Masculino";16;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;1;2;4;1;1;1;1;1;0;1;0;0;1;0;0
-257;"Bela Vista de Goiás";"Pública";2;13;"Masculino";NA;"";"Rural";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";4;0;2;5;2;0;1;0;1;1;1;0;0;0;0;0
-259;"Bela Vista de Goiás";"Pública";2;13;"Masculino";19;"7";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";4;0;5;3;4;0;1;1;0;1;1;0;0;0;0;0
-260;"Bela Vista de Goiás";"Pública";2;13;"Feminino";4;"4";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";4;0;2;5;2;0;1;1;1;1;0;0;0;0;0;0
-261;"Bela Vista de Goiás";"Pública";2;13;"Feminino";15;"6";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";3;0;1;5;1;0;1;0;1;1;0;0;0;0;0;0
-262;"Bela Vista de Goiás";"Pública";2;13;"Feminino";17;"1";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";3;1;4;5;3;1;1;1;0;1;0;1;0;0;0;0
-263;"Bela Vista de Goiás";"Pública";2;13;"Feminino";17;"17";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";3;1;3;4;2;1;1;0;1;1;0;1;0;0;0;0
-264;"Bela Vista de Goiás";"Pública";2;13;"Feminino";16;"16";"Urbana";"sao vicente";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";4;3;4;3;3;2;1;1;1;1;0;1;0;1;1;0
-265;"Bela Vista de Goiás";"Pública";2;13;"Feminino";16;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";2;2;1;4;0;1;1;0;1;0;0;1;0;1;0;0
-266;"Bela Vista de Goiás";"Pública";2;13;"Masculino";16;"4";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";4;1;4;4;3;1;1;1;1;1;0;1;0;0;0;0
-267;"Bela Vista de Goiás";"Pública";2;13;"Masculino";17;"10";"Urbana";"sao vicente";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";3;1;3;4;2;1;1;0;1;1;0;1;0;0;0;0
-268;"Bela Vista de Goiás";"Pública";2;13;"Masculino";16;"11";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";3;1;3;2;2;1;1;1;1;0;0;1;0;0;0;0
-270;"Bela Vista de Goiás";"Pública";2;13;"Masculino";17;"4";"Urbana";"dona clotilde";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";3;1;1;4;1;1;1;0;1;1;0;1;0;0;0;0
-272;"Bela Vista de Goiás";"Pública";2;13;"Masculino";16;"16";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";3;1;2;4;2;1;1;0;1;1;0;1;0;0;0;0
-273;"Bela Vista de Goiás";"Pública";2;13;"Masculino";16;"16";"Urbana";"buritizais";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";2;2;3;3;2;2;0;1;0;1;0;1;0;1;0;0
-275;"Bela Vista de Goiás";"Pública";2;13;"Feminino";17;"2";"Rural";"barcelona";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";2;2;1;2;0;2;1;0;1;0;0;1;0;1;0;0
-277;"Bela Vista de Goiás";"Pública";3;14;"Feminino";15;"15";"Rural";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";5;1;3;3;3;1;1;1;1;1;1;1;0;0;0;0
-278;"Bela Vista de Goiás";"Pública";3;14;"Masculino";16;"14";"Urbana";"bambus";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";3;2;2;4;1;2;0;0;1;1;1;1;0;0;0;1
-279;"Bela Vista de Goiás";"Pública";3;14;"Feminino";17;"10";"Urbana";"dona clotilde";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";2;3;1;4;1;2;0;0;0;1;1;1;0;0;1;1
-280;"Bela Vista de Goiás";"Pública";3;14;"Masculino";17;"17";"Urbana";"lucia alice";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";3;1;4;1;3;0;0;1;1;0;1;1;0;0;0;0
-281;"Bela Vista de Goiás";"Pública";3;14;"Feminino";17;"2";"Urbana";"armando antonio";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";3;2;2;5;2;2;0;0;1;1;1;1;0;0;1;0
-282;"Bela Vista de Goiás";"Pública";3;14;"Masculino";18;"5";"Rural";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";3;2;5;0;3;0;0;1;0;1;1;1;0;0;0;1
-283;"Bela Vista de Goiás";"Pública";3;14;"Feminino";18;"0,3";"Rural";"";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";1;2;1;3;1;1;0;0;0;0;1;1;1;0;0;0
-284;"Bela Vista de Goiás";"Pública";3;14;"Feminino";16;"16";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";2;2;1;5;1;2;0;0;0;1;1;1;0;0;0;1
-285;"Bela Vista de Goiás";"Pública";3;14;"Masculino";16;"4";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";2;2;2;4;1;1;0;0;0;1;1;1;0;0;0;1
-286;"Bela Vista de Goiás";"Pública";3;14;"Masculino";17;"17";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";2;3;1;4;1;2;0;0;0;1;1;1;0;0;1;1
-287;"Bela Vista de Goiás";"Pública";3;14;"Masculino";16;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";2;2;1;4;1;1;0;0;0;1;1;1;0;0;0;1
-288;"Bela Vista de Goiás";"Pública";3;14;"Masculino";16;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";2;2;1;3;1;1;0;0;0;1;1;1;0;0;0;1
-289;"Bela Vista de Goiás";"Pública";3;14;"Feminino";15;"";"Rural";"";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";2;2;1;3;0;2;0;1;1;0;0;1;0;0;0;1
-290;"Bela Vista de Goiás";"Pública";3;14;"Feminino";15;"15";"Urbana";"santo antonio";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";2;1;2;4;1;1;0;0;0;1;1;1;0;0;0;0
-291;"Bela Vista de Goiás";"Pública";3;14;"Feminino";16;"8";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;1;4;3;3;0;1;0;1;1;1;1;0;0;0;0
-292;"Bela Vista de Goiás";"Pública";4;15;"Feminino";16;"3";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";3;3;1;5;1;3;1;0;1;1;0;0;1;0;1;1
-293;"Bela Vista de Goiás";"Pública";4;15;"Feminino";16;"4";"Urbana";"oeste";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";5;2;4;5;4;2;1;1;1;1;1;0;0;0;1;1
-294;"Bela Vista de Goiás";"Pública";4;15;"Feminino";17;"17";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";5;2;4;3;4;2;1;1;1;1;1;0;0;0;1;1
-295;"Bela Vista de Goiás";"Pública";4;15;"Feminino";20;"0,8";"Urbana";"";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";3;1;3;3;2;1;1;0;1;0;1;0;0;0;1;0
-296;"Bela Vista de Goiás";"Pública";4;15;"Feminino";15;"7";"Rural";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;3;3;4;2;3;1;0;1;1;1;0;0;1;1;1
-297;"Bela Vista de Goiás";"Pública";4;15;"Feminino";17;"14";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;3;1;4;1;3;1;1;1;1;1;0;1;0;1;1
-298;"Bela Vista de Goiás";"Pública";4;15;"Masculino";17;"17";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";3;2;1;3;1;0;1;0;1;1;0;0;1;0;0;1
-299;"Bela Vista de Goiás";"Pública";4;15;"Masculino";16;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";3;2;2;5;2;2;0;0;1;1;1;0;1;1;0;0
-300;"Bela Vista de Goiás";"Pública";4;15;"Feminino";16;"16";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";4;1;3;3;3;1;1;0;1;1;1;0;1;0;0;0
-301;"Bela Vista de Goiás";"Pública";4;15;"Masculino";16;"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";5;2;3;4;3;2;1;1;1;1;1;0;0;0;1;1
-302;"Bela Vista de Goiás";"Pública";4;15;"Masculino";17;"";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;2;2;5;2;2;1;1;1;1;1;0;0;0;1;1
-303;"Bela Vista de Goiás";"Pública";4;15;"Feminino";16;"";"Rural";"barcelona";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;2;2;5;2;2;1;1;1;1;1;0;0;0;1;1
-304;"Bela Vista de Goiás";"Pública";4;15;"Feminino";15;"15";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";5;2;2;5;2;2;1;1;1;1;1;0;1;0;0;1
-305;"Bela Vista de Goiás";"Pública";4;15;"Masculino";NA;"";"Urbana";"lucia alice";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";5;3;4;5;4;3;1;1;1;1;1;0;1;0;1;1
-306;"Bela Vista de Goiás";"Pública";4;15;"Feminino";15;"13";"Urbana";"buritis";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";5;3;3;5;3;3;1;1;1;1;1;0;1;0;1;1
-307;"Bela Vista de Goiás";"Pública";4;15;"Feminino";16;"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;1;3;4;3;1;0;1;1;1;1;0;0;0;0;1
-308;"Bela Vista de Goiás";"Pública";4;15;"Feminino";16;"16";"Urbana";"amando antoni";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";5;1;3;3;3;1;1;1;1;1;1;0;0;0;1;0
-309;"Bela Vista de Goiás";"Pública";4;15;"Feminino";17;"0,3";"Urbana";"boa vista";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";5;2;3;1;3;1;1;1;1;1;1;0;1;0;1;0
-310;"Bela Vista de Goiás";"Pública";4;15;"Feminino";19;"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";4;1;3;3;2;0;1;1;1;1;0;0;1;0;0;0
-311;"Bela Vista de Goiás";"Pública";4;15;"Masculino";18;"18";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";5;3;3;3;3;3;1;1;1;1;1;0;1;0;1;1
-312;"Bela Vista de Goiás";"Pública";4;15;"Masculino";17;"17";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";5;3;3;4;3;3;1;1;1;1;1;0;1;0;1;1
-313;"Bela Vista de Goiás";"Pública";4;15;"Feminino";17;"17";"Urbana";"flamboyant";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;1;1;3;1;1;1;1;1;1;1;0;0;0;1;0
-314;"Bela Vista de Goiás";"Pública";4;15;"Feminino";NA;"5";"Urbana";"roselandia";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;3;1;3;1;1;1;1;1;1;1;0;0;1;1;1
-315;"Bela Vista de Goiás";"Pública";4;15;"Masculino";19;"6";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";4;2;3;4;3;2;0;1;1;1;1;0;0;1;0;1
-316;"Bela Vista de Goiás";"Pública";4;15;"Masculino";16;"16";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";5;2;3;4;3;2;1;1;1;1;1;0;0;0;1;1
-317;"Bela Vista de Goiás";"Pública";1;16;"Masculino";17;"";"Urbana";"armando antonio";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";4;2;2;5;2;2;1;1;1;1;0;1;0;1;0;0
-318;"Bela Vista de Goiás";"Pública";1;16;"Masculino";16;"11";"Rural";"dona clotilde";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";4;2;3;4;3;2;1;1;1;1;0;1;0;1;0;0
-319;"Bela Vista de Goiás";"Pública";1;16;"Feminino";18;"6";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;2;3;5;3;2;1;1;1;1;0;0;1;1;0;0
-320;"Bela Vista de Goiás";"Pública";1;16;"Feminino";17;"17";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";4;1;2;3;2;1;1;1;1;1;0;0;0;1;0;0
-321;"Bela Vista de Goiás";"Pública";1;16;"Feminino";16;"14";"Urbana";"lucia alice";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";5;3;4;4;4;3;1;1;1;1;1;1;0;1;0;1
-322;"Bela Vista de Goiás";"Pública";1;16;"Masculino";18;"18";"Rural";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;3;4;5;4;3;1;1;1;1;1;1;1;1;0;0
-323;"Bela Vista de Goiás";"Pública";1;16;"Feminino";17;"17";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;3;5;5;5;3;1;1;1;1;1;1;1;1;0;0
-324;"Bela Vista de Goiás";"Pública";1;16;"Masculino";19;"";"Urbana";"centro";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";4;2;3;5;3;2;1;1;1;1;0;1;0;1;0;0
-325;"Bela Vista de Goiás";"Pública";1;16;"Masculino";16;"16";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";4;2;3;4;3;2;1;1;1;1;0;1;0;1;0;0
-326;"Bela Vista de Goiás";"Pública";1;16;"Masculino";17;"17";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;1;3;5;2;1;1;1;1;1;0;0;0;1;0;0
-327;"Bela Vista de Goiás";"Pública";1;16;"Masculino";NA;"";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;2;3;5;3;2;1;1;1;1;0;1;0;1;0;0
-328;"Bela Vista de Goiás";"Pública";1;16;"Feminino";17;"10";"Rural";"buritizais";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";5;2;2;2;2;1;1;1;1;1;1;0;1;1;0;0
-329;"Bela Vista de Goiás";"Pública";1;16;"Masculino";17;"10";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";5;2;5;5;5;2;1;1;1;1;1;0;1;1;0;0
-330;"Bela Vista de Goiás";"Pública";1;16;"Feminino";NA;"0,9";"Urbana";"dona clotilde";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";5;3;5;5;5;3;1;1;1;1;1;1;1;1;0;0
-331;"Bela Vista de Goiás";"Pública";4;16;"Feminino";16;"16";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";5;3;1;5;1;3;1;1;1;1;1;0;1;0;1;1
-332;"Bela Vista de Goiás";"Pública";4;16;"Masculino";NA;"2";"Urbana";"gratao";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";4;4;4;3;3;3;1;1;1;0;1;0;1;1;1;1
-333;"Bela Vista de Goiás";"Pública";4;16;"Masculino";NA;"";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";5;4;2;3;2;3;1;1;1;1;1;0;1;1;1;1
-334;"Bela Vista de Goiás";"Pública";4;16;"Masculino";17;"";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;3;4;4;4;2;1;1;1;1;1;0;1;0;1;1
-335;"Bela Vista de Goiás";"Pública";4;16;"Feminino";16;"12";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";5;3;4;4;4;2;1;1;1;1;1;0;1;0;1;1
-336;"Bela Vista de Goiás";"Pública";4;16;"Feminino";17;"6";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";5;1;1;4;1;1;1;1;1;1;1;0;0;0;0;1
-337;"Bela Vista de Goiás";"Pública";4;16;"Feminino";18;"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";4;2;3;4;2;2;1;1;1;1;0;0;0;0;1;1
-338;"Bela Vista de Goiás";"Pública";4;16;"Feminino";17;"1";"Urbana";"";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";5;3;2;5;2;3;1;1;1;1;1;0;1;0;1;1
-339;"Bela Vista de Goiás";"Pública";4;16;"Feminino";18;"18";"Urbana";"flamboyant";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;1;3;3;3;1;0;1;1;1;1;1;0;0;0;0
-340;"Bela Vista de Goiás";"Pública";4;16;"Feminino";17;"17";"Urbana";"roselandia";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";4;2;2;3;2;2;1;1;1;1;0;0;0;0;1;1
-341;"Bela Vista de Goiás";"Pública";1;17;"Feminino";17;"10";"Urbana";"sao vicente";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;3;1;3;1;1;1;1;1;1;0;1;1;1;0;0
-342;"Bela Vista de Goiás";"Pública";1;17;"Feminino";16;"0,9";"Rural";"";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";5;2;3;3;3;2;1;1;1;1;1;1;0;1;0;0
-343;"Bela Vista de Goiás";"Pública";2;17;"Masculino";18;"10";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";4;1;2;5;1;1;1;1;1;1;0;0;0;0;1;0
-344;"Bela Vista de Goiás";"Pública";2;17;"Masculino";17;"17";"Urbana";"sao jorge";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;2;5;1;4;0;1;1;1;1;0;1;0;1;0;0
-345;"Bela Vista de Goiás";"Pública";2;17;"Masculino";18;"18";"Urbana";"dona clotildes";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";3;1;3;4;3;1;1;1;0;1;0;1;0;0;0;0
-346;"Bela Vista de Goiás";"Pública";2;17;"Masculino";18;"10";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";4;2;0;5;0;2;1;1;1;1;0;1;0;0;1;0
-347;"Bela Vista de Goiás";"Pública";2;17;"Masculino";NA;"";"Rural";"flamboyant";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;1;3;4;2;1;1;1;1;1;0;1;0;0;0;0
-348;"Bela Vista de Goiás";"Pública";2;17;"Feminino";16;"9";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";4;1;5;5;4;1;1;1;1;1;0;1;0;0;0;0
-349;"Bela Vista de Goiás";"Pública";2;17;"Feminino";NA;"0,3";"Rural";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";3;2;4;3;3;1;0;1;1;1;0;1;0;1;0;0
-350;"Bela Vista de Goiás";"Pública";2;17;"Feminino";16;"16";"Urbana";"buritis";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";2;2;3;3;2;1;0;0;1;1;0;1;0;1;0;0
-351;"Bela Vista de Goiás";"Pública";2;17;"Masculino";18;"18";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";4;1;0;5;0;1;1;1;1;1;0;1;0;0;0;0
-352;"Bela Vista de Goiás";"Pública";2;17;"Masculino";17;"17";"Urbana";"sao jorge";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";2;2;4;4;2;2;1;0;1;0;0;1;0;0;1;0
-353;"Bela Vista de Goiás";"Pública";2;17;"Masculino";17;"11";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";2;1;3;4;1;1;1;0;1;0;0;1;0;0;0;0
-354;"Bela Vista de Goiás";"Pública";2;17;"Feminino";16;"9";"Urbana";"bela vista";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";4;1;4;4;3;1;1;1;1;1;0;1;0;0;0;0
-355;"Bela Vista de Goiás";"Pública";2;17;"Feminino";17;"7";"Urbana";"oeste";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";3;1;2;4;1;1;1;0;1;1;0;1;0;0;0;0
-356;"Bela Vista de Goiás";"Pública";2;17;"Feminino";17;"2";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";4;2;2;4;2;2;1;1;1;1;0;1;0;0;1;0
-357;"Bela Vista de Goiás";"Pública";3;17;"Feminino";17;"17";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";2;2;1;5;1;2;0;0;1;0;1;1;0;0;0;1
-358;"Bela Vista de Goiás";"Pública";3;17;"Feminino";16;"4";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";3;1;1;5;1;1;1;0;0;1;1;0;0;0;0;1
-359;"Bela Vista de Goiás";"Pública";3;17;"Masculino";16;"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";4;2;2;5;2;2;1;0;1;1;1;1;0;0;0;1
-360;"Bela Vista de Goiás";"Pública";3;17;"Masculino";NA;"";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Sempre";"Sim";"Não se aplica";3;1;3;2;2;1;1;0;0;1;1;0;0;0;0;1
-361;"Bela Vista de Goiás";"Pública";3;17;"Masculino";16;"";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";2;2;1;5;1;2;0;0;0;1;1;1;0;0;0;1
-362;"Bela Vista de Goiás";"Pública";3;17;"Feminino";17;"17";"Urbana";"centro";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";0;3;1;3;0;3;0;0;0;0;0;0;0;1;1;1
-363;"Bela Vista de Goiás";"Pública";3;17;"Feminino";17;"17";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Raramente";"Sim";"Não se aplica";4;2;2;4;2;2;1;0;1;1;1;1;0;0;0;1
-364;"Bela Vista de Goiás";"Pública";3;17;"Feminino";NA;"6";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";2;3;2;5;1;3;0;0;1;0;1;1;0;0;1;1
-365;"Bela Vista de Goiás";"Pública";3;17;"Feminino";17;"4";"Urbana";"roselandia";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";4;2;3;4;3;1;1;0;1;1;1;1;0;0;0;1
-366;"Bela Vista de Goiás";"Pública";3;17;"Masculino";18;"";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";2;2;1;3;1;1;0;0;0;1;1;1;0;0;0;1
-367;"Bela Vista de Goiás";"Pública";3;17;"Masculino";17;"16";"Urbana";"vitoria";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";4;1;2;5;2;1;0;1;1;1;1;1;0;0;0;0
-368;"Bela Vista de Goiás";"Pública";3;17;"Masculino";18;"";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";2;3;4;3;1;3;0;0;0;1;1;1;0;0;1;1
-369;"Bela Vista de Goiás";"Pública";4;17;"Masculino";17;"";"Rural";"sao vicente";"Colégio Pedro Viera Januário";"Frequentemente";"Não";"Não se aplica";5;2;2;4;2;2;1;1;1;1;1;0;0;1;1;0
-370;"Bela Vista de Goiás";"Pública";4;17;"Masculino";17;"14";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";5;3;2;4;2;2;1;1;1;1;1;0;0;1;1;1
-371;"Bela Vista de Goiás";"Pública";4;17;"Feminino";17;"17";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Raramente";"Não";"Não se aplica";4;3;4;4;4;2;0;1;1;1;1;1;1;0;1;0
-372;"Bela Vista de Goiás";"Pública";4;17;"Masculino";18;"1";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Sempre";"Não";"Não se aplica";5;3;4;5;4;3;1;1;1;1;1;0;0;1;1;1
-373;"Bela Vista de Goiás";"Pública";4;17;"Masculino";16;"";"Rural";"sussuapara";"Colégio Pedro Viera Januário";"Frequentemente";"Sim";"Não se aplica";4;1;2;3;2;0;1;0;1;1;1;0;1;0;0;0
-374;"Bela Vista de Goiás";"Pública";4;17;"Masculino";18;"7";"Urbana";"sao jorge";"Colégio Pedro Viera Januário";"Ás vezes";"Não";"Não se aplica";5;3;4;4;4;3;1;1;1;1;1;0;1;0;1;1
-375;"Bela Vista de Goiás";"Pública";4;17;"Feminino";17;"5";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim";"Não se aplica";5;4;2;3;2;3;1;1;1;1;1;0;1;1;1;1
+"codigo";"municipio";"escola";"modelo";"turmas";"sexo";"idade";"temp.residencia";"area";"bairro";"nome.escola";"frequencia";"fez.aula";"flona";"aula";"exoticas";"nativas";"origem_exoticas";"origem_nativas";"indice_exoticas";"indice_nativas";"exotica_aves";"exotica_invertebrado";"exotica_mamifero";"exotica_peixe";"exotica_reptil";"nativa_aves";"nativa_invertebrado";"nativa_mamifero";"nativa_peixe";"nativa_reptil"
+1;"Silvânia";"Particular";1;1;"Feminino";"17";"";"Urbana";"";"Ginásio Anchieta";"Ás vezes";"Sim, parque ou trilha";"Não";"Sim";5;2;3;4;3;2;1;1;1;1;1;1;0;1;0;0
+2;"Silvânia";"Particular";1;1;"Feminino";"17";"17";"Urbana";"pedrinhas";"Ginásio Anchieta";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;3;4;5;4;3;1;1;1;1;0;1;1;1;0;0
+3;"Silvânia";"Particular";1;1;"Masculino";"17";"17";"Urbana";"são sebastião 7";"Ginásio Anchieta";"Frequentemente";"Sim, FLONA";"Sim";"Sim";4;3;4;5;4;3;1;1;1;1;0;1;1;1;0;0
+4;"Silvânia";"Particular";1;1;"Masculino";"17";"17";"Urbana";"parque anchieta";"Ginásio Anchieta";"Frequentemente";"Não fez";"Não";"Não";5;2;3;4;3;2;1;1;1;1;1;1;0;1;0;0
+5;"Silvânia";"Particular";2;1;"Feminino";"17";"17";"Rural";"centro";"Ginásio Anchieta";"Frequentemente";"Não fez";"Não";"Não";4;1;0;5;0;1;1;1;1;1;0;0;0;0;1;0
+6;"Silvânia";"Particular";2;1;"Feminino";"17";"15";"Rural";"";"Ginásio Anchieta";"Sempre";"Sim, fazenda";"Não";"Sim";2;1;2;4;0;0;1;0;1;0;0;0;0;1;0;0
+7;"Silvânia";"Particular";2;1;"Masculino";"18";"3";"Urbana";"res. anhanguera";"Ginásio Anchieta";"Sempre";"Não fez";"Não";"Não";3;1;2;5;1;1;1;1;1;0;0;0;0;1;0;0
+8;"Silvânia";"Particular";3;1;"Feminino";"16";"8";"Rural";"";"Ginásio Anchieta";"Sempre";"Não fez";"Sim";"Não";3;2;2;4;1;2;1;0;0;1;1;1;0;0;1;0
+9;"Silvânia";"Particular";3;1;"Masculino";"16";"";"Urbana";"anhanguera";"Ginásio Anchieta";"Ás vezes";"Não fez";"Sim";"Não";4;0;2;3;2;0;1;0;1;1;1;0;0;0;0;0
+10;"Silvânia";"Particular";3;1;"Feminino";"17";"17";"Urbana";"Leonides cotrim";"Ginásio Anchieta";"Frequentemente";"Sim, fazenda";"Não";"Sim";3;1;3;3;2;1;0;0;1;1;1;1;0;0;0;0
+11;"Silvânia";"Particular";3;1;"Masculino";"17";"3,5";"Urbana";"setor sul";"Ginásio Anchieta";"Sempre";"Não fez";"Não";"Não";2;1;1;3;1;0;0;0;0;1;1;1;0;0;0;0
+12;"Silvânia";"Particular";4;1;"Masculino";"16";"16";"Urbana";"";"Ginásio Anchieta";"Frequentemente";"Não fez";"Sim";"Não";5;2;4;4;4;2;1;1;1;1;1;0;0;0;1;1
+13;"Silvânia";"Particular";4;1;"Feminino";"16";"16";"Urbana";"vianopolis";"Ginásio Anchieta";"Raramente";"Sim, zoologico";"Não";"Sim";4;3;3;4;2;3;1;0;1;1;1;0;1;0;1;1
+14;"Silvânia";"Particular";4;1;"Feminino";"17";"17";"Urbana";"são sebastião";"Ginásio Anchieta";"Ás vezes";"Não fez";"Sim";"Não";5;2;2;3;2;2;1;1;1;1;1;0;1;0;1;0
+15;"Silvânia";"Pública";1;2;"Masculino";"16";"16";"Urbana";"nossa senhora de fatima";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, FLONA";"Sim";"Sim";3;2;4;3;3;2;1;1;1;0;0;1;0;1;0;0
+16;"Silvânia";"Pública";1;2;"Feminino";"17";"10";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, outro";"Sim";"Sim";2;2;3;3;1;1;1;0;1;0;0;1;0;1;0;0
+17;"Silvânia";"Pública";1;2;"Masculino";"18";"";"Rural";"";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";3;2;3;4;3;2;0;1;1;1;0;1;0;1;0;0
+18;"Silvânia";"Pública";1;2;"Masculino";"17";"8";"Urbana";"pedrinha";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;1;1;1;0;0
+19;"Silvânia";"Pública";1;2;"Masculino";"17";"17";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";3;2;2;4;2;2;0;1;1;1;0;1;0;1;0;0
+20;"Silvânia";"Pública";1;2;"Feminino";"17";"8";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Raramente";"Não fez";"Não";"Não";4;3;2;5;2;3;1;1;1;0;1;1;1;1;0;0
+21;"Silvânia";"Pública";1;2;"Feminino";"19";"";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Não";"Sim";2;3;3;5;1;3;0;1;0;1;0;1;1;1;0;0
+22;"Silvânia";"Pública";1;2;"Feminino";"17";"7";"Urbana";"Baú";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Não";"Sim";5;2;5;3;5;2;1;1;1;1;1;1;0;1;0;0
+23;"Silvânia";"Pública";1;2;"Feminino";"18";"17";"Urbana";"são sebastião 2";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Não";"Sim";4;4;1;5;1;4;1;1;1;1;0;1;1;1;0;1
+24;"Silvânia";"Pública";1;2;"Masculino";"18";"10";"Rural";"";"Colégio Prof. José Pascoal";"Ás vezes";"Não fez";"Não";"Não";4;2;1;4;1;2;1;1;1;1;0;1;0;1;0;0
+25;"Silvânia";"Pública";1;2;"Feminino";"";"0,5";"Urbana";"nossa senhora de fatima";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Não";"Não";1;3;3;2;1;1;1;0;0;0;0;1;1;1;0;0
+26;"Silvânia";"Pública";1;2;"Masculino";"17";"17";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;2;2;4;2;2;1;1;1;1;1;1;0;1;0;0
+27;"Silvânia";"Pública";1;2;"Feminino";"18";"18";"Urbana";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";3;2;2;5;1;2;0;1;1;1;0;1;0;1;0;0
+28;"Silvânia";"Pública";1;2;"Masculino";"";"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";5;2;4;3;4;2;1;1;1;1;1;1;0;1;0;0
+29;"Silvânia";"Pública";1;2;"Feminino";"20";"18";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";4;2;4;4;3;2;1;1;1;0;1;1;0;1;0;0
+30;"Silvânia";"Pública";1;2;"Feminino";"20";"20";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Não";"Sim";4;2;4;5;3;2;1;1;1;1;0;1;0;1;0;0
+31;"Silvânia";"Pública";1;2;"Masculino";"17";"17";"Urbana";"";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";2;3;4;4;2;3;1;0;1;0;0;1;1;1;0;0
+32;"Silvânia";"Pública";1;2;"Masculino";"17";"17";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;3;3;4;3;3;1;1;1;1;0;1;0;1;0;1
+33;"Silvânia";"Pública";2;3;"Masculino";"17";"17";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";4;0;3;4;3;0;1;1;1;1;0;0;0;0;0;0
+34;"Silvânia";"Pública";2;3;"Masculino";"";"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, FLONA";"Sim";"Sim";2;0;2;5;2;0;1;0;0;1;0;0;0;0;0;0
+36;"Silvânia";"Pública";2;3;"Feminino";"17";"4";"Urbana";"deco correa";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";2;0;0;5;0;0;1;0;1;0;0;0;0;0;0;0
+37;"Silvânia";"Pública";2;3;"Feminino";"17";"17";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";3;0;2;5;1;0;1;0;1;1;0;0;0;0;0;0
+38;"Silvânia";"Pública";2;3;"Feminino";"17";"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, FLONA";"Sim";"Sim";4;1;2;5;1;1;1;1;1;1;0;0;0;0;0;1
+39;"Silvânia";"Pública";2;3;"Feminino";"17";"2";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, FLONA";"Sim";"Sim";3;1;2;4;2;1;0;1;1;1;0;0;0;1;0;0
+40;"Silvânia";"Pública";2;3;"Feminino";"17";"";"Urbana";"santo antonio";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;0;0;5;0;0;1;0;1;1;1;0;0;0;0;0
+41;"Silvânia";"Pública";2;3;"Feminino";"16";"11";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;2;4;4;3;1;1;1;1;1;0;0;0;1;0;1
+42;"Silvânia";"Pública";2;3;"Masculino";"";"";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, outro";"Sim";"Sim";3;1;3;4;2;1;1;0;1;1;0;0;0;1;0;0
+43;"Silvânia";"Pública";2;3;"Feminino";"18";"2";"Urbana";"nossa senhora de fatima";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Não";"Não";3;0;2;5;1;0;1;1;1;0;0;0;0;0;0;0
+44;"Silvânia";"Pública";2;3;"Masculino";"17";"6";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Não";"Sim";4;0;5;3;4;0;1;0;1;1;1;0;0;0;0;0
+45;"Silvânia";"Pública";2;3;"Feminino";"17";"5";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";3;1;2;3;0;0;1;1;1;0;0;0;0;1;0;0
+46;"Silvânia";"Pública";2;3;"Feminino";"18";"18";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Ás vezes";"Não fez";"Não";"Não";3;0;2;4;1;0;1;0;1;0;1;0;0;0;0;0
+47;"Silvânia";"Pública";2;3;"Feminino";"16";"16";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Sim";"Não";3;0;2;4;1;0;1;1;1;0;0;0;0;0;0;0
+48;"Silvânia";"Pública";2;3;"Feminino";"16";"10";"Urbana";"deco correa";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, FLONA";"Sim";"Sim";3;0;3;3;2;0;1;1;1;0;0;0;0;0;0;0
+49;"Silvânia";"Pública";2;3;"Masculino";"19";"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";3;0;2;5;1;0;1;0;1;1;0;0;0;0;0;0
+50;"Silvânia";"Pública";2;3;"Feminino";"17";"17";"Urbana";"jardim ipe";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;0;2;4;2;0;1;1;1;1;0;0;0;0;0;0
+51;"Silvânia";"Pública";2;3;"Masculino";"17";"17";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";3;1;1;4;1;0;1;0;1;1;0;0;0;1;0;0
+52;"Silvânia";"Pública";3;4;"Masculino";"16";"16";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";3;2;5;3;3;2;0;0;1;1;1;1;0;0;0;1
+53;"Silvânia";"Pública";3;4;"Feminino";"17";"17";"Urbana";"baú";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";3;3;1;5;1;3;0;1;0;1;1;1;0;0;1;1
+54;"Silvânia";"Pública";3;4;"Masculino";"17";"11";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";3;2;2;5;2;2;0;0;1;1;1;1;0;0;0;1
+55;"Silvânia";"Pública";3;4;"Feminino";"17";"17";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Raramente";"Sim, parque ou trilha";"Sim";"Sim";3;1;3;2;2;1;0;1;0;1;1;1;0;0;0;0
+56;"Silvânia";"Pública";3;4;"Masculino";"18";"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, FLONA";"Sim";"Sim";4;2;2;4;2;2;0;1;1;1;1;1;0;0;0;1
+57;"Silvânia";"Pública";3;4;"Masculino";"17";"17";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Raramente";"Sim, parque ou trilha";"Sim";"Sim";3;2;2;4;2;2;0;0;1;1;1;1;0;0;0;1
+58;"Silvânia";"Pública";3;4;"Feminino";"17";"7";"Urbana";"leonildes cotrim";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Não";"Sim";1;1;2;3;0;1;0;1;0;0;0;1;0;0;0;0
+59;"Silvânia";"Pública";3;4;"Masculino";"16";"16";"Urbana";"santo antonio";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, outro";"Sim";"Sim";2;2;3;5;2;2;0;0;1;0;1;1;0;0;1;0
+60;"Silvânia";"Pública";3;4;"Feminino";"17";"";"Urbana";"sao sebastiao";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Sim";"Não";4;2;2;5;2;2;0;1;1;1;1;1;0;0;0;1
+61;"Silvânia";"Pública";3;4;"Feminino";"16";"16";"Urbana";"pedrinhas";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Não";"Não";2;1;1;5;1;1;0;0;0;1;1;1;0;0;0;0
+62;"Silvânia";"Pública";3;4;"Feminino";"16";"12";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Não";"Não";1;2;1;3;1;1;0;0;0;0;1;1;0;0;0;1
+63;"Silvânia";"Pública";3;4;"Masculino";"17";"";"Urbana";"nossa senhora de fatima";"Colégio Prof. José Pascoal";"Sempre";"Sim, zoologico";"Sim";"Sim";3;0;2;3;2;0;0;1;1;0;1;0;0;0;0;0
+64;"Silvânia";"Pública";3;4;"Feminino";"18";"";"Urbana";"centro";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Não";"Não";3;2;1;5;1;2;0;1;0;1;1;1;1;0;0;0
+65;"Silvânia";"Pública";3;4;"Masculino";"17";"17";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";2;2;2;3;1;1;0;1;1;0;0;1;1;0;0;0
+66;"Silvânia";"Pública";3;4;"Masculino";"";"";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, FLONA";"Sim";"Sim";4;3;2;4;2;3;1;0;1;1;1;1;1;0;0;1
+67;"Silvânia";"Pública";3;4;"Feminino";"16";"16";"Urbana";"sao sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, FLONA";"Sim";"Sim";3;1;4;4;2;1;0;0;1;1;1;0;0;0;0;1
+68;"Silvânia";"Pública";3;4;"Feminino";"16";"16";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Não";"Não";2;2;3;4;1;2;0;0;1;1;0;1;0;0;0;1
+69;"Silvânia";"Pública";3;4;"Feminino";"17";"17";"Urbana";"sao sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, FLONA";"Sim";"Sim";2;1;1;5;1;1;0;0;0;1;1;1;0;0;0;0
+70;"Silvânia";"Pública";4;5;"Masculino";"17";"11";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";5;2;3;5;3;2;1;1;1;1;1;0;0;0;1;1
+71;"Silvânia";"Pública";4;5;"Masculino";"17";"17";"Urbana";"";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;2;3;5;3;2;1;1;1;1;1;0;0;0;1;1
+72;"Silvânia";"Pública";4;5;"Feminino";"17";"";"Rural";"";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";5;3;2;5;2;3;1;1;1;1;1;0;0;1;1;1
+73;"Silvânia";"Pública";4;5;"Feminino";"16";"9";"Urbana";"sete de setembro";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;1;1;1;0
+74;"Silvânia";"Pública";4;5;"Feminino";"17";"17";"Urbana";"centro";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;0;1;1;1
+75;"Silvânia";"Pública";4;5;"Feminino";"19";"19";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";5;3;0;5;0;3;1;1;1;1;1;0;1;1;1;0
+76;"Silvânia";"Pública";4;5;"Feminino";"16";"8";"Rural";"josé seneca lobo";"Colégio Prof. José Pascoal";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;3;5;5;4;3;1;0;1;1;1;0;1;0;1;1
+77;"Silvânia";"Pública";4;5;"Masculino";"";"";"Urbana";"";"Colégio Prof. José Pascoal";"Raramente";"Não fez";"Não";"Não";3;2;4;4;2;2;1;1;0;1;0;0;1;0;0;1
+78;"Silvânia";"Pública";4;5;"Masculino";"17";"17";"Urbana";"leonides cotrim";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, outro";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;1;0;1;1
+79;"Silvânia";"Pública";4;5;"Masculino";"16";"16";"Urbana";"são sebastião";"Colégio Prof. José Pascoal";"Frequentemente";"Não fez";"Sim";"Não";5;4;3;5;3;4;1;1;1;1;1;0;1;1;1;1
+80;"Silvânia";"Pública";4;5;"Feminino";"16";"16";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;1;2;5;2;1;1;1;1;1;0;0;0;0;1;0
+81;"Silvânia";"Pública";4;5;"Masculino";"";"";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";5;2;4;2;4;1;1;1;1;1;1;0;0;1;1;0
+82;"Silvânia";"Pública";4;5;"Feminino";"18";"15";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";4;2;3;5;3;2;0;1;1;1;1;0;1;0;1;0
+83;"Silvânia";"Pública";4;5;"Feminino";"17";"13";"Rural";"";"Colégio Prof. José Pascoal";"Sempre";"Sim, parque ou trilha";"Não";"Sim";5;3;2;4;2;3;1;1;1;1;1;0;0;1;1;1
+84;"Silvânia";"Pública";4;5;"Masculino";"16";"16";"Urbana";"jorge barroso";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;3;5;3;5;2;1;1;1;1;1;0;0;1;1;1
+85;"Silvânia";"Pública";4;5;"Feminino";"17";"17";"Urbana";"maria de lourdes";"Colégio Prof. José Pascoal";"Frequentemente";"Sim, FLONA";"Sim";"Sim";5;2;5;2;5;2;1;1;1;1;1;0;0;0;1;1
+86;"Silvânia";"Particular";1;6;"Masculino";"17";"17";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;2;3;4;3;2;1;1;1;1;1;1;0;1;0;0
+87;"Silvânia";"Particular";1;6;"Feminino";"17";"17";"Urbana";"centro";"Instituto Auxiliadora";"Raramente";"Sim, parque ou trilha";"Sim";"Sim";3;2;3;4;2;2;1;0;1;1;0;1;0;1;0;0
+88;"Silvânia";"Particular";1;6;"Masculino";"16";"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim, FLONA";"Sim";"Sim";2;4;3;4;1;3;1;1;0;0;0;1;1;1;1;0
+89;"Silvânia";"Particular";1;6;"Feminino";"17";"4";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Sim";"Não";3;3;2;5;2;3;0;1;1;1;0;1;1;1;0;0
+90;"Silvânia";"Particular";1;6;"Masculino";"17";"17";"Urbana";"setor sul";"Instituto Auxiliadora";"Raramente";"Não fez";"Sim";"Não";5;2;1;4;1;2;1;1;1;1;1;1;0;1;0;0
+91;"Silvânia";"Particular";1;6;"Feminino";"16";"";"Urbana";"parque anchieta";"Instituto Auxiliadora";"Frequentemente";"Não fez";"Sim";"Não";5;2;4;4;4;2;1;1;1;1;1;1;0;1;0;0
+92;"Silvânia";"Particular";1;6;"Feminino";"16";"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;2;4;4;4;2;1;1;1;1;0;1;0;1;0;0
+93;"Silvânia";"Particular";1;6;"Feminino";"17";"17";"Rural";"";"Instituto Auxiliadora";"Sempre";"Não fez";"Sim";"Não";4;3;2;3;2;2;1;1;1;1;0;1;0;1;0;1
+94;"Silvânia";"Particular";1;6;"Masculino";"17";"17";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;2;4;4;3;2;0;1;1;1;1;1;0;1;0;0
+95;"Silvânia";"Particular";1;6;"Feminino";"17";"17";"Urbana";"parque anchieta";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;1;3;3;3;1;1;1;1;1;0;0;0;1;0;0
+96;"Silvânia";"Particular";1;6;"Masculino";"17";"12";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;3;4;5;4;3;1;1;1;1;0;1;0;1;0;1
+97;"Silvânia";"Particular";1;6;"Feminino";"16";"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Não fez";"Não";"Não";5;2;3;3;3;2;1;1;1;1;1;1;0;1;0;0
+98;"Silvânia";"Particular";1;6;"Feminino";"17";"17";"Rural";"jorge barroso";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;3;3;4;3;2;0;1;1;1;1;1;1;1;0;0
+99;"Silvânia";"Particular";1;6;"Masculino";"17";"16";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Frequentemente";"Não fez";"Não";"Não";3;3;4;4;3;2;1;0;1;1;0;1;1;1;0;0
+100;"Silvânia";"Particular";1;6;"Masculino";"16";"13";"Urbana";"michelle";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Não";"Sim";2;1;2;4;1;1;0;1;0;1;0;0;0;1;0;0
+101;"Silvânia";"Particular";1;6;"Masculino";"17";"17";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;3;3;4;3;3;1;1;1;1;0;1;1;1;0;0
+102;"Silvânia";"Particular";1;6;"Masculino";"16";"16";"Urbana";"leonides cotrim";"Instituto Auxiliadora";"Ás vezes";"Sim, FLONA";"Sim";"Sim";2;1;2;5;2;1;0;0;1;1;0;0;0;1;0;0
+103;"Silvânia";"Particular";1;6;"Feminino";"17";"";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Sim, FLONA";"Sim";"Sim";5;3;4;5;4;3;1;1;1;1;1;1;1;1;0;0
+104;"Silvânia";"Particular";1;6;"Feminino";"19";"";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";4;2;4;5;4;2;1;1;1;1;0;1;0;1;0;0
+105;"Silvânia";"Particular";1;6;"Feminino";"17";"11";"Urbana";"bau";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";3;2;2;4;2;2;0;1;1;1;0;1;0;1;0;0
+106;"Silvânia";"Particular";1;6;"Feminino";"17";"";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;3;3;3;3;2;1;1;1;1;0;1;0;1;0;1
+107;"Silvânia";"Particular";1;6;"Feminino";"16";"7";"Urbana";"parque anchieta";"Instituto Auxiliadora";"Frequentemente";"Não fez";"Não";"Não";4;3;3;4;3;3;1;1;0;1;1;1;1;1;0;0
+108;"Silvânia";"Particular";1;6;"Masculino";"";"5";"Rural";"";"Instituto Auxiliadora";"Sempre";"Sim, FLONA";"Sim";"Sim";4;3;3;5;3;3;1;1;1;1;0;1;1;1;0;0
+109;"Silvânia";"Particular";1;6;"Feminino";"17";"17";"Urbana";"michelly";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";1;2;2;3;1;1;0;0;1;0;0;1;0;1;0;0
+110;"Silvânia";"Particular";1;6;"Masculino";"18";"18";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim, zoologico";"Não";"Sim";5;2;2;5;2;2;1;1;1;1;1;0;1;1;0;0
+111;"Silvânia";"Particular";1;6;"Masculino";"17";"17";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";3;3;3;5;2;3;1;1;1;0;0;1;1;1;0;0
+112;"Silvânia";"Particular";1;6;"Feminino";"16";"15";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;4;3;4;3;3;1;1;1;1;0;1;1;1;0;1
+113;"Silvânia";"Particular";2;7;"Masculino";"";"2";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Não fez";"Não";"Não";4;0;4;4;3;0;1;1;1;1;0;0;0;0;0;0
+114;"Silvânia";"Particular";2;7;"Feminino";"17";"17";"Urbana";"conselheiro caetano";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;0;3;4;3;0;1;1;1;1;0;0;0;0;0;0
+115;"Silvânia";"Particular";2;7;"Masculino";"17";"17";"Urbana";"conselheiro caetano";"Instituto Auxiliadora";"Frequentemente";"Sim, FLONA";"Sim";"Sim";5;1;1;5;1;1;1;1;1;1;1;0;0;0;1;0
+117;"Silvânia";"Particular";2;7;"Feminino";"17";"17";"Urbana";"jose senica lobo";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;1;4;3;4;0;1;1;1;1;1;0;0;1;0;0
+118;"Silvânia";"Particular";2;7;"Feminino";"17";"17";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;2;1;5;1;2;1;1;1;1;0;0;0;1;1;0
+119;"Silvânia";"Particular";2;7;"Masculino";"17";"17";"Rural";"";"Instituto Auxiliadora";"Sempre";"Sim, parque ou trilha";"Não";"Sim";5;0;5;3;5;0;1;1;1;1;1;0;0;0;0;0
+120;"Silvânia";"Particular";2;7;"Masculino";"17";"17";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;1;5;3;4;0;1;1;1;1;0;0;0;1;0;0
+121;"Silvânia";"Particular";2;7;"Feminino";"17";"17";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Sim";"Não";4;0;4;3;4;0;1;1;1;1;0;0;0;0;0;0
+122;"Silvânia";"Particular";2;7;"Feminino";"17";"10";"Urbana";"conselheiro caetano";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";3;0;4;4;2;0;1;1;1;0;0;0;0;0;0;0
+123;"Silvânia";"Particular";2;7;"Feminino";"16";"";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;0;5;2;5;0;1;1;1;1;1;0;0;0;0;0
+124;"Silvânia";"Particular";2;7;"Masculino";"16";"16";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";3;1;4;5;2;1;1;0;1;1;0;0;0;0;1;0
+125;"Silvânia";"Particular";2;7;"Feminino";"16";"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Não fez";"Não";"Não";4;0;4;4;3;0;1;1;1;1;0;0;0;0;0;0
+126;"Silvânia";"Particular";2;7;"Masculino";"";"4";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Sim";"Não";3;0;4;4;3;0;1;1;1;0;0;0;0;0;0;0
+127;"Silvânia";"Particular";2;7;"Feminino";"16";"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim, FLONA";"Sim";"Sim";3;0;0;5;0;0;1;1;1;0;0;0;0;0;0;0
+128;"Silvânia";"Particular";2;7;"Masculino";"16";"16";"Urbana";"";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Não";"Sim";5;0;4;4;4;0;1;1;1;1;1;0;0;0;0;0
+129;"Silvânia";"Particular";2;7;"Masculino";"17";"17";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;0;3;4;2;0;1;1;1;1;0;0;0;0;0;0
+130;"Silvânia";"Particular";2;7;"Masculino";"16";"16";"Urbana";"sao judas tadeu";"Instituto Auxiliadora";"Raramente";"Sim, parque ou trilha";"Sim";"Sim";4;1;4;3;3;0;1;1;1;1;0;0;0;1;0;0
+131;"Silvânia";"Particular";2;7;"Feminino";"17";"3";"Rural";"";"Instituto Auxiliadora";"Sempre";"Não fez";"Não";"Não";4;0;4;4;4;0;1;1;1;1;0;0;0;0;0;0
+132;"Silvânia";"Particular";2;7;"Masculino";"16";"16";"Rural";"";"Instituto Auxiliadora";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";3;1;4;4;3;1;1;1;1;0;0;0;0;0;1;0
+133;"Silvânia";"Particular";2;7;"Feminino";"16";"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;0;4;4;4;0;1;1;1;1;0;0;0;0;0;0
+134;"Silvânia";"Particular";2;7;"Feminino";"17";"4";"Rural";"";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";4;0;4;4;3;0;1;1;1;1;0;0;0;0;0;0
+135;"Silvânia";"Particular";3;8;"Masculino";"16";"16";"Urbana";"";"Instituto Auxiliadora";"Sempre";"Não fez";"Sim";"Não";2;2;1;5;1;2;0;0;0;1;1;1;0;0;0;1
+136;"Silvânia";"Particular";3;8;"Feminino";"17";"17";"Urbana";"sao sebastião";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";2;2;1;4;1;2;0;0;0;1;1;0;1;0;0;1
+138;"Silvânia";"Particular";3;8;"Feminino";"17";"17";"Urbana";"vianopolis";"Instituto Auxiliadora";"Ás vezes";"Sim, fazenda";"Sim";"Sim";4;3;3;3;3;2;1;0;1;1;1;1;0;0;1;1
+139;"Silvânia";"Particular";3;8;"Masculino";"17";"4";"Urbana";"centro";"Instituto Auxiliadora";"Sempre";"Não fez";"Sim";"Não";3;2;1;3;1;2;0;1;0;1;1;1;0;0;0;1
+140;"Silvânia";"Particular";3;8;"Feminino";"17";"17";"Urbana";"santo antonio";"Instituto Auxiliadora";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";3;1;1;5;1;1;0;1;0;1;1;1;0;0;0;0
+141;"Silvânia";"Particular";3;8;"Masculino";"17";"15";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";5;2;2;4;2;2;1;1;1;1;1;1;0;0;0;1
+142;"Silvânia";"Particular";3;8;"Feminino";"16";"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";2;1;1;2;1;0;0;0;0;1;1;1;0;0;0;0
+143;"Silvânia";"Particular";3;8;"Masculino";"17";"16";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";5;2;2;4;2;2;1;1;1;1;1;1;0;0;0;1
+144;"Silvânia";"Particular";3;8;"Feminino";"18";"18";"Urbana";"deco correa";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";2;1;2;2;1;1;0;0;0;1;1;1;0;0;0;0
+145;"Silvânia";"Particular";3;8;"Feminino";"16";"16";"Urbana";"sao sebastião";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";3;2;2;4;2;2;0;0;1;1;1;1;0;0;0;1
+146;"Silvânia";"Particular";3;8;"Masculino";"17";"17";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Sim, outro";"Não";"Sim";2;3;1;5;1;3;0;0;0;1;1;1;0;0;1;1
+147;"Silvânia";"Particular";3;8;"Masculino";"18";"18";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";3;1;2;2;2;1;0;0;1;1;1;0;0;0;0;1
+148;"Silvânia";"Particular";3;8;"Feminino";"16";"16";"Urbana";"bonfinopolis";"Instituto Auxiliadora";"Frequentemente";"Não fez";"Não";"Não";4;0;1;3;1;0;1;1;0;1;1;0;0;0;0;0
+149;"Silvânia";"Particular";3;8;"Feminino";"19";"";"Urbana";"vianopolis";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";3;2;3;4;2;2;0;0;1;1;1;1;0;0;0;1
+150;"Silvânia";"Particular";3;8;"Masculino";"16";"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";2;2;2;4;1;2;0;0;0;1;1;1;0;0;0;1
+151;"Silvânia";"Particular";3;8;"Feminino";"17";"17";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";2;2;2;5;2;2;0;0;1;0;1;1;0;0;0;1
+152;"Silvânia";"Particular";3;8;"Feminino";"17";"11";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";3;1;2;3;2;1;0;1;1;1;0;1;0;0;0;0
+153;"Silvânia";"Particular";3;8;"Feminino";"17";"17";"Urbana";"bonfim";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Sim";"Não";4;2;2;5;2;2;0;1;1;1;1;1;0;0;0;1
+154;"Silvânia";"Particular";3;8;"Feminino";"16";"16";"Urbana";"vianopolis";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Sim";"Não";4;2;2;5;2;2;1;0;1;1;1;1;0;0;0;1
+155;"Silvânia";"Particular";3;8;"Feminino";"16";"12";"Urbana";"jorge barroso";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Não";"Sim";2;1;1;2;1;1;1;0;0;1;0;0;0;0;1;0
+156;"Silvânia";"Particular";3;8;"Feminino";"17";"15";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";3;1;1;4;1;1;0;1;0;1;1;0;0;0;0;1
+157;"Silvânia";"Particular";3;8;"Feminino";"17";"8";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;2;3;4;3;2;0;1;1;1;1;1;0;0;0;1
+158;"Silvânia";"Particular";3;8;"Masculino";"17";"6";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";2;1;3;2;1;1;1;0;0;0;1;1;0;0;0;0
+159;"Silvânia";"Particular";3;8;"Feminino";"16";"13";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Não";"Sim";2;2;2;3;1;2;0;0;0;1;1;1;0;0;1;0
+160;"Silvânia";"Particular";3;8;"Feminino";"16";"16";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim, outro";"Sim";"Sim";3;1;1;2;1;1;0;1;0;1;1;1;0;0;0;0
+161;"Silvânia";"Particular";3;8;"Feminino";"16";"16";"Urbana";"anchieta";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Sim";"Não";3;2;2;5;2;2;0;0;1;1;1;1;0;0;0;1
+162;"Silvânia";"Particular";3;8;"Masculino";"16";"1";"Urbana";"";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";2;1;2;4;1;1;0;0;0;1;1;1;0;0;0;0
+163;"Silvânia";"Particular";4;9;"Masculino";"";"";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Sim, FLONA";"Sim";"Sim";3;3;3;4;1;2;1;1;1;0;0;0;1;0;1;1
+164;"Silvânia";"Particular";4;9;"Feminino";"16";"16";"Urbana";"centro";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;3;3;3;3;3;1;1;1;1;1;0;1;0;1;1
+165;"Silvânia";"Particular";4;9;"Masculino";"17";"15";"Urbana";"alonso batista";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;0;1;1;1
+166;"Silvânia";"Particular";4;9;"Masculino";"16";"16";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;3;4;5;4;3;1;1;1;1;1;0;0;1;1;1
+167;"Silvânia";"Particular";4;9;"Masculino";"17";"17";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Frequentemente";"Não fez";"Sim";"Não";5;3;3;5;3;3;1;1;1;1;1;0;0;1;1;1
+168;"Silvânia";"Particular";4;9;"Masculino";"16";"16";"Urbana";"deco correa";"Instituto Auxiliadora";"Frequentemente";"Sim, FLONA";"Sim";"Sim";5;3;4;4;4;3;1;1;1;1;1;0;1;0;1;1
+169;"Silvânia";"Particular";4;9;"Feminino";"16";"16";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;1;0;1;1
+170;"Silvânia";"Particular";4;9;"Feminino";"17";"17";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;3;4;5;4;3;1;1;1;1;1;0;0;1;1;1
+171;"Silvânia";"Particular";4;9;"Feminino";"17";"17";"Urbana";"anchieta";"Instituto Auxiliadora";"Ás vezes";"Sim, FLONA";"Sim";"Sim";4;2;1;4;1;2;1;0;1;1;1;0;1;0;1;0
+172;"Silvânia";"Particular";4;9;"Feminino";"16";"16";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";5;3;4;5;4;3;1;1;1;1;1;0;0;1;1;1
+173;"Silvânia";"Particular";4;9;"Feminino";"16";"";"Urbana";"pedrinhas";"Instituto Auxiliadora";"Sempre";"Sim, parque ou trilha";"Sim";"Sim";5;3;3;4;3;3;1;1;1;1;1;0;1;0;1;1
+174;"Silvânia";"Particular";4;9;"Feminino";"17";"17";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";2;2;3;4;1;2;0;1;1;0;0;0;0;1;1;0
+175;"Silvânia";"Particular";4;9;"Masculino";"16";"16";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Sim";"Sim";4;2;3;5;3;2;1;0;1;1;1;0;0;0;1;1
+176;"Silvânia";"Particular";4;9;"Masculino";"17";"14";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Raramente";"Sim, parque ou trilha";"Sim";"Sim";4;3;2;4;2;2;1;0;1;1;1;0;0;1;1;1
+177;"Silvânia";"Particular";4;9;"Feminino";"16";"";"Urbana";"beira lago";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";3;4;1;5;1;4;0;0;1;1;1;0;1;1;1;1
+178;"Silvânia";"Particular";4;9;"Feminino";"17";"16";"Urbana";"maria de lourdes";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;2;3;4;3;2;0;1;1;1;1;0;0;0;1;1
+179;"Silvânia";"Particular";4;9;"Feminino";"15";"15";"Urbana";"centro";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Não";"Sim";4;2;4;5;4;2;1;0;1;1;1;0;0;0;1;1
+180;"Silvânia";"Particular";4;9;"Masculino";"17";"13";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Sim, parque ou trilha";"Não";"Sim";4;1;0;5;0;1;0;1;1;1;1;0;0;0;1;0
+181;"Silvânia";"Particular";4;9;"Feminino";"16";"15";"Urbana";"anchieta";"Instituto Auxiliadora";"Frequentemente";"Sim, parque ou trilha";"Sim";"Sim";4;2;4;3;4;1;0;1;1;1;1;0;1;1;0;0
+182;"Silvânia";"Particular";4;9;"Feminino";"16";"16";"Rural";"maria de lourdes";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Sim";"Não";4;3;5;4;4;2;1;0;1;1;1;0;1;0;1;1
+183;"Silvânia";"Particular";4;9;"Feminino";"16";"14";"Rural";"leopoldo de bulhoes";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";4;0;1;4;1;0;1;1;1;1;0;0;0;0;0;0
+184;"Silvânia";"Particular";4;9;"Feminino";"16";"16";"Urbana";"santo antonio";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Não";"Não";3;2;3;3;2;1;1;0;1;1;0;0;0;0;1;1
+185;"Silvânia";"Particular";4;9;"Masculino";"18";"2";"Urbana";"nossa senhora de fatima";"Instituto Auxiliadora";"Ás vezes";"Não fez";"Sim";"Não";5;2;2;4;2;1;1;1;1;1;1;0;0;1;0;1
+186;"Bela Vista de Goiás";"Particular";1;10;"Masculino";"16";"16";"Urbana";"santa cruz";"Colégio Exodo";"Frequentemente";"Sim, parque ou trilha";"Não se aplica";"Sim";2;2;2;4;1;2;0;1;1;0;0;1;0;1;0;0
+187;"Bela Vista de Goiás";"Particular";1;10;"Masculino";"17";"";"Rural";"";"Colégio Exodo";"Sempre";"Não fez";"Não se aplica";"Não";4;4;2;4;2;4;1;1;1;1;0;1;1;1;0;1
+188;"Bela Vista de Goiás";"Particular";1;10;"Feminino";"17";"12";"Urbana";"portal sul";"Colégio Exodo";"Frequentemente";"Sim, zoologico";"Não se aplica";"Sim";5;3;3;5;3;3;1;1;1;1;1;1;0;1;1;0
+189;"Bela Vista de Goiás";"Particular";1;10;"Masculino";"16";"16";"Urbana";"portal sul";"Colégio Exodo";"Frequentemente";"Sim, parque ou trilha";"Não se aplica";"Sim";4;2;4;4;3;2;1;1;1;0;1;1;0;1;0;0
+190;"Bela Vista de Goiás";"Particular";1;10;"Masculino";"17";"17";"Urbana";"vereda dos buritis";"Colégio Exodo";"Sempre";"Sim, fazenda";"Não se aplica";"Sim";4;2;4;4;3;2;1;1;1;0;1;1;0;1;0;0
+191;"Bela Vista de Goiás";"Particular";1;10;"Feminino";"15";"15";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim, fazenda";"Não se aplica";"Sim";4;2;3;5;3;2;1;1;1;1;0;1;0;1;0;0
+192;"Bela Vista de Goiás";"Particular";1;10;"Masculino";"16";"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim, parque ou trilha";"Não se aplica";"Sim";4;2;4;5;3;2;0;1;1;1;1;1;0;1;0;0
+193;"Bela Vista de Goiás";"Particular";1;10;"Masculino";"16";"16";"Rural";"";"Colégio Exodo";"Sempre";"Não fez";"Não se aplica";"Não";4;2;4;5;4;2;1;1;1;1;0;1;0;1;0;0
+194;"Bela Vista de Goiás";"Particular";1;10;"Masculino";"16";"16";"Urbana";"sao jorge";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";4;2;3;4;2;2;1;1;1;1;0;1;0;1;0;0
+195;"Bela Vista de Goiás";"Particular";1;10;"Feminino";"15";"15";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim, fazenda";"Não se aplica";"Sim";3;2;1;5;1;2;1;1;1;0;0;0;0;1;0;1
+196;"Bela Vista de Goiás";"Particular";1;10;"Masculino";"16";"8";"Urbana";"via flores";"Colégio Exodo";"Ás vezes";"Sim, fazenda";"Não se aplica";"Sim";4;2;0;5;0;2;1;1;1;1;0;1;0;1;0;0
+197;"Bela Vista de Goiás";"Particular";1;10;"Feminino";"";"8";"Urbana";"";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";4;4;1;5;1;4;1;1;1;0;1;1;1;1;0;1
+198;"Bela Vista de Goiás";"Particular";2;10;"Masculino";"17";"1";"Urbana";"";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";4;0;4;4;4;0;1;1;1;1;0;0;0;0;0;0
+199;"Bela Vista de Goiás";"Particular";2;10;"Masculino";"";"10";"Urbana";"perola do sul";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";3;0;3;4;3;0;0;1;1;1;0;0;0;0;0;0
+200;"Bela Vista de Goiás";"Particular";2;10;"Feminino";"16";"16";"Urbana";"centro";"Colégio Exodo";"Ás vezes";"Sim, parque ou trilha";"Não se aplica";"Sim";3;0;4;3;2;0;1;1;1;0;0;0;0;0;0;0
+201;"Bela Vista de Goiás";"Particular";2;10;"Masculino";"15";"15";"Urbana";"vila multirao";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";3;0;2;4;2;0;1;0;1;1;0;0;0;0;0;0
+202;"Bela Vista de Goiás";"Particular";2;10;"Feminino";"16";"6";"Urbana";"maria nadir";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";4;0;3;4;3;0;1;1;1;1;0;0;0;0;0;0
+203;"Bela Vista de Goiás";"Particular";2;10;"Feminino";"16";"13";"Urbana";"sao geraldo";"Colégio Exodo";"Ás vezes";"Sim, parque ou trilha";"Não se aplica";"Sim";3;0;3;3;1;0;1;0;1;1;0;0;0;0;0;0
+204;"Bela Vista de Goiás";"Particular";2;10;"Feminino";"16";"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";4;0;4;4;3;0;1;1;1;1;0;0;0;0;0;0
+205;"Bela Vista de Goiás";"Particular";2;10;"Masculino";"16";"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim, fazenda";"Não se aplica";"Sim";4;0;3;5;3;0;1;1;1;1;0;0;0;0;0;0
+206;"Bela Vista de Goiás";"Particular";2;10;"Masculino";"16";"16";"Urbana";"sao geraldo";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";4;0;4;3;4;0;1;1;1;1;0;0;0;0;0;0
+207;"Bela Vista de Goiás";"Particular";2;10;"Masculino";"16";"";"Urbana";"sao jorge";"Colégio Exodo";"Frequentemente";"Sim, fazenda";"Não se aplica";"Sim";4;0;3;5;2;0;1;1;1;1;0;0;0;0;0;0
+208;"Bela Vista de Goiás";"Particular";3;11;"Feminino";"17";"13";"Urbana";"";"Colégio Exodo";"Sempre";"Não fez";"Não se aplica";"Não";5;2;2;5;2;2;1;1;1;1;1;1;0;0;0;1
+209;"Bela Vista de Goiás";"Particular";3;11;"Masculino";"16";"16";"Urbana";"centro";"Colégio Exodo";"Raramente";"Sim, fazenda";"Não se aplica";"Sim";3;2;2;3;1;1;1;1;0;0;1;1;0;0;0;1
+210;"Bela Vista de Goiás";"Particular";3;11;"Masculino";"17";"17";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";3;3;2;3;2;2;0;1;0;1;1;1;1;0;0;1
+211;"Bela Vista de Goiás";"Particular";3;11;"Feminino";"17";"17";"Urbana";"las vegas";"Colégio Exodo";"Frequentemente";"Sim, parque ou trilha";"Não se aplica";"Sim";4;2;2;5;2;2;0;1;1;1;1;1;0;0;0;1
+212;"Bela Vista de Goiás";"Particular";3;11;"Feminino";"16";"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim, parque ou trilha";"Não se aplica";"Sim";2;2;2;4;2;2;0;0;0;1;1;1;0;0;0;1
+213;"Bela Vista de Goiás";"Particular";3;11;"Masculino";"16";"16";"Urbana";"";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";3;2;1;4;1;1;0;1;0;1;1;1;0;0;0;1
+214;"Bela Vista de Goiás";"Particular";3;11;"Masculino";"16";"16";"Urbana";"";"Colégio Exodo";"Ás vezes";"Sim, fazenda";"Não se aplica";"Sim";4;1;2;5;2;1;1;0;1;1;1;1;0;0;0;0
+215;"Bela Vista de Goiás";"Particular";3;11;"Feminino";"15";"7";"Urbana";"perola do sul";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";4;2;1;5;1;2;1;1;0;1;1;1;0;0;0;1
+216;"Bela Vista de Goiás";"Particular";3;11;"Feminino";"16";"16";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Sim, outro";"Não se aplica";"Sim";2;2;1;4;1;2;0;1;0;0;1;1;0;0;0;1
+217;"Bela Vista de Goiás";"Particular";3;11;"Masculino";"17";"17";"Urbana";"sao jorge";"Colégio Exodo";"Sempre";"Sim, parque ou trilha";"Não se aplica";"Sim";3;2;2;3;1;1;0;1;0;1;1;1;0;0;0;1
+218;"Bela Vista de Goiás";"Particular";3;11;"Masculino";"16";"1";"Urbana";"centro";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";4;2;2;4;2;2;0;1;1;1;1;1;0;0;0;1
+219;"Bela Vista de Goiás";"Particular";4;11;"Masculino";"16";"8";"Urbana";"centro";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";3;3;2;5;2;3;0;0;1;1;1;0;1;0;1;1
+220;"Bela Vista de Goiás";"Particular";4;11;"Masculino";"16";"";"Rural";"portal sul";"Colégio Exodo";"Frequentemente";"Sim, fazenda";"Não se aplica";"Sim";4;2;3;3;3;1;1;0;1;1;1;0;1;0;0;1
+221;"Bela Vista de Goiás";"Particular";4;11;"Feminino";"16";"16";"Urbana";"dona benedita";"Colégio Exodo";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;2;5;2;3;1;1;1;1;1;0;0;1;1;1
+223;"Bela Vista de Goiás";"Particular";4;11;"Feminino";"15";"5";"Urbana";"ulisses guimaraes";"Colégio Exodo";"Ás vezes";"Sim, fazenda";"Não se aplica";"Sim";5;4;5;5;5;4;1;1;1;1;1;0;1;1;1;1
+223;"Bela Vista de Goiás";"Particular";4;11;"Masculino";"16";"16";"Urbana";"sao geraldo";"Colégio Exodo";"Sempre";"Sim, zoologico";"Não se aplica";"Sim";5;4;5;5;5;4;1;1;1;1;1;0;1;1;1;1
+224;"Bela Vista de Goiás";"Particular";4;11;"Feminino";"16";"12";"Urbana";"centro";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";4;2;1;3;1;2;1;0;1;1;1;0;0;0;1;1
+225;"Bela Vista de Goiás";"Particular";4;11;"Feminino";"15";"15";"Urbana";"";"Colégio Exodo";"Ás vezes";"Sim, fazenda";"Não se aplica";"Sim";5;2;3;5;3;2;1;1;1;1;1;0;0;0;1;1
+226;"Bela Vista de Goiás";"Particular";4;11;"Feminino";"17";"17";"Urbana";"são geraldo";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";3;2;3;5;2;2;1;0;0;1;1;0;0;0;1;1
+227;"Bela Vista de Goiás";"Particular";4;11;"Feminino";"17";"17";"Urbana";"maria nadira";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";5;3;1;4;1;3;1;1;1;1;1;0;1;0;1;1
+228;"Bela Vista de Goiás";"Particular";4;11;"Masculino";"16";"12";"Urbana";"las vegas";"Colégio Exodo";"Frequentemente";"Não fez";"Não se aplica";"Não";5;3;2;5;2;3;1;1;1;1;1;0;1;0;1;1
+229;"Bela Vista de Goiás";"Particular";4;11;"Feminino";"16";"16";"Urbana";"primavera";"Colégio Exodo";"Ás vezes";"Não fez";"Não se aplica";"Não";5;3;0;5;0;3;1;1;1;1;1;0;1;0;1;1
+230;"Bela Vista de Goiás";"Particular";4;11;"Masculino";"16";"16";"Urbana";"luci";"Colégio Exodo";"Frequentemente";"Sim, fazenda";"Não se aplica";"Sim";4;2;4;3;3;1;0;1;1;1;1;0;0;0;1;1
+231;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"16";"";"Urbana";"alphaville";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;3;4;3;1;1;1;1;1;0;0;0;1;0;0
+232;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"15";"8";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";4;3;4;4;4;3;1;1;1;1;0;1;0;1;0;1
+233;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"16";"";"Urbana";"";"Colégio Pedro Viera Januário";"Nunca";"Sim, memorial do cerrado";"Não se aplica";"Sim";3;0;3;4;3;0;1;1;1;0;0;0;0;0;0;0
+234;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"18";"";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não";"Não";5;2;3;5;3;2;1;1;1;1;1;1;0;1;0;0
+235;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"";"";"Urbana";"vila";"Colégio Pedro Viera Januário";"Raramente";"Sim, parque ou trilha";"Não se aplica";"Sim";3;2;3;4;2;2;1;0;1;1;0;1;0;1;0;0
+236;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"16";"16";"Urbana";"dona clotilde";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;3;4;5;4;3;1;1;1;1;0;1;1;1;0;0
+237;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"18";"2";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;2;3;4;3;2;1;1;1;1;1;1;0;1;0;0
+238;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"17";"11";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, parque ou trilha";"Não se aplica";"Sim";2;2;3;3;1;2;0;1;0;1;0;1;0;1;0;0
+239;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"19";"";"Urbana";"flamboyant";"Colégio Pedro Viera Januário";"Raramente";"Sim, parque ou trilha";"Não se aplica";"Sim";4;2;3;4;2;2;1;1;1;0;1;1;0;1;0;0
+240;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"15";"15";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;3;4;2;2;1;1;1;0;1;1;0;1;0;0
+241;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"16";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";4;2;1;5;1;2;1;1;1;1;0;1;0;1;0;0
+242;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"16";"16";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;3;3;4;3;3;1;1;1;1;0;1;1;1;0;0
+243;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"16";"";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";2;2;1;3;1;2;1;1;0;0;0;1;0;1;0;0
+244;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"16";"16";"Rural";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;3;3;3;3;2;1;1;1;1;0;1;1;1;0;0
+245;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"17";"17";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";5;4;1;4;1;3;1;1;1;1;1;1;1;1;1;0
+246;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"16";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";4;2;0;2;0;2;1;1;1;1;0;0;0;1;1;0
+247;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"17";"4";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";4;5;5;5;4;5;1;1;1;1;0;1;1;1;1;1
+248;"Bela Vista de Goiás";"Pública";1;12;"Masculino";"16";"11";"Urbana";"ulisses guimaraes";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";5;3;4;4;4;3;1;1;1;1;1;1;1;1;0;0
+249;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"";"5";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";4;2;2;3;2;2;1;1;1;1;0;1;0;1;0;0
+250;"Bela Vista de Goiás";"Pública";1;12;"Feminino";"16";"7";"Urbana";"barcelona";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;3;4;3;2;1;0;1;1;1;1;0;1;0;0
+251;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"15";"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";3;0;2;5;2;0;1;0;1;1;0;0;0;0;0;0
+252;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"18";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;2;3;2;1;1;1;1;1;0;1;0;1;0;0
+253;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"15";"";"Urbana";"";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";4;0;1;5;1;0;1;0;1;1;1;0;0;0;0;0
+254;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"17";"4";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;2;4;2;0;1;1;1;1;0;0;0;1;0;0
+255;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"16";"16";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";2;1;3;3;0;1;0;1;0;0;1;0;0;0;0;1
+256;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"16";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;2;4;1;1;1;1;1;0;1;0;0;1;0;0
+257;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"";"";"Rural";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";4;0;2;5;2;0;1;0;1;1;1;0;0;0;0;0
+259;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"19";"7";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, parque ou trilha";"Não se aplica";"Sim";4;0;5;3;4;0;1;1;0;1;1;0;0;0;0;0
+260;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"4";"4";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;0;2;5;2;0;1;1;1;1;0;0;0;0;0;0
+261;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"15";"6";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Raramente";"Sim, parque ou trilha";"Não se aplica";"Sim";3;0;1;5;1;0;1;0;1;1;0;0;0;0;0;0
+262;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"17";"1";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";3;1;4;5;3;1;1;1;0;1;0;1;0;0;0;0
+263;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"17";"17";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";3;1;3;4;2;1;1;0;1;1;0;1;0;0;0;0
+264;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"16";"16";"Urbana";"sao vicente";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";4;3;4;3;3;2;1;1;1;1;0;1;0;1;1;0
+265;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"16";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";2;2;1;4;0;1;1;0;1;0;0;1;0;1;0;0
+266;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"16";"4";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;4;4;3;1;1;1;1;1;0;1;0;0;0;0
+267;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"17";"10";"Urbana";"sao vicente";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";3;1;3;4;2;1;1;0;1;1;0;1;0;0;0;0
+268;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"16";"11";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";3;1;3;2;2;1;1;1;1;0;0;1;0;0;0;0
+270;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"17";"4";"Urbana";"dona clotilde";"Colégio Pedro Viera Januário";"Raramente";"Sim, memorial do cerrado";"Não se aplica";"Sim";3;1;1;4;1;1;1;0;1;1;0;1;0;0;0;0
+272;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"16";"16";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";3;1;2;4;2;1;1;0;1;1;0;1;0;0;0;0
+273;"Bela Vista de Goiás";"Pública";2;13;"Masculino";"16";"16";"Urbana";"buritizais";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";2;2;3;3;2;2;0;1;0;1;0;1;0;1;0;0
+275;"Bela Vista de Goiás";"Pública";2;13;"Feminino";"17";"2";"Rural";"barcelona";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";2;2;1;2;0;2;1;0;1;0;0;1;0;1;0;0
+277;"Bela Vista de Goiás";"Pública";3;14;"Feminino";"15";"15";"Rural";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";5;1;3;3;3;1;1;1;1;1;1;1;0;0;0;0
+278;"Bela Vista de Goiás";"Pública";3;14;"Masculino";"16";"14";"Urbana";"bambus";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";3;2;2;4;1;2;0;0;1;1;1;1;0;0;0;1
+279;"Bela Vista de Goiás";"Pública";3;14;"Feminino";"17";"10";"Urbana";"dona clotilde";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";2;3;1;4;1;2;0;0;0;1;1;1;0;0;1;1
+280;"Bela Vista de Goiás";"Pública";3;14;"Masculino";"17";"17";"Urbana";"lucia alice";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, zoologico";"Não se aplica";"Sim";3;1;4;1;3;0;0;1;1;0;1;1;0;0;0;0
+281;"Bela Vista de Goiás";"Pública";3;14;"Feminino";"17";"2";"Urbana";"armando antonio";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";3;2;2;5;2;2;0;0;1;1;1;1;0;0;1;0
+282;"Bela Vista de Goiás";"Pública";3;14;"Masculino";"18";"5";"Rural";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";3;2;5;0;3;0;0;1;0;1;1;1;0;0;0;1
+283;"Bela Vista de Goiás";"Pública";3;14;"Feminino";"18";"0,3";"Rural";"";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";1;2;1;3;1;1;0;0;0;0;1;1;1;0;0;0
+284;"Bela Vista de Goiás";"Pública";3;14;"Feminino";"16";"16";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Raramente";"Sim, memorial do cerrado";"Não se aplica";"Sim";2;2;1;5;1;2;0;0;0;1;1;1;0;0;0;1
+285;"Bela Vista de Goiás";"Pública";3;14;"Masculino";"16";"4";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";2;2;2;4;1;1;0;0;0;1;1;1;0;0;0;1
+286;"Bela Vista de Goiás";"Pública";3;14;"Masculino";"17";"17";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";2;3;1;4;1;2;0;0;0;1;1;1;0;0;1;1
+287;"Bela Vista de Goiás";"Pública";3;14;"Masculino";"16";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";2;2;1;4;1;1;0;0;0;1;1;1;0;0;0;1
+288;"Bela Vista de Goiás";"Pública";3;14;"Masculino";"16";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";2;2;1;3;1;1;0;0;0;1;1;1;0;0;0;1
+289;"Bela Vista de Goiás";"Pública";3;14;"Feminino";"15";"";"Rural";"";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";2;2;1;3;0;2;0;1;1;0;0;1;0;0;0;1
+290;"Bela Vista de Goiás";"Pública";3;14;"Feminino";"15";"15";"Urbana";"santo antonio";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";2;1;2;4;1;1;0;0;0;1;1;1;0;0;0;0
+291;"Bela Vista de Goiás";"Pública";3;14;"Feminino";"16";"8";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, parque ou trilha";"Não se aplica";"Sim";4;1;4;3;3;0;1;0;1;1;1;1;0;0;0;0
+292;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"16";"3";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";3;3;1;5;1;3;1;0;1;1;0;0;1;0;1;1
+293;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"16";"4";"Urbana";"oeste";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";5;2;4;5;4;2;1;1;1;1;1;0;0;0;1;1
+294;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"17";"17";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";5;2;4;3;4;2;1;1;1;1;1;0;0;0;1;1
+295;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"20";"0,8";"Urbana";"";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";3;1;3;3;2;1;1;0;1;0;1;0;0;0;1;0
+296;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"15";"7";"Rural";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;3;3;4;2;3;1;0;1;1;1;0;0;1;1;1
+297;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"17";"14";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;1;4;1;3;1;1;1;1;1;0;1;0;1;1
+298;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"17";"17";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";3;2;1;3;1;0;1;0;1;1;0;0;1;0;0;1
+299;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"16";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";3;2;2;5;2;2;0;0;1;1;1;0;1;1;0;0
+300;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"16";"16";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";4;1;3;3;3;1;1;0;1;1;1;0;1;0;0;0
+301;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"16";"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;2;3;4;3;2;1;1;1;1;1;0;0;0;1;1
+302;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"17";"";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;2;2;5;2;2;1;1;1;1;1;0;0;0;1;1
+303;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"16";"";"Rural";"barcelona";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;2;2;5;2;2;1;1;1;1;1;0;0;0;1;1
+304;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"15";"15";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, parque ou trilha";"Não se aplica";"Sim";5;2;2;5;2;2;1;1;1;1;1;0;1;0;0;1
+305;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"";"";"Urbana";"lucia alice";"Colégio Pedro Viera Januário";"Raramente";"Sim, parque ou trilha";"Não se aplica";"Sim";5;3;4;5;4;3;1;1;1;1;1;0;1;0;1;1
+306;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"15";"13";"Urbana";"buritis";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;3;5;3;3;1;1;1;1;1;0;1;0;1;1
+307;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"16";"16";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;3;4;3;1;0;1;1;1;1;0;0;0;0;1
+308;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"16";"16";"Urbana";"amando antoni";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";5;1;3;3;3;1;1;1;1;1;1;0;0;0;1;0
+309;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"17";"0,3";"Urbana";"boa vista";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";5;2;3;1;3;1;1;1;1;1;1;0;1;0;1;0
+310;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"19";"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";4;1;3;3;2;0;1;1;1;1;0;0;1;0;0;0
+311;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"18";"18";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Sempre";"Sim, parque ou trilha";"Não se aplica";"Sim";5;3;3;3;3;3;1;1;1;1;1;0;1;0;1;1
+312;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"17";"17";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";5;3;3;4;3;3;1;1;1;1;1;0;1;0;1;1
+313;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"17";"17";"Urbana";"flamboyant";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;1;1;3;1;1;1;1;1;1;1;0;0;0;1;0
+314;"Bela Vista de Goiás";"Pública";4;15;"Feminino";"";"5";"Urbana";"roselandia";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;1;3;1;1;1;1;1;1;1;0;0;1;1;1
+315;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"19";"6";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";4;2;3;4;3;2;0;1;1;1;1;0;0;1;0;1
+316;"Bela Vista de Goiás";"Pública";4;15;"Masculino";"16";"16";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";5;2;3;4;3;2;1;1;1;1;1;0;0;0;1;1
+317;"Bela Vista de Goiás";"Pública";1;16;"Masculino";"17";"";"Urbana";"armando antonio";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";4;2;2;5;2;2;1;1;1;1;0;1;0;1;0;0
+318;"Bela Vista de Goiás";"Pública";1;16;"Masculino";"16";"11";"Rural";"dona clotilde";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";4;2;3;4;3;2;1;1;1;1;0;1;0;1;0;0
+319;"Bela Vista de Goiás";"Pública";1;16;"Feminino";"18";"6";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;3;5;3;2;1;1;1;1;0;0;1;1;0;0
+320;"Bela Vista de Goiás";"Pública";1;16;"Feminino";"17";"17";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";4;1;2;3;2;1;1;1;1;1;0;0;0;1;0;0
+321;"Bela Vista de Goiás";"Pública";1;16;"Feminino";"16";"14";"Urbana";"lucia alice";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";5;3;4;4;4;3;1;1;1;1;1;1;0;1;0;1
+322;"Bela Vista de Goiás";"Pública";1;16;"Masculino";"18";"18";"Rural";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;4;5;4;3;1;1;1;1;1;1;1;1;0;0
+323;"Bela Vista de Goiás";"Pública";1;16;"Feminino";"17";"17";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;5;5;5;3;1;1;1;1;1;1;1;1;0;0
+324;"Bela Vista de Goiás";"Pública";1;16;"Masculino";"19";"";"Urbana";"centro";"Colégio Pedro Viera Januário";"Raramente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;3;5;3;2;1;1;1;1;0;1;0;1;0;0
+325;"Bela Vista de Goiás";"Pública";1;16;"Masculino";"16";"16";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;3;4;3;2;1;1;1;1;0;1;0;1;0;0
+326;"Bela Vista de Goiás";"Pública";1;16;"Masculino";"17";"17";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;3;5;2;1;1;1;1;1;0;0;0;1;0;0
+327;"Bela Vista de Goiás";"Pública";1;16;"Masculino";"";"";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, zoologico";"Não se aplica";"Sim";4;2;3;5;3;2;1;1;1;1;0;1;0;1;0;0
+328;"Bela Vista de Goiás";"Pública";1;16;"Feminino";"17";"10";"Rural";"buritizais";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";5;2;2;2;2;1;1;1;1;1;1;0;1;1;0;0
+329;"Bela Vista de Goiás";"Pública";1;16;"Masculino";"17";"10";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";5;2;5;5;5;2;1;1;1;1;1;0;1;1;0;0
+330;"Bela Vista de Goiás";"Pública";1;16;"Feminino";"";"0,9";"Urbana";"dona clotilde";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";5;3;5;5;5;3;1;1;1;1;1;1;1;1;0;0
+331;"Bela Vista de Goiás";"Pública";4;16;"Feminino";"16";"16";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, parque ou trilha";"Não se aplica";"Sim";5;3;1;5;1;3;1;1;1;1;1;0;1;0;1;1
+332;"Bela Vista de Goiás";"Pública";4;16;"Masculino";"";"2";"Urbana";"gratao";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;4;4;3;3;3;1;1;1;0;1;0;1;1;1;1
+333;"Bela Vista de Goiás";"Pública";4;16;"Masculino";"";"";"Urbana";"";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;4;2;3;2;3;1;1;1;1;1;0;1;1;1;1
+334;"Bela Vista de Goiás";"Pública";4;16;"Masculino";"17";"";"Urbana";"";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;4;4;4;2;1;1;1;1;1;0;1;0;1;1
+335;"Bela Vista de Goiás";"Pública";4;16;"Feminino";"16";"12";"Urbana";"centro";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;4;4;4;2;1;1;1;1;1;0;1;0;1;1
+336;"Bela Vista de Goiás";"Pública";4;16;"Feminino";"17";"6";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, parque ou trilha";"Não se aplica";"Sim";5;1;1;4;1;1;1;1;1;1;1;0;0;0;0;1
+337;"Bela Vista de Goiás";"Pública";4;16;"Feminino";"18";"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;3;4;2;2;1;1;1;1;0;0;0;0;1;1
+338;"Bela Vista de Goiás";"Pública";4;16;"Feminino";"17";"1";"Urbana";"";"Colégio Pedro Viera Januário";"Raramente";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;3;2;5;2;3;1;1;1;1;1;0;1;0;1;1
+339;"Bela Vista de Goiás";"Pública";4;16;"Feminino";"18";"18";"Urbana";"flamboyant";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;3;3;3;1;0;1;1;1;1;1;0;0;0;0
+340;"Bela Vista de Goiás";"Pública";4;16;"Feminino";"17";"17";"Urbana";"roselandia";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;2;3;2;2;1;1;1;1;0;0;0;0;1;1
+341;"Bela Vista de Goiás";"Pública";1;17;"Feminino";"17";"10";"Urbana";"sao vicente";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, zoologico";"Não se aplica";"Sim";4;3;1;3;1;1;1;1;1;1;0;1;1;1;0;0
+342;"Bela Vista de Goiás";"Pública";1;17;"Feminino";"16";"0,9";"Rural";"";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";5;2;3;3;3;2;1;1;1;1;1;1;0;1;0;0
+343;"Bela Vista de Goiás";"Pública";2;17;"Masculino";"18";"10";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;2;5;1;1;1;1;1;1;0;0;0;0;1;0
+344;"Bela Vista de Goiás";"Pública";2;17;"Masculino";"17";"17";"Urbana";"sao jorge";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, fazenda";"Não se aplica";"Sim";4;2;5;1;4;0;1;1;1;1;0;1;0;1;0;0
+345;"Bela Vista de Goiás";"Pública";2;17;"Masculino";"18";"18";"Urbana";"dona clotildes";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";3;1;3;4;3;1;1;1;0;1;0;1;0;0;0;0
+346;"Bela Vista de Goiás";"Pública";2;17;"Masculino";"18";"10";"Urbana";"sussuapara";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;0;5;0;2;1;1;1;1;0;1;0;0;1;0
+347;"Bela Vista de Goiás";"Pública";2;17;"Masculino";"";"";"Rural";"flamboyant";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, parque ou trilha";"Não se aplica";"Sim";4;1;3;4;2;1;1;1;1;1;0;1;0;0;0;0
+348;"Bela Vista de Goiás";"Pública";2;17;"Feminino";"16";"9";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, parque ou trilha";"Não se aplica";"Sim";4;1;5;5;4;1;1;1;1;1;0;1;0;0;0;0
+349;"Bela Vista de Goiás";"Pública";2;17;"Feminino";"";"0,3";"Rural";"";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";3;2;4;3;3;1;0;1;1;1;0;1;0;1;0;0
+350;"Bela Vista de Goiás";"Pública";2;17;"Feminino";"16";"16";"Urbana";"buritis";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";2;2;3;3;2;1;0;0;1;1;0;1;0;1;0;0
+351;"Bela Vista de Goiás";"Pública";2;17;"Masculino";"18";"18";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";4;1;0;5;0;1;1;1;1;1;0;1;0;0;0;0
+352;"Bela Vista de Goiás";"Pública";2;17;"Masculino";"17";"17";"Urbana";"sao jorge";"Colégio Pedro Viera Januário";"Sempre";"Sim, zoologico";"Não se aplica";"Sim";2;2;4;4;2;2;1;0;1;0;0;1;0;0;1;0
+353;"Bela Vista de Goiás";"Pública";2;17;"Masculino";"17";"11";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";2;1;3;4;1;1;1;0;1;0;0;1;0;0;0;0
+354;"Bela Vista de Goiás";"Pública";2;17;"Feminino";"16";"9";"Urbana";"bela vista";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";4;1;4;4;3;1;1;1;1;1;0;1;0;0;0;0
+355;"Bela Vista de Goiás";"Pública";2;17;"Feminino";"17";"7";"Urbana";"oeste";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";3;1;2;4;1;1;1;0;1;1;0;1;0;0;0;0
+356;"Bela Vista de Goiás";"Pública";2;17;"Feminino";"17";"2";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";4;2;2;4;2;2;1;1;1;1;0;1;0;0;1;0
+357;"Bela Vista de Goiás";"Pública";3;17;"Feminino";"17";"17";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";2;2;1;5;1;2;0;0;1;0;1;1;0;0;0;1
+358;"Bela Vista de Goiás";"Pública";3;17;"Feminino";"16";"4";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";3;1;1;5;1;1;1;0;0;1;1;0;0;0;0;1
+359;"Bela Vista de Goiás";"Pública";3;17;"Masculino";"16";"";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";4;2;2;5;2;2;1;0;1;1;1;1;0;0;0;1
+360;"Bela Vista de Goiás";"Pública";3;17;"Masculino";"";"";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Sempre";"Sim, memorial do cerrado";"Não se aplica";"Sim";3;1;3;2;2;1;1;0;0;1;1;0;0;0;0;1
+361;"Bela Vista de Goiás";"Pública";3;17;"Masculino";"16";"";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";2;2;1;5;1;2;0;0;0;1;1;1;0;0;0;1
+362;"Bela Vista de Goiás";"Pública";3;17;"Feminino";"17";"17";"Urbana";"centro";"Colégio Pedro Viera Januário";"Raramente";"Sim, memorial do cerrado";"Não se aplica";"Sim";0;3;1;3;0;3;0;0;0;0;0;0;0;1;1;1
+363;"Bela Vista de Goiás";"Pública";3;17;"Feminino";"17";"17";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Raramente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;2;4;2;2;1;0;1;1;1;1;0;0;0;1
+364;"Bela Vista de Goiás";"Pública";3;17;"Feminino";"";"6";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";2;3;2;5;1;3;0;0;1;0;1;1;0;0;1;1
+365;"Bela Vista de Goiás";"Pública";3;17;"Feminino";"17";"4";"Urbana";"roselandia";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;2;3;4;3;1;1;0;1;1;1;1;0;0;0;1
+366;"Bela Vista de Goiás";"Pública";3;17;"Masculino";"18";"";"Urbana";"perola do sul";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";2;2;1;3;1;1;0;0;0;1;1;1;0;0;0;1
+367;"Bela Vista de Goiás";"Pública";3;17;"Masculino";"17";"16";"Urbana";"vitoria";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";4;1;2;5;2;1;0;1;1;1;1;1;0;0;0;0
+368;"Bela Vista de Goiás";"Pública";3;17;"Masculino";"18";"";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";2;3;4;3;1;3;0;0;0;1;1;1;0;0;1;1
+369;"Bela Vista de Goiás";"Pública";4;17;"Masculino";"17";"";"Rural";"sao vicente";"Colégio Pedro Viera Januário";"Frequentemente";"Não fez";"Não se aplica";"Não";5;2;2;4;2;2;1;1;1;1;1;0;0;1;1;0
+370;"Bela Vista de Goiás";"Pública";4;17;"Masculino";"17";"14";"Rural";"";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";5;3;2;4;2;2;1;1;1;1;1;0;0;1;1;1
+371;"Bela Vista de Goiás";"Pública";4;17;"Feminino";"17";"17";"Urbana";"las vegas";"Colégio Pedro Viera Januário";"Raramente";"Não fez";"Não se aplica";"Não";4;3;4;4;4;2;0;1;1;1;1;1;1;0;1;0
+372;"Bela Vista de Goiás";"Pública";4;17;"Masculino";"18";"1";"Urbana";"maria nadir";"Colégio Pedro Viera Januário";"Sempre";"Não fez";"Não se aplica";"Não";5;3;4;5;4;3;1;1;1;1;1;0;0;1;1;1
+373;"Bela Vista de Goiás";"Pública";4;17;"Masculino";"16";"";"Rural";"sussuapara";"Colégio Pedro Viera Januário";"Frequentemente";"Sim, memorial do cerrado";"Não se aplica";"Sim";4;1;2;3;2;0;1;0;1;1;1;0;1;0;0;0
+374;"Bela Vista de Goiás";"Pública";4;17;"Masculino";"18";"7";"Urbana";"sao jorge";"Colégio Pedro Viera Januário";"Ás vezes";"Não fez";"Não se aplica";"Não";5;3;4;4;4;3;1;1;1;1;1;0;1;0;1;1
+375;"Bela Vista de Goiás";"Pública";4;17;"Feminino";"17";"5";"Urbana";"centro";"Colégio Pedro Viera Januário";"Ás vezes";"Sim, memorial do cerrado";"Não se aplica";"Sim";5;4;2;3;2;3;1;1;1;1;1;0;1;1;1;1

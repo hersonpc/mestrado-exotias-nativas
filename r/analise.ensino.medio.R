@@ -34,14 +34,47 @@ importar_dados_ensino_medio <- function() {
                                         'frequencia', 'fez.aula', 'flona', 'flona.visitou', 
                                         'ex.prot.1', 'ex.prot.2', 'ex.prot.3', 
                                         'nota')
+    animais_exoticos = trimws(c(questionario.descritivo$ex.exo.1, 
+                                questionario.descritivo$ex.exo.2, 
+                                questionario.descritivo$ex.exo.3)) %>% 
+                        as.data.frame() %>% 
+                        filter(. != "") %>%
+                        tbl_df()
+    names(animais_exoticos) <- c("animais")
+    animais_exoticos <- 
+        animais_exoticos %>% 
+        group_by(animais) %>% 
+        summarise(freq = n()) %>% 
+        arrange(desc(freq)) %>%
+        mutate(animais = factor(animais, levels = animais))
+
+    animais_nativos = trimws(c(questionario.descritivo$ex.nat.1, 
+                               questionario.descritivo$ex.nat.2, 
+                               questionario.descritivo$ex.nat.3)) %>% 
+                        as.data.frame() %>% 
+                        filter(. != "") %>%
+                        tbl_df()
+    names(animais_nativos) <- c("animais")
+    animais_nativos <- 
+        animais_nativos %>%
+        group_by(animais) %>%
+        summarise(freq = n()) %>%
+        arrange(desc(freq)) %>%
+        mutate(animais = factor(animais, levels = animais))
+
     resultado <- merge(dados, 
-                       questionario.descritivo %>% 
-                           select(codigo, sexo, idade, temp.residencia, area, bairro, nome.escola, frequencia, fez.aula, flona) %>%
-                           mutate(fez.aula = ifelse(substr(fez.aula, 1, 1) == "S", "Sim", "Não") ), 
-                       by = "codigo") %>%
-        tbl_df()
+                    questionario.descritivo %>% 
+                       select(codigo, sexo, idade, temp.residencia, area, bairro, nome.escola, frequencia, fez.aula, flona) %>%
+                       mutate(aula = ifelse(substr(fez.aula, 1, 1) == "S", "Sim", "Não") ), 
+                    by = "codigo") %>%
+                    tbl_df()
     
-    return(tbl_df(resultado))
+    return(list(
+        respostas = resultado,
+        raking_animais = list(
+            nativos = animais_nativos,
+            exoticos = animais_exoticos
+        )))
 }
 
 validar_questionario_no_gabarito <- function(data) {
@@ -242,9 +275,83 @@ computar_proporcoes <- function(lista_pos_gabarito) {
         ungroup() %>%
         tbl_df()
     
+    grp_turma_municipio <- 
+        lista_pos_gabarito$dados %>%
+        group_by(turmas, municipio) %>%
+        summarise(qtde = n(),
+                  total_acertos_esperado = qtde * 5,
+                  p_exoticas = sum(exoticas) / total_acertos_esperado,
+                  p_nativas = sum(nativas) / total_acertos_esperado,
+                  p_origem_exoticas = sum(origem_exoticas) / total_acertos_esperado,
+                  p_origem_nativas = sum(origem_nativas) / total_acertos_esperado,
+                  p_indice_exoticas = sum(indice_exoticas) / total_acertos_esperado,
+                  p_indice_nativas = sum(indice_nativas) / total_acertos_esperado) %>%
+        ungroup() %>%
+        tbl_df()
+    
     grp_turma_area <- 
         lista_pos_gabarito$dados %>%
         group_by(turmas, area) %>%
+        summarise(qtde = n(),
+                  total_acertos_esperado = qtde * 5,
+                  p_exoticas = sum(exoticas) / total_acertos_esperado,
+                  p_nativas = sum(nativas) / total_acertos_esperado,
+                  p_origem_exoticas = sum(origem_exoticas) / total_acertos_esperado,
+                  p_origem_nativas = sum(origem_nativas) / total_acertos_esperado,
+                  p_indice_exoticas = sum(indice_exoticas) / total_acertos_esperado,
+                  p_indice_nativas = sum(indice_nativas) / total_acertos_esperado) %>%
+        ungroup() %>%
+        tbl_df()
+    
+    grp_turma_freq_contato <- 
+        lista_pos_gabarito$dados %>%
+        group_by(turmas, frequencia) %>%
+        summarise(qtde = n(),
+                  total_acertos_esperado = qtde * 5,
+                  p_exoticas = sum(exoticas) / total_acertos_esperado,
+                  p_nativas = sum(nativas) / total_acertos_esperado,
+                  p_origem_exoticas = sum(origem_exoticas) / total_acertos_esperado,
+                  p_origem_nativas = sum(origem_nativas) / total_acertos_esperado,
+                  p_indice_exoticas = sum(indice_exoticas) / total_acertos_esperado,
+                  p_indice_nativas = sum(indice_nativas) / total_acertos_esperado) %>%
+        ungroup() %>%
+        mutate(
+            frequencia = factor(frequencia, levels = c("Nunca", "Raramente", "Ás vezes", "Frequentemente", "Sempre"))
+        ) %>%
+        tbl_df()
+    
+    grp_turma_aula <- 
+        lista_pos_gabarito$dados %>%
+        group_by(turmas, aula) %>%
+        summarise(qtde = n(),
+                  total_acertos_esperado = qtde * 5,
+                  p_exoticas = sum(exoticas) / total_acertos_esperado,
+                  p_nativas = sum(nativas) / total_acertos_esperado,
+                  p_origem_exoticas = sum(origem_exoticas) / total_acertos_esperado,
+                  p_origem_nativas = sum(origem_nativas) / total_acertos_esperado,
+                  p_indice_exoticas = sum(indice_exoticas) / total_acertos_esperado,
+                  p_indice_nativas = sum(indice_nativas) / total_acertos_esperado) %>%
+        ungroup() %>%
+        tbl_df()
+    
+    grp_turma_fez_aula <- 
+        lista_pos_gabarito$dados %>%
+        group_by(turmas, fez.aula) %>%
+        summarise(qtde = n(),
+                  total_acertos_esperado = qtde * 5,
+                  p_exoticas = sum(exoticas) / total_acertos_esperado,
+                  p_nativas = sum(nativas) / total_acertos_esperado,
+                  p_origem_exoticas = sum(origem_exoticas) / total_acertos_esperado,
+                  p_origem_nativas = sum(origem_nativas) / total_acertos_esperado,
+                  p_indice_exoticas = sum(indice_exoticas) / total_acertos_esperado,
+                  p_indice_nativas = sum(indice_nativas) / total_acertos_esperado) %>%
+        ungroup() %>%
+        tbl_df()
+    
+    grp_turma_flona <- 
+        lista_pos_gabarito$dados %>%
+        filter(municipio == "Silvânia") %>% # Filtrando apenas Silvania
+        group_by(turmas, flona) %>%
         summarise(qtde = n(),
                   total_acertos_esperado = qtde * 5,
                   p_exoticas = sum(exoticas) / total_acertos_esperado,
@@ -260,7 +367,12 @@ computar_proporcoes <- function(lista_pos_gabarito) {
         list(
             por_turma = grp_turma,
             por_turma_sexo = grp_turma_sexo,
-            por_turma_area = grp_turma_area
+            por_municipio = grp_turma_municipio,
+            por_turma_area = grp_turma_area,
+            por_turma_freq_contato = grp_turma_freq_contato,
+            por_turma_aula = grp_turma_aula,
+            por_turma_fez_aula = grp_turma_fez_aula,
+            por_turma_flona = grp_turma_flona
         )
     
     return(resultado)
@@ -301,11 +413,12 @@ computar_grupos_taxonomicos <- function(lista_pos_gabarito) {
 # Aplicação do questionário no gabarito
 ## Processar o gabarito sobre cada uma das respostas dos alunos...
 if(!exists("pos_gabarito")) {
-    dados.importados <- importar_dados_ensino_medio()
-    pos_gabarito <- aplicar_gabarito_no_questionario(dados.importados)
+    dados_importados <- importar_dados_ensino_medio()
+    pos_gabarito <- aplicar_gabarito_no_questionario(dados_importados$respostas)
     pos_gabarito$especies <- computar_lista_especies(pos_gabarito)
     pos_gabarito$proporcoes <- computar_proporcoes(pos_gabarito)
     pos_gabarito$taxonomicos <- computar_grupos_taxonomicos(pos_gabarito)
+    pos_gabarito$raking_animais <- dados_importados$raking_animais
     
     # setwd("F:/gdrive/code/mestrados/mestrado-exoticas-nativas/r")
     # setwd("/Users/hersonmelo/Desktop/mestrado-exoticas-nativas/r")
