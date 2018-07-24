@@ -353,12 +353,6 @@ data.frame(
 ```
 
 
-```{r}
-## Hipotese 1
-# t.test(jogo.dados.em.p$p_nativas, jogo.dados.em.p$p_exoticas, 
-#        alternative = "two.sided", paired = F, var.equal = T)
-```
-
 #### 2. Os alunos identificam mais espécies de origem exótica que as de origem nativa.
 
 **TEST T-student**  
@@ -442,15 +436,7 @@ ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.01, 0.05, 1),
     
 ```
 
-#### 5. 
-
-```{r}
-## Hipotese 4
-# t.test(jogo.dados.em.p$p_exoticas, jogo.dados.em.p$p_origem_exoticas, 
-#        alternative = "two.sided", paired = F, var.equal = T)
-```
-
-#### 6. Estudantes que residem na Cidade 1 (com UC) identificam mais espécies nativas do que estudantes que residem na Cidade 2 (sem UC).
+#### 5. Estudantes que residem na Cidade 1 (com UC) identificam mais espécies nativas do que estudantes que residem na Cidade 2 (sem UC).
 
 ```{r}
 proporcoesPorMunicipio <-
@@ -460,47 +446,37 @@ proporcoesPorMunicipio <-
             unique(),
         pos_gabarito$proporcoes$por_turma_sexo
     ) %>%
-    select(municipio, p_nativas) %>%
     tbl_df()
 
-# tmp <- dcast(proporcoesPorMunicipio, formula = municipio)
-# names(tmp) <- c("valor", "bela_vista", "silvania")
-# boxplot(tmp$valor, tmp$bela_vista)
+nat <- NULL
+nat$silvania <- 
+    na.omit(spread(proporcoesPorMunicipio, key = municipio, value = p_nativas)[,"Silvânia"]) %>% as.vector()
+nat$belavista <- 
+    na.omit(spread(proporcoesPorMunicipio, key = municipio, value = p_nativas)[,"Bela Vista de Goiás"]) %>% as.vector()
 
-nat_silvania <-
-    (proporcoesPorMunicipio %>%
-        filter(municipio == "Silvânia"))$p_nativas
-nat_belavista <-
-    (proporcoesPorMunicipio %>%
-        filter(municipio == "Bela Vista de Goiás"))$p_nativas
-    
-#cbind(nat_silvania, nat_belavista)
-boxplot(nat_silvania, nat_belavista)
-#summary(nat_silvania)
-#summary(nat_belavista)
+boxplot(nat$silvania, nat$belavista)
 #var.test(nat_silvania, nat_belavista, alternative = "two.sided")
 
-t.test(nat_silvania, nat_belavista,
+t.test(nat$silvania, nat$belavista,
        alternative = "two.sided", paired = F, var.equal = T)
 ```
 
-#### 7. Estudantes que residem em área rural tem maior conhecimento sobre as espécies nativas.
-
+#### 6. Estudantes que residem em área rural tem maior conhecimento sobre as espécies nativas.
 
 ```{r, fig.width=8, fig.height=3}
 tmp <- 
     pos_gabarito$proporcoes$por_turma_area %>%
-    select(area, p_nome_nativas = p_nativas, p_origem_nativas, p_indice_nativas) %>%
+    select(municipio, area, p_nome_nativas = p_nativas, p_origem_nativas, p_indice_nativas) %>%
     arrange(area) %>%
-    melt(id = "area")
+    melt(id = c("municipio", "area"))
 
 tmp <-
     cbind(tmp, colsplit(tmp$variable, "_", c("p", "indicador", "origem"))) %>%
-    select(area, indicador, origem, value)
+    select(municipio, area, indicador, origem, value)
 
 tmp %>%
   ggplot() + 
-  geom_boxplot(aes(x = area, y = value, fill = area), show.legend = T) + 
+  geom_boxplot(aes(x = area, y = value, fill = municipio), show.legend = T) + 
   scale_y_continuous(limits = c(0,1), labels = scales::percent) +
   facet_wrap(~indicador) +
   theme_bw() +
@@ -510,12 +486,29 @@ tmp %>%
 ```
 
 ```{r}
-t.anova <- aov(data = tmp, formula = value ~ area)
-t.anova
-summary(t.anova)
+#boxplot(value  ~ municipio + area, data = tmp)
+# interaction.plot(tmp$area, tmp$municipio, tmp$value)
+# interaction.plot(tmp$municipio, tmp$area, tmp$value)
+# aggregate(value ~ area * municipio, data = tmp, FUN = function(x) shapiro.test(x)$p.value)
+# tmp$bart = paste(tmp$municipio, "-", tmp$area)
+# bartlett.test(value ~ bart, data = tmp)
 
-tukey <- TukeyHSD(t.anova)
-tukey
+t.anova <- anova(lm(value  ~ municipio * area, data = tmp %>% filter(indicador == "indice")))
+t.anova
+
+tukey <- TukeyHSD(aov(lm(value  ~ municipio * area, data = tmp %>% filter(indicador == "indice"))))
+plot(tukey)
+
+tk <- as.data.frame(tukey$`municipio:area`)
+tk$comparacao = rownames(tk)
+rownames(tk) = NULL
+tk %>%
+    select(comparacao, diff:`p adj`) %>%
+    mutate(significancia = `p adj` <= 0.05) %>%
+    kable() %>%
+    kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
+    column_spec(1, bold = TRUE)
+
 ```
 
 #### 8. Frequencia de contato natureza
@@ -539,50 +532,31 @@ tmp %>%
   theme_bw() +
   labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
        y = "Percentual de identificação", x = "") +
-  theme(legend.position = "top")
-```
-
-```{r}
-tmp %>%
-    filter(indicador == "indice") %>%
-    select(frequencia, value)
-
-t.anova <- aov(data = tmp, formula = value ~ frequencia)
-t.anova
-summary(t.anova)
-
-tukey <- TukeyHSD(t.anova)
-tukey
-```
-
-
-```{r, fig.width=8, fig.height=3}
-tmp <- pos_gabarito$proporcoes$por_turma_freq_contato %>%
-  select(frequencia, p_nome_nativas = p_nativas, p_origem_nativas, p_indice_nativas) %>%
-  melt(id = "frequencia")
-
-cbind(tmp, colsplit(tmp$variable, "_", c("p", "indicador", "origem"))) %>%
-  select(frequencia, indicador, origem, value) %>%
-    # filter(origem == "nativas") %>%
-  ggplot() + 
-  geom_boxplot(aes(x = frequencia, y = value, fill = frequencia), show.legend = T) + 
-  scale_y_continuous(limits = c(0,1), labels = scales::percent) +
-  facet_wrap(~indicador) +
-  theme_bw() +
-  labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
-       y = "Percentual de identificação", x = "") +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1), 
+  theme(axis.text.x = element_text(angle = 25, hjust = 1),
         legend.position = "top")
-
 ```
 
 ```{r}
-t.test(pos_gabarito$proporcoes$por_turma_freq_contato$p_origem_nativas, 
-       pos_gabarito$proporcoes$por_turma_freq_contato$p_origem_exoticas, 
-       alternative = "two.sided", paired = F, var.equal = T)
+aggregate(value ~ frequencia, data = tmp %>% filter(indicador == "indice"), FUN = function(x) shapiro.test(x)$p.value)
+
+t.anova <- anova(lm(value  ~ frequencia, data = tmp %>% filter(indicador == "indice")))
+t.anova
+
+tukey <- TukeyHSD(aov(lm(value  ~ frequencia, data = tmp %>% filter(indicador == "indice"))))
+tukey
+plot(tukey)
+
+tk <- as.data.frame(tukey$frequencia)
+tk$comparacao = rownames(tk)
+rownames(tk) = NULL
+tk %>%
+    select(comparacao, diff:`p adj`) %>%
+    mutate(significancia = `p adj` <= 0.05) %>%
+    kable() %>%
+    kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
+    column_spec(1, bold = TRUE)
+
 ```
-
-
 
 #### 9. Fez aulas praticas
 
@@ -609,13 +583,60 @@ tmp %>%
 ```
 
 ```{r}
-t.anova <- aov(data = tmp, formula = value ~ fez.aula)
-t.anova
-summary(t.anova)
 
-tukey <- TukeyHSD(t.anova)
-tukey
+teste.anova <- function(formula, data) {
+    t.normalidade <- 
+        aggregate(formula, data, 
+                  FUN = function(x) shapiro.test(x)$p.value) %>%
+        mutate(H0 = (value <= 0.05),
+               normalidade = cell_spec(H0, bold = H0,
+                   color= ifelse(H0, "white", "black"), 
+                   background = ifelse(H0, "green", "#CCCCCC"))
+               ) %>%
+        kable(escape = F) %>%
+        kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
+        column_spec(1, bold = TRUE)
+
+    t.anova <- anova(lm(formula, data))
+    t.tukey <- TukeyHSD(aov(lm(formula, data)))
+
+    if(length(t.tukey) > 1) {
+        error("ANOVA fatorial (falta tratar isso)!")
+    }
+    tukey.tbl <- as.data.frame(t.tukey[[1]], cut.names = F)
+    tukey.tbl$comparacao = rownames(tukey.tbl)
+    rownames(tukey.tbl) = NULL
+    tabela.tukey <- tukey.tbl %>%
+        mutate(H0 = (`p adj` <= 0.05),
+               significancia = cell_spec(H0, bold = H0,
+                   color= ifelse(H0, "white", "black"), 
+                   background = ifelse(H0, "green", "#CCCCCC"))
+               ) %>%
+        select(comparacao, diff:`p adj`, significancia) %>%
+        kable(escape = F) %>%
+        kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
+        column_spec(1, bold = TRUE)
+    
+        
+    resultado <- 
+        list(
+            teste.normalidade = t.normalidade,
+            teste.anova = t.anova,
+            tukey = t.tukey,
+            tabela.tukey = tabela.tukey
+        )
+    return(resultado)
+}
+
+anova_fez.aula <- teste.anova(formula = value ~ fez.aula, 
+            data = tmp %>% filter(indicador == "indice"))
+
+anova_fez.aula$teste.normalidade
+anova_fez.aula$teste.anova
+anova_fez.aula$tabela.tukey
+
 ```
+
 
 
 #### 10. Estudantes da Cidade 1 (com UC) tem maior número de acertos de espécies nativas.
@@ -643,12 +664,20 @@ tmp %>%
 ```
 
 ```{r}
-t.anova <- aov(data = tmp, formula = value ~ flona)
-t.anova
-summary(t.anova)
+# t.anova <- aov(data = tmp, formula = value ~ flona)
+# t.anova
+# summary(t.anova)
+# 
+# tukey <- TukeyHSD(t.anova)
+# tukey
 
-tukey <- TukeyHSD(t.anova)
-tukey
+anova_flona <- teste.anova(formula = value ~ flona, 
+            data = tmp %>% filter(indicador == "indice"))
+
+anova_flona$teste.normalidade
+anova_flona$teste.anova
+anova_flona$tabela.tukey
+
 ```
 
 #### Ranking dos animais

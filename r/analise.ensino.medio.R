@@ -291,7 +291,7 @@ computar_proporcoes <- function(lista_pos_gabarito) {
     
     grp_turma_area <- 
         lista_pos_gabarito$dados %>%
-        group_by(turmas, area) %>%
+        group_by(turmas, municipio, area) %>%
         summarise(qtde = n(),
                   total_acertos_esperado = qtde * 5,
                   p_exoticas = sum(exoticas) / total_acertos_esperado,
@@ -302,7 +302,7 @@ computar_proporcoes <- function(lista_pos_gabarito) {
                   p_indice_nativas = sum(indice_nativas) / total_acertos_esperado) %>%
         ungroup() %>%
         tbl_df()
-    
+
     grp_turma_freq_contato <- 
         lista_pos_gabarito$dados %>%
         group_by(turmas, frequencia) %>%
