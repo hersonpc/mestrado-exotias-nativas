@@ -404,7 +404,7 @@ computar_grupos_taxonomicos <- function(lista_pos_gabarito) {
     resultado <-
         tbl_df(
             cbind(tbl_grupos, colsplit(tbl_grupos$variable, "_", c("origem", "grupo"))) %>% 
-                select(turmas, grupo, origem, valor = value)
+                select(turmas, grupo, origem, value)
         )
     
     return(resultado)
