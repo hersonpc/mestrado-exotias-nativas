@@ -25,10 +25,19 @@ library(stats)
 library(multcompView)
 
 suppressWarnings(Sys.setlocale("LC_ALL", 'en_US.UTF-8'))
-options(scipen = 999, digits = 4)
+#options(scipen = 999, digits = 4)
+options(scipen = 0, digits = 4)
 # options("scipen"=-100, "digits"=6)
 # getwd()
 load("dados.RData")
+
+
+my_theme <- 
+    theme(axis.text.x = element_text(angle = 25, hjust = 1, size = 12), 
+          axis.text.y = element_text(size = 12),
+          strip.text.x = element_text(size = 14, face = "bold"),
+          title = element_text(size = 16, face = "bold"),
+          legend.position = "top")
 
 # Implementando formula para testes estatísticos padronizada
 teste.anova <- function(formula, data) {
@@ -165,7 +174,7 @@ t6 <- grafico_densidade("p_indice_exoticas", "orangered", "Indice de reconhecime
 
 #### Identificação médio das turmas (nomes das espécies & origens)
 
-```{r fig.width=8, fig.height=5}
+```{r fig.width=6, fig.height=5}
 grid.arrange(t1$plot, t2$plot,
              t1$normalidade, t2$normalidade,
              t3$plot, t4$plot,
@@ -280,7 +289,7 @@ head(pos_gabarito$especies, 10)
 #### Indice de identificação por Origem
 
 ```{r, fig.width=8, fig.height=4}
-pos_gabarito$especie %>% 
+pos_gabarito$especies %>% 
     ggplot(aes(especieDesc, fr, fill = grupo)) + 
     geom_bar(stat="identity") +
     geom_text(aes(label = paste0(round(fr * 100, 1), "%")), 
@@ -290,17 +299,15 @@ pos_gabarito$especie %>%
     facet_wrap(~origem, scales = "free_y") +
     coord_flip() +
     theme_bw() +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1),
-          legend.position = "top") +
     labs(title = "Indice de Identificação por Origem",
-         fill = "Grupos", x = "", y = "\nFrequencia relativa")
-
+         fill = "Grupos", x = "", y = "\nFrequencia relativa") +
+    my_theme
 ```
 
 #### Indice de identificação por Espécie
 
 ```{r, fig.width=8, fig.height=4}
-pos_gabarito$especie %>% 
+pos_gabarito$especies %>% 
     ggplot(aes(especieDesc, fr, fill = origem)) + 
     geom_bar(stat="identity") +
     geom_text(aes(label = paste0(round(fr * 100, 1), "%")), 
@@ -310,10 +317,9 @@ pos_gabarito$especie %>%
     facet_wrap(~grupo, scales = "free_y") +
     coord_flip() +
     theme_bw() +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1),
-          legend.position = "top") +
     labs(title = "Indice de Identificação por Espécie",
-         fill = "Origem", x = "", y = "\nFrequencia relativa")
+         fill = "Origem", x = "", y = "\nFrequencia relativa") +
+    my_theme
 ```
 
 ## Testes de hipoteses
@@ -323,11 +329,7 @@ Esperado p-valor <= 0.05 no teste de hipotese (espera-se H1)
 
 ### 1 - Os alunos itendificam mais os nomes dos animais de espécies exóticas que os animais de espécies nativas.
 
-**TEST T-student**  
-H0 = Tident(exoticas) = Tident(nativas)  
-H1 = Tident(exoticas) > Tident(nativas)
-
-```{r, fig.width=8, fig.height=3}
+```{r, fig.width=6, fig.height=3}
 tmp <- pos_gabarito$proporcoes$por_turma %>%
   select(turmas, p_nome_exoticas = p_exoticas, p_nome_nativas = p_nativas, p_origem_exoticas:p_indice_nativas) %>%
   melt(id = "turmas")
@@ -341,8 +343,7 @@ cbind(tmp, colsplit(tmp$variable, "_", c("p", "indicador", "origem"))) %>%
   theme_bw() +
   labs(title = "Boxplot de identificação dos critérios estabelecidos",
        y = "Percentual de identificação", x = "") +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1), 
-        legend.position = "top")
+  my_theme
 ```
 
 ```{r}
@@ -398,10 +399,6 @@ data.frame(
 
 ### 2 - Os alunos identificam mais espécies de origem exótica que as de origem nativa.
 
-**TEST T-student**  
-H0 = Tident(origem.exoticas) = Tident(origem.nativas)  
-H1 = Tident(origem.exoticas) > Tident(origem.nativas)
-
 ```{r}
 t.test(pos_gabarito$proporcoes$por_turma$p_origem_nativas, 
        pos_gabarito$proporcoes$por_turma$p_origem_exoticas, 
@@ -414,110 +411,56 @@ t.test(pos_gabarito$proporcoes$por_turma$p_origem_nativas,
 
 ### 4 - Os alunos reconhecem mais mamíferos do que os demais grupos taxonómicos.
 
-**ANOVA**  
-
-```{r, fig.width=8, fig.height=3}
+```{r, fig.width=6, fig.height=3}
 pos_gabarito$taxonomicos %>%
-  ggplot() + 
-  geom_boxplot(aes(x = grupo, y = value, fill = origem), show.legend = T) + 
-  scale_y_continuous(limits = c(0,1), labels = scales::percent) +
-  theme_bw() +
-  labs(title = "Boxplot de identificação de espécies por grupo taxonômico",
-       y = "Percentual de identificação", x = "") +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1), 
-        legend.position = "top")
+    ggplot() + 
+    geom_boxplot(aes(x = grupo, y = value, fill = origem), show.legend = T) + 
+    scale_y_continuous(limits = c(0,1), labels = scales::percent) +
+    theme_bw() +
+    labs(title = "Boxplot de identificação de espécies por grupo taxonômico",
+         y = "Percentual de identificação", x = "") +
+    my_theme
 ```
 
 ```{r, fig.width=8, fig.height=5}
-anova_taxonomico <- teste.anova(formula = value ~ grupo, 
-            data = pos_gabarito$taxonomicos)
-
-anova_taxonomico$teste.normalidade
-anova_taxonomico$teste.anova
-anova_taxonomico$tabela.tukey
-
-# dadosANOVA <- 
-#     pos_gabarito$taxonomicos %>%
-#     select(turmas, grupos = grupo, valor)
-# #anova <- aov(data = pos_gabarito$taxonomicos, valor ~ grupo + origem)
-# anova <- aov(data = dadosANOVA, valor ~ grupos)
-# summary(anova)
-# tukey <- TukeyHSD(anova)
-# tukey
-# #plot(tukey, las = 1, col = "brown")
-# 
-# tky = as.data.frame(tukey$grupos)
-# tky$pair = rownames(tky)
-# ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.01, 0.05, 1), 
-#                            label = c("p<0.01","p<0.05","Não significativo")))) +
-#     geom_hline(yintercept=0, lty="11", colour="grey30") +
-#     geom_errorbar(aes(pair, ymin=lwr, ymax=upr), width=0.2) +
-#     geom_point(aes(pair, diff)) +
-#     coord_flip() +
-#     theme_bw() +
-#     theme(axis.text.x = element_text(angle = 90, hjust = 1),
-#           legend.position = "top") +
-#     labs(title = "Tukey",
-#          colour = "", x = "Comparação", y = "Diferença")
-    
-```
-
-```{r, fig.width=8, fig.height=8}
-# dadosANOVA <- 
-#     pos_gabarito$taxonomicos %>%
-#     mutate(grupos = paste(grupo, "@", origem)) %>%
-#     select(turmas, grupos, valor)
-# #anova <- aov(data = pos_gabarito$taxonomicos, valor ~ grupo + origem)
-# anova <- aov(data = dadosANOVA, valor ~ grupos)
-# summary(anova)
-# tukey <- TukeyHSD(anova)
-# tukey
-# #plot(tukey, las = 1, col = "brown")
-# 
-# tky = as.data.frame(tukey$grupos)
-# tky$pair = rownames(tky)
-# ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.01, 0.05, 1), 
-#                            label = c("p<0.01","p<0.05","Non-Sig")))) +
-#     geom_hline(yintercept=0, lty="11", colour="grey30") +
-#     geom_errorbar(aes(pair, ymin=lwr, ymax=upr), width=0.2) +
-#     geom_point(aes(pair, diff)) +
-#     coord_flip() +
-#     theme_bw() +
-#     theme(axis.text.x = element_text(angle = 90, hjust = 1),
-#           legend.position = "top") +
-#     labs(title = "Tukey",
-#          colour = "", x = "Comparação", y = "Diferença")
-    
+# Realizando Anova fatorial
+anova(lm(value ~ grupo * origem, pos_gabarito$taxonomicos))
+TukeyHSD(aov(lm(value ~ grupo * origem, pos_gabarito$taxonomicos)))
 ```
 
 ### 5 - Estudantes que residem na Cidade 1 (com UC) identificam mais espécies nativas do que estudantes que residem na Cidade 2 (sem UC).
 
-```{r}
-proporcoesPorMunicipio <-
+```{r, fig.width=6, fig.height=3}
+tmp <-
     merge(
         pos_gabarito$dados %>% 
             select(turmas, municipio) %>% 
             unique(),
-        pos_gabarito$proporcoes$por_turma_sexo
+        pos_gabarito$proporcoes$por_turma_area
     ) %>%
+    select(municipio, area, value = p_nativas) %>%
     tbl_df()
 
-nat <- NULL
-nat$silvania <- 
-    na.omit(spread(proporcoesPorMunicipio, key = municipio, value = p_nativas)[,"Silvânia"]) %>% as.vector()
-nat$belavista <- 
-    na.omit(spread(proporcoesPorMunicipio, key = municipio, value = p_nativas)[,"Bela Vista de Goiás"]) %>% as.vector()
+# Realizando o teste T
+t.test(value ~ municipio, tmp)
+```
 
-boxplot(nat$silvania, nat$belavista)
-#var.test(nat_silvania, nat_belavista, alternative = "two.sided")
+```{r, fig.width=6, fig.height=3}
+tmp %>%
+  ggplot() + 
+  geom_boxplot(aes(x = area, y = value, fill = municipio), show.legend = T) + 
+  scale_y_continuous(limits = c(0,1), labels = scales::percent) +
+  facet_wrap(~municipio) +
+  theme_bw() +
+  labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
+       y = "Percentual de identificação", x = "") +
+  my_theme
 
-t.test(nat$silvania, nat$belavista,
-       alternative = "two.sided", paired = F, var.equal = T)
 ```
 
 ### 6 - Estudantes que residem em área rural tem maior conhecimento sobre as espécies nativas.
 
-```{r, fig.width=8, fig.height=3}
+```{r, fig.width=6, fig.height=3}
 tmp <- 
     pos_gabarito$proporcoes$por_turma_area %>%
     select(municipio, area, p_nome_nativas = p_nativas, p_origem_nativas, p_indice_nativas) %>%
@@ -536,7 +479,7 @@ tmp %>%
   theme_bw() +
   labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
        y = "Percentual de identificação", x = "") +
-  theme(legend.position = "top")
+  my_theme
 ```
 
 ```{r}
@@ -548,10 +491,14 @@ tmp %>%
 # bartlett.test(value ~ bart, data = tmp)
 
 t.anova <- anova(lm(value  ~ municipio * area, data = tmp %>% filter(indicador == "indice")))
-t.anova
+t.anova %>%
+    kable() %>%
+    kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
+    column_spec(1, bold = TRUE)
 
 tukey <- TukeyHSD(aov(lm(value  ~ municipio * area, data = tmp %>% filter(indicador == "indice"))))
-plot(tukey)
+tukey
+#plot(tukey)
 
 tk <- as.data.frame(tukey$`municipio:area`)
 tk$comparacao = rownames(tk)
@@ -569,7 +516,7 @@ tk %>%
 
 ### 8 - Frequencia de contato natureza
 
-```{r, fig.width=8, fig.height=3}
+```{r, fig.width=6, fig.height=3}
 tmp <- 
     pos_gabarito$proporcoes$por_turma_freq_contato %>%
     select(frequencia, p_nome_nativas = p_nativas, p_origem_nativas, p_indice_nativas) %>%
@@ -588,19 +535,23 @@ tmp %>%
   theme_bw() +
   labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
        y = "Percentual de identificação", x = "") +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1),
-        legend.position = "top")
+  my_theme
 ```
 
 ```{r}
-aggregate(value ~ frequencia, data = tmp %>% filter(indicador == "indice"), FUN = function(x) shapiro.test(x)$p.value)
+# aggregate(value ~ frequencia, 
+#           data = tmp %>% filter(indicador == "indice"), 
+#           FUN = function(x) shapiro.test(x)$p.value)
 
 t.anova <- anova(lm(value  ~ frequencia, data = tmp %>% filter(indicador == "indice")))
-t.anova
+t.anova %>%
+    kable() %>%
+    kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
+    column_spec(1, bold = TRUE)
 
 tukey <- TukeyHSD(aov(lm(value  ~ frequencia, data = tmp %>% filter(indicador == "indice"))))
 tukey
-plot(tukey)
+#plot(tukey)
 
 tk <- as.data.frame(tukey$frequencia)
 tk$comparacao = rownames(tk)
@@ -616,7 +567,7 @@ tk %>%
 
 ### 9 - Fez aulas praticas
 
-```{r, fig.width=8, fig.height=3}
+```{r, fig.width=6, fig.height=3}
 tmp <- 
     pos_gabarito$proporcoes$por_turma_fez_aula %>%
     select(fez.aula, p_nome_nativas = p_nativas, p_origem_nativas, p_indice_nativas) %>%
@@ -634,8 +585,7 @@ tmp %>%
   theme_bw() +
   labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos - Alunos que fizeram aula",
        y = "Percentual de identificação", x = "") +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1), 
-        legend.position = "top")
+  my_theme
 ```
 
 ```{r}
@@ -650,7 +600,7 @@ anova_fez.aula$tabela.tukey
 
 ### 10 - Estudantes da Cidade 1 (com UC) tem maior número de acertos de espécies nativas.
 
-```{r, fig.width=8, fig.height=3}
+```{r, fig.width=6, fig.height=3}
 tmp <- 
     pos_gabarito$proporcoes$por_turma_flona %>%
     select(flona, p_nome_nativas = p_nativas, p_origem_nativas, p_indice_nativas) %>%
@@ -668,30 +618,21 @@ tmp %>%
   theme_bw() +
   labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos - Alunos que visitaram a Flona",
        y = "Percentual de identificação", x = "") +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1), 
-        legend.position = "top")
+  my_theme
 ```
 
 ```{r}
-# t.anova <- aov(data = tmp, formula = value ~ flona)
-# t.anova
-# summary(t.anova)
-# 
-# tukey <- TukeyHSD(t.anova)
-# tukey
-
 anova_flona <- teste.anova(formula = value ~ flona, 
             data = tmp %>% filter(indicador == "indice"))
 
 anova_flona$teste.normalidade
 anova_flona$teste.anova
 anova_flona$tabela.tukey
-
 ```
 
 ### 11 - Ranking dos animais
 
-```{r, fig.width=8, fig.height=4}
+```{r, fig.width=6, fig.height=4}
 a1 <- 
     pos_gabarito$raking_animais$nativos %>%
     head(20) %>%
@@ -703,7 +644,7 @@ a1 <-
     theme_bw() +
     labs(title = "Espécies citadas como nativas",
        y = "Frequencia", x = "") +
-    theme(axis.text.x = element_text(angle = 25, hjust = 1))
+    my_theme
 a2 <- 
     pos_gabarito$raking_animais$exoticos %>%
     head(20) %>%
@@ -715,11 +656,54 @@ a2 <-
     theme_bw() +
     labs(title = "Espécies citadas como exóticas",
        y = "Frequencia", x = "") +
-    theme(axis.text.x = element_text(angle = 25, hjust = 1))
+    my_theme
+
 grid.arrange(a1, a2,
              nrow = 2,
              top = textGrob("TOP 20 - Ranking das espécies citadas como exemplo\n", 
                             gp = gpar(fontsize = 20, font = 2))
 )
+```
+
+### 13 - Ranking dos animais citados para proteção
+
+```{r, fig.width=6, fig.height=2}
+a3 <- 
+    pos_gabarito$raking_animais$protegidos %>%
+    head(20) %>%
+    ggplot(aes(x = animais, y = freq, fill = freq)) +
+    geom_bar(stat="identity", show.legend = F) +
+    geom_text(aes(label = freq), position = position_dodge(0.9), vjust = -1, hjust = 0.5) +
+    scale_y_continuous(limits = c(0,190)) +
+    scale_fill_gradient(low = "green", high = "darkgreen") +
+    theme_bw() +
+    labs(title = "Espécies citadas como nativas",
+       y = "Frequencia", x = "") +
+    my_theme
+
+grid.arrange(a3,
+             top = textGrob("TOP 20 - Ranking das espécies citadas como exemplo para proteção\n", 
+                            gp = gpar(fontsize = 20, font = 2))
+)
+```
+
+```{r, echo=FALSE}
+## Anova por grupo de espécies
+
+# for(grp in unique(pos_gabarito$especie$grupo)) {
+#     message(grp)
+#     
+#     TukeyHSD(aov(lm(acertos ~ especie + grupo, tbl_especies1)))
+#     dados <- 
+#         pos_gabarito$especiesBruto %>% 
+#         filter(grupo == grp) %>% 
+#         mutate(value = fr, especie = factor(especie))
+#     #print(dados)
+#     #aggregate(value ~ grupo, dados,  FUN = function(x) shapiro.test(x)$p.value)
+#     
+#     shapiro.test(dados$fr)
+#     anova(lm(fr ~ especie, dados))
+#     TukeyHSD(aov(lm(fr ~ especie, dados)))
+# }
 ```
 

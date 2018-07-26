@@ -62,6 +62,20 @@ importar_dados_ensino_medio <- function() {
         arrange(desc(freq)) %>%
         mutate(animais = factor(animais, levels = animais))
 
+    animais_protegidos = trimws(c(questionario.descritivo$ex.prot.1, 
+                                questionario.descritivo$ex.prot.2, 
+                                questionario.descritivo$ex.prot.3)) %>% 
+        as.data.frame() %>% 
+        filter(. != "") %>%
+        tbl_df()
+    names(animais_protegidos) <- c("animais")
+    animais_protegidos <- 
+        animais_protegidos %>% 
+        group_by(animais) %>% 
+        summarise(freq = n()) %>% 
+        arrange(desc(freq)) %>%
+        mutate(animais = factor(animais, levels = animais))
+    
     resultado <- merge(dados, 
                     questionario.descritivo %>% 
                        select(codigo, sexo, idade, temp.residencia, area, bairro, nome.escola, frequencia, fez.aula, flona) %>%
@@ -73,17 +87,23 @@ importar_dados_ensino_medio <- function() {
         respostas = resultado,
         raking_animais = list(
             nativos = animais_nativos,
-            exoticos = animais_exoticos
+            exoticos = animais_exoticos,
+            protegidos = animais_protegidos
         )))
 }
 
-validar_questionario_no_gabarito <- function(data) {
+gabarito_questionario <- function() {
     if(!exists("gabarito")) {
         message("* Baixando o gabarito...                         ")
         url.gabarito <- 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqltencC-1KU1X4nz-CJsANjcne8yAu_9Y4D0aBbr_AA-FX1Y627CpsFEpLdBObmAKpsrITYutPrWg/pub?gid=0&single=true&output=csv'
         gabarito <<- read.csv(file = url.gabarito, stringsAsFactors = FALSE, encoding = "UTF-8")
         gabarito <<- gabarito %>% mutate(nativo_sn = substr(nativo_sn, 1, 1)) %>% tbl_df()
     }
+    return(gabarito)    
+}
+
+validar_questionario_no_gabarito <- function(data) {
+    gabarito <- gabarito_questionario()
     inc <- function(x) {eval.parent(substitute(x <- x + 1))}
     
     gabarito_do_modelo_quest <- (gabarito %>% filter(modelo == data$modelo))
@@ -212,12 +232,19 @@ computar_lista_especies <- function(lista_pos_gabarito) {
         group_by(modelo) %>%
         summarise(totalModelo = n())
     
+    # tbl_especies1 <-
+    #     merge(
+    #         lista_pos_gabarito$especies, 
+    #         gabarito_questionario() %>% 
+    #             select(modelo, especie, grupo, nativo_sn) %>%
+    #             unique(),
+    #         by = "especie")
     tbl_especies <-
         merge(
-            lista_pos_gabarito$especie %>%
+            lista_pos_gabarito$especies %>%
                 group_by(especie) %>%
                 summarise(acertos = sum(acertos)), 
-            gabarito %>% 
+            gabarito_questionario() %>% 
                 select(modelo, especie, grupo, nativo_sn) %>%
                 unique(),
             by = "especie")
@@ -415,13 +442,16 @@ computar_grupos_taxonomicos <- function(lista_pos_gabarito) {
 if(!exists("pos_gabarito")) {
     dados_importados <- importar_dados_ensino_medio()
     pos_gabarito <- aplicar_gabarito_no_questionario(dados_importados$respostas)
+    pos_gabarito_bkp <- pos_gabarito
+    pos_gabarito$especiesBruto <- pos_gabarito$especies
     pos_gabarito$especies <- computar_lista_especies(pos_gabarito)
     pos_gabarito$proporcoes <- computar_proporcoes(pos_gabarito)
     pos_gabarito$taxonomicos <- computar_grupos_taxonomicos(pos_gabarito)
     pos_gabarito$raking_animais <- dados_importados$raking_animais
     
     # setwd("F:/gdrive/code/mestrados/mestrado-exoticas-nativas/r")
-    # setwd("/Users/hersonmelo/Desktop/mestrado-exoticas-nativas/r")
+    setwd("/Users/hersonmelo/Desktop/mestrado-exoticas-nativas/r")
+    # knit("analise.ensino.medio.Rmd", output = "README.md")
     save(pos_gabarito, file = "dados.RData")
     # para recuperar variavel do arquivo *.RData use: load("dados.RData")
     
