@@ -33,7 +33,7 @@ importar_dados_ensino_medio <- function() {
                                         'q4', 'q5', 'ex.nat.1', 'ex.nat.2', 'ex.nat.3', 
                                         'frequencia', 'fez.aula', 'flona', 'flona.visitou', 
                                         'ex.prot.1', 'ex.prot.2', 'ex.prot.3', 
-                                        'nota')
+                                        'x', 'nota')
     animais_exoticos = trimws(c(questionario.descritivo$ex.exo.1, 
                                 questionario.descritivo$ex.exo.2, 
                                 questionario.descritivo$ex.exo.3)) %>% 
@@ -78,7 +78,8 @@ importar_dados_ensino_medio <- function() {
     
     resultado <- merge(dados, 
                     questionario.descritivo %>% 
-                       select(codigo, sexo, idade, temp.residencia, area, bairro, nome.escola, frequencia, fez.aula, flona) %>%
+                       select(codigo, sexo, idade, temp.residencia, area, 
+                              bairro, nome.escola, frequencia, fez.aula, flona) %>%
                        mutate(aula = ifelse(substr(fez.aula, 1, 1) == "S", "Sim", "Não") ), 
                     by = "codigo") %>%
                     tbl_df()
@@ -220,6 +221,17 @@ aplicar_gabarito_no_questionario <- function(dados) {
             dados %>% 
                 select(-data, -q1:-s10)
         ),
+        percentual_acerto = 
+            dados %>%
+            mutate(total_acertos_esperado = 5,
+                   p_nome_exoticas = (exoticas) / total_acertos_esperado,
+                   p_nome_nativas = (nativas) / total_acertos_esperado,
+                   p_origem_exoticas = (origem_exoticas) / total_acertos_esperado,
+                   p_origem_nativas = (origem_nativas) / total_acertos_esperado,
+                   p_indice_exoticas = (indice_exoticas) / total_acertos_esperado,
+                   p_indice_nativas = (indice_nativas) / total_acertos_esperado) %>%
+            select(codigo, municipio, turmas, area, sexo, frequencia, fez.aula, p_nome_exoticas:p_indice_nativas) %>%
+            tbl_df(),
         especies = tbl_df(tabela_especies)
     )
     
@@ -274,6 +286,19 @@ gravar_arquivo <- function(dados, nomeArquivo) {
 }
 
 computar_proporcoes <- function(lista_pos_gabarito) {
+    # dadosGeral <- 
+        # lista_pos_gabarito$dados %>%
+        # mutate(total_acertos_esperado = 5,
+        #         p_nome_exoticas = (exoticas) / total_acertos_esperado,
+        #         p_nome_nativas = (nativas) / total_acertos_esperado,
+        #         p_origem_exoticas = (origem_exoticas) / total_acertos_esperado,
+        #         p_origem_nativas = (origem_nativas) / total_acertos_esperado,
+        #         p_indice_exoticas = (indice_exoticas) / total_acertos_esperado,
+        #         p_indice_nativas = (indice_nativas) / total_acertos_esperado) %>%
+        # select(codigo, municipio, turmas, area, sexo, frequencia, fez.aula, p_nome_exoticas:p_indice_nativas) %>%
+        # tbl_df() %>%
+        # View()
+    
     grp_turma <- 
         lista_pos_gabarito$dados %>% 
         group_by(turmas) %>%
@@ -456,6 +481,7 @@ if(!exists("pos_gabarito")) {
     # para recuperar variavel do arquivo *.RData use: load("dados.RData")
     
     gravar_arquivo(pos_gabarito$dados, "dados.brutos.csv")
+    gravar_arquivo(pos_gabarito$percentual_acerto, "dados.acertos.csv")
     gravar_arquivo(pos_gabarito$especie_comp, "dados.animais.csv")
     gravar_arquivo(pos_gabarito$proporcoes$por_turma, "dados.clean.csv")
     gravar_arquivo(pos_gabarito$taxonomicos, "dados.taxonomicos.csv")
@@ -474,3 +500,40 @@ if(!exists("pos_gabarito")) {
 #               p_indice_nativas = sum(indice_nativas) / total_acertos_esperado) %>%
 #     ungroup()
 
+
+# 
+# grid.arrange(
+#     as.data.frame(table(pos_gabarito$dados$exoticas)) %>% 
+#         ggplot(aes(Var1, Freq)) + geom_col() + 
+#         labs(title = "Acerto de nomes exóticas", 
+#              x = "Numero de acertos", 
+#              y = "Quantidade de acertos"), 
+#     as.data.frame(table(pos_gabarito$dados$nativas)) %>% 
+#         ggplot(aes(Var1, Freq)) + geom_col() + 
+#         labs(title = "Acerto de nomes nativas", 
+#              x = "Numero de acertos", 
+#              y = "Quantidade de acertos"),
+#     as.data.frame(table(pos_gabarito$dados$origem_exoticas)) %>% 
+#         ggplot(aes(Var1, Freq)) + geom_col() + 
+#         labs(title = "Acerto de origem exóticas", 
+#              x = "Numero de acertos", 
+#              y = "Quantidade de acertos"), 
+#     as.data.frame(table(pos_gabarito$dados$origem_nativas)) %>% 
+#         ggplot(aes(Var1, Freq)) + geom_col() + 
+#         labs(title = "Acerto de origem nativas", 
+#              x = "Numero de acertos", 
+#              y = "Quantidade de acertos")
+# )
+# 
+# 
+# dados <- read.csv2("https://raw.githubusercontent.com/hersonpc/mestrado-exoticas-nativas/master/r/dados.brutos.csv",
+#                    stringsAsFactors = F, encoding = 'UTF-8') %>% tbl_df()
+# dados
+# 
+# library(dplyr)
+# dados2 <- 
+#     dados %>% 
+#     tbl_df() %>% 
+#     select(codigo, municipio, nome.escola, turmas, area, flona,
+#                  nome_exoticas = exoticas, nome_nativas = nativas,
+#                  origem_exoticas, origem_nativas, indice_exoticas, indice_nativas)
