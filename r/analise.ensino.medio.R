@@ -224,13 +224,24 @@ aplicar_gabarito_no_questionario <- function(dados) {
         percentual_acerto = 
             dados %>%
             mutate(total_acertos_esperado = 5,
+                   total_acertos_esperado_grupos_taxonomicos = 2,
                    p_nome_exoticas = (exoticas) / total_acertos_esperado,
                    p_nome_nativas = (nativas) / total_acertos_esperado,
                    p_origem_exoticas = (origem_exoticas) / total_acertos_esperado,
                    p_origem_nativas = (origem_nativas) / total_acertos_esperado,
                    p_indice_exoticas = (indice_exoticas) / total_acertos_esperado,
-                   p_indice_nativas = (indice_nativas) / total_acertos_esperado) %>%
-            select(codigo, municipio, turmas, area, sexo, frequencia, fez.aula, p_nome_exoticas:p_indice_nativas) %>%
+                   p_indice_nativas = (indice_nativas) / total_acertos_esperado,
+                   p_exotica_aves = exotica_aves / total_acertos_esperado_grupos_taxonomicos,
+                   p_exotica_invertebrado = exotica_invertebrado / total_acertos_esperado_grupos_taxonomicos,
+                   p_exotica_mamifero = exotica_mamifero / total_acertos_esperado_grupos_taxonomicos,
+                   p_exotica_peixe = exotica_peixe / total_acertos_esperado_grupos_taxonomicos,
+                   p_exotica_reptil = exotica_reptil / total_acertos_esperado_grupos_taxonomicos,
+                   p_nativa_aves = nativa_aves / total_acertos_esperado_grupos_taxonomicos,
+                   p_nativa_invertebrado = nativa_invertebrado / total_acertos_esperado_grupos_taxonomicos,
+                   p_nativa_mamifero = nativa_mamifero / total_acertos_esperado_grupos_taxonomicos,
+                   p_nativa_peixe = nativa_peixe / total_acertos_esperado_grupos_taxonomicos,
+                   p_nativa_reptil = nativa_reptil / total_acertos_esperado_grupos_taxonomicos) %>%
+            select(codigo, municipio, turmas, area, sexo, frequencia, fez.aula, p_nome_exoticas:p_nativa_reptil) %>%
             tbl_df(),
         especies = tbl_df(tabela_especies)
     )
@@ -431,8 +442,8 @@ computar_proporcoes <- function(lista_pos_gabarito) {
 }
 
 computar_grupos_taxonomicos <- function(lista_pos_gabarito) {
-    tbl_grupos <- 
-        lista_pos_gabarito$dados %>% 
+    tbl_grupos <-
+        lista_pos_gabarito$dados %>%
         group_by(turmas) %>%
         summarise(qtde = n(),
                   total_acertos_esperado = qtde,
@@ -448,14 +459,14 @@ computar_grupos_taxonomicos <- function(lista_pos_gabarito) {
                   nativa_reptil = sum(nativa_reptil) / total_acertos_esperado) %>%
         ungroup() %>%
         select(-qtde, -total_acertos_esperado)
-    
-    tbl_grupos <- 
+
+    tbl_grupos <-
         tbl_grupos %>%
-        melt(id = "turmas") 
-    
+        melt(id = "turmas")
+
     resultado <-
         tbl_df(
-            cbind(tbl_grupos, colsplit(tbl_grupos$variable, "_", c("origem", "grupo"))) %>% 
+            cbind(tbl_grupos, colsplit(tbl_grupos$variable, "_", c("origem", "grupo"))) %>%
                 select(turmas, grupo, origem, value)
         )
     
