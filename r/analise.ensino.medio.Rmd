@@ -211,15 +211,22 @@ Diferença de acertos
 ```{r, fig.width=7, fig.height=4}
 grid.arrange(
     ggplot(pos_gabarito$dados, aes(exoticas - nativas)) +
-        geom_histogram(bins = 9) +
+        geom_histogram(bins = 10) +
+        scale_y_continuous(limits = c(0,130)) +
+        scale_x_continuous(limits = c(-5,5)) +
         labs(title = "Identificação dos nomes", y = "Total de acertos") +
         my_theme,
     ggplot(pos_gabarito$dados, aes(origem_exoticas - origem_nativas)) +
-        geom_histogram(bins = 9) +
+        geom_histogram(bins = 10) +
+        #geom_density(fill = "red") +
+        scale_y_continuous(limits = c(0,130)) +
+        scale_x_continuous(limits = c(-5,5)) +
         labs(title = "Identificação das origens", y = "") +
         my_theme,
     ggplot(pos_gabarito$dados, aes(indice_exoticas - indice_nativas)) +
-        geom_histogram(bins = 9) +
+        geom_histogram(bins = 10, fill = "darkblue") +
+        scale_y_continuous(limits = c(0,130)) +
+        scale_x_continuous(limits = c(-5,5)) +
         labs(title = "Taxa de reconhecimento", y = "") +
         my_theme, 
     ggtexttable(normalidade(pos_gabarito$dados$exoticas - pos_gabarito$dados$nativas),
@@ -263,19 +270,77 @@ grid.arrange(
 )
 ```
 
+
+```{r, fig.width=8, fig.height=3}
+cidade1 <- pos_gabarito$percentual_acerto[pos_gabarito$percentual_acerto$municipio == "Silvânia",]
+cidade2 <- pos_gabarito$percentual_acerto[pos_gabarito$percentual_acerto$municipio == "Bela Vista de Goiás",]
+grid.arrange(
+    plotAnaliseMedias(
+        cidade1$p_indice_exoticas,
+        cidade1$p_indice_nativas,
+        "Silvânia"),
+    plotAnaliseMedias(
+        cidade2$p_indice_exoticas,
+        cidade2$p_indice_nativas,
+        "Bela Vista de Goiás", ytext = ""),
+    ncol = 2,
+    top = textGrob("Niveis de reconhecimento por origem\n", 
+                   gp = gpar(fontsize = 20, font = 2)),
+    right = "\n"
+)
+```
+
 Medindo as médias de acerto na identificação do nome das espécies
 
-```{r fig.width=6, fig.height=2}
+```{r fig.width=6, fig.height=3}
+# pos_gabarito$percentual_acerto %>%
+#     group_by(municipio) %>%
+#     summarise(exoticas = mean(p_indice_exoticas),
+#               nativas = mean(p_indice_nativas)) %>%
+#     ungroup() %>%
+#     melt(id = "municipio") %>%
+#     ggplot(aes(municipio, value, fill = variable)) +
+#     facet_wrap(~variable)+
+#     geom_point(show.legend = F) +
+#     geom_errorbar(aes(ymin = ic.media(variable)$error_inferior, ymax = ic.media(variable)$error_superior )) +
+#     labs(title = "Média de taxa de reconhecimento das origens exóticas por municipio\n",
+#          x = "", y = "Percentual médio de acerto\n") +
+#     my_theme
+```
+
+
+```{r fig.width=6, fig.height=1.5}
+barplot(tapply(
+    pos_gabarito$percentual_acerto$p_indice_exoticas, 
+    pos_gabarito$percentual_acerto$municipio,
+    mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
+```
+
+```{r fig.width=6, fig.height=1.5}
+barplot(tapply(
+    pos_gabarito$percentual_acerto$p_indice_exoticas, 
+    pos_gabarito$percentual_acerto$area,
+    mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
+```
+```{r fig.width=6, fig.height=1.5}
+barplot(tapply(
+    pos_gabarito$percentual_acerto$p_indice_nativas, 
+    pos_gabarito$percentual_acerto$area,
+    mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
+```
+
+```{r fig.width=6, fig.height=1.5}
 barplot(tapply(
     pos_gabarito$percentual_acerto$p_indice_exoticas, 
     pos_gabarito$percentual_acerto$turmas,
-    mean), main = "Média de identificação do nome de origem exóticas por turmas")
+    mean), main = "Média de taxa de reconhecimento das origens exóticas por turmas")
 ```
-```{r fig.width=6, fig.height=2}
+
+```{r fig.width=6, fig.height=1.5}
 barplot(tapply(
     pos_gabarito$percentual_acerto$p_indice_nativas, 
     pos_gabarito$percentual_acerto$turmas,
-    mean), main = "Média de identificação do nome de origem nativas por turmas")
+    mean), main = "Média de taxa de reconhecimento das origens nativas por turmas")
 ```
 
 
@@ -480,25 +545,42 @@ t2 <- t.test(
    pos_gabarito$percentual_acerto$p_origem_nativas, 
    alternative = "two.sided", paired = TRUE, conf.level = .95)
 t3 <- t.test(
-   pos_gabarito$percentual_acerto$p_indice_exoticas, 
-   pos_gabarito$percentual_acerto$p_indice_nativas, 
-   alternative = "two.sided", paired = TRUE, conf.level = .95)
-
+    pos_gabarito$percentual_acerto$p_indice_exoticas, 
+    pos_gabarito$percentual_acerto$p_indice_nativas, 
+    alternative = "two.sided", paired = TRUE, conf.level = .95)
+t1b <- wilcox.test(
+    pos_gabarito$percentual_acerto$p_nome_exoticas, 
+    pos_gabarito$percentual_acerto$p_nome_nativas, 
+    alternative = "two.sided", paired = TRUE)
+t2b <- wilcox.test(
+    pos_gabarito$percentual_acerto$p_origem_exoticas, 
+    pos_gabarito$percentual_acerto$p_origem_nativas, 
+    alternative = "two.sided", paired = TRUE)
+t3b <- wilcox.test(
+    pos_gabarito$percentual_acerto$p_indice_exoticas, 
+    pos_gabarito$percentual_acerto$p_indice_nativas, 
+    alternative = "two.sided", paired = TRUE)
 data.frame(
-    Algoritmo = c(t1$method, t2$method, t3$method),
     "Comparação" = c("Exóticas x Nativas"),
+    Algoritmo = c(t1$method, t2$method, t3$method, t1b$method, t2b$method, t3b$method),
     "Variável" = c(
         "Identificação do nome das espécies",
         "Identificação da origem",
         "Indice de reconhecimento"
     ),
-    p_valor = c(t1$p.value, t2$p.value, t3$p.value),
-    H0 = c(t1$p.value >= 0.05, t2$p.value >= 0.05, t3$p.value >= 0.05),
-    H1 = c(t1$p.value < 0.05, t2$p.value < 0.05, t3$p.value < 0.05),
+    p_valor = c(t1$p.value, t2$p.value, t3$p.value, 
+                t1b$p.value, t2b$p.value, t3b$p.value),
+    H0 = c(t1$p.value >= 0.05, t2$p.value >= 0.05, t3$p.value >= 0.05, 
+           t1b$p.value >= 0.05, t2b$p.value >= 0.05, t3b$p.value >= 0.05),
+    H1 = c(t1$p.value < 0.05, t2$p.value < 0.05, t3$p.value < 0.05,
+           t1b$p.value < 0.05, t2b$p.value < 0.05, t3b$p.value < 0.05),
     "Confiança" = c(
         paste(paste0(round(t1$conf.int * 100, 2), "%"), collapse = " ~ "),
         paste(paste0(round(t2$conf.int * 100, 2), "%"), collapse = " ~ "),
-        paste(paste0(round(t3$conf.int * 100, 2), "%"), collapse = " ~ ")
+        paste(paste0(round(t3$conf.int * 100, 2), "%"), collapse = " ~ "),
+        "-",
+        "-",
+        "-"
     )
 ) %>%
   mutate(
@@ -512,7 +594,7 @@ data.frame(
   ) %>%
   kable(escape = F) %>%
   kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
-  column_spec(1, bold = TRUE) %>%
+  column_spec(2, bold = TRUE) %>%
   collapse_rows(columns = 1:2, valign = "top") %>%
   footnote(general = "Intervalo de confiança 95%",
            general_title = "\nObs.: ",
@@ -522,21 +604,44 @@ data.frame(
 
 ### 1 - Os alunos itendificam mais os nomes dos animais de espécies exóticas que os animais de espécies nativas.
 
+Resultado do teste paramétrico
+
 ```{r, echo=FALSE}
 t1
+```
+Resultado do teste não paramétrico
+
+```{r, echo=FALSE}
+t1b
 ```
 
 
 ### 2 - Os alunos identificam mais espécies de origem exótica que as de origem nativa.
 
+Resultado do teste paramétrico
+
 ```{r, echo=FALSE}
 t2
 ```
 
+Resultado do teste não paramétrico
+
+```{r, echo=FALSE}
+t2b
+```
+
 ### 3 - Os alunos identificam mais as espécies exóticas (nome dos animais e origem) que espécies nativas.
+
+Resultado do teste paramétrico
 
 ```{r, echo=FALSE}
 t3
+```
+
+Resultado do teste não paramétrico
+
+```{r, echo=FALSE}
+t3b
 ```
 
 ### 4 - Os alunos reconhecem mais mamíferos do que os demais grupos taxonómicos.
@@ -557,11 +662,15 @@ tmp <- pos_gabarito$percentual_acerto %>%
     select(p_exotica_aves:p_nativa_reptil) %>%
     melt()
 
-tmp <- cbind(tmp, colsplit(tmp$variable, "_", c("p", "indicador", "origem"))) %>%
-    select(indicador, origem, value)
+tmp <- cbind(tmp, colsplit(tmp$variable, "_", c("p", "origem", "grupo"))) %>%
+    select(origem, grupo, value)
 
-anova(lm(value ~ indicador * origem, tmp))
-TukeyHSD(aov(lm(value ~ indicador * origem, tmp)))
+print(tmp)
+```
+
+```{r}
+anova(lm(value ~ origem * grupo, tmp))
+TukeyHSD(aov(lm(value ~ origem * grupo, tmp)))
 ```
 
 
