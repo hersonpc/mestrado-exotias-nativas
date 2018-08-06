@@ -700,7 +700,7 @@ t3b
 
 ### 4 - Os alunos reconhecem mais mamíferos do que os demais grupos taxonómicos.
 
-```{r, fig.width=6, fig.height=3}
+```{r, fig.width=6, fig.height=2.5}
 pos_gabarito$taxonomicos %>%
     ggplot() + 
     geom_boxplot(aes(x = grupo, y = value, fill = origem), show.legend = T) + 
@@ -719,7 +719,7 @@ tmp <- pos_gabarito$percentual_acerto %>%
 tmp <- cbind(tmp, colsplit(tmp$variable, "_", c("p", "origem", "grupo"))) %>%
     select(origem, grupo, value)
 
-print(tmp)
+#print(tmp)
 ```
 
 ```{r}
@@ -729,8 +729,8 @@ TukeyHSD(aov(lm(value ~ origem * grupo, tmp)))
 
 ```{r, fig.width=8, fig.height=5}
 # permanova
-library(vegan)
-adonis(value ~ origem * grupo, tmp, permutations=99)
+# library(vegan)
+# adonis(value ~ origem * grupo, tmp, permutations=99)
 ```
 
 ```{r, fig.width=8, fig.height=5}
@@ -755,7 +755,7 @@ tmp <- pos_gabarito$percentual_acerto %>%
 t.test(p_indice_nativas ~ area, tmp)
 ```
 
-```{r, fig.width=6, fig.height=3}
+```{r, fig.width=6, fig.height=2.5}
 tmp <- pos_gabarito$percentual_acerto %>%
     select(area, p_nome_exoticas:p_indice_nativas) %>%
     melt("area")
@@ -771,7 +771,6 @@ tmp %>%
   labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
        y = "Percentual de identificação", x = "") +
   my_theme
-
 ```
 
 ### 7 - Frequencia de contato natureza
@@ -794,7 +793,6 @@ tmp %>%
   labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
        y = "Percentual de identificação", x = "") +
   my_theme
-
 ```
 
 ```{r}
