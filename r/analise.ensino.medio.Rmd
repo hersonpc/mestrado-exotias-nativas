@@ -289,42 +289,6 @@ rbind(
 ```
 
 
-
-```{r, fig.width=8, fig.height=3}
-grid.arrange(
-    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_aves,
-                  pos_gabarito$percentual_acerto$p_nativa_aves,
-                  "Aves", "Média percentual de acertos\n",
-                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
-                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)),
-    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_invertebrado,
-                  pos_gabarito$percentual_acerto$p_nativa_invertebrado,
-                  "Invertebrados", y = "",
-                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
-                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)),
-    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_mamifero,
-                  pos_gabarito$percentual_acerto$p_nativa_mamifero,
-                  "Mamiferos", y = "",
-                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
-                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)), 
-    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_peixe,
-                  pos_gabarito$percentual_acerto$p_nativa_peixe,
-                  "Peixes", y = "",
-                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
-                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)), 
-    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_reptil,
-                  pos_gabarito$percentual_acerto$p_nativa_reptil,
-                  "Répteis", y = "",
-                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
-                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)), 
-    ncol = 5,
-    top = textGrob("Niveis de reconhecimento por origem\n", 
-                   gp = gpar(fontsize = 20, font = 2)),
-    right = "\n"
-)
-```
-
-
 ```{r, fig.width=8, fig.height=3}
 cidade1 <- pos_gabarito$percentual_acerto[pos_gabarito$percentual_acerto$municipio == "Silvânia",]
 cidade2 <- pos_gabarito$percentual_acerto[pos_gabarito$percentual_acerto$municipio == "Bela Vista de Goiás",]
@@ -559,7 +523,7 @@ pos_gabarito$especies %>%
     facet_wrap(~origem, scales = "free_y") +
     coord_flip() +
     theme_bw() +
-    labs(title = "Indice de Identificação por Origem",
+    labs(title = "Reconhecimento do nome das especies por origem",
          fill = "Grupos", x = "", y = "\nFrequencia relativa") +
     my_theme
 ```
@@ -577,7 +541,7 @@ pos_gabarito$especies %>%
     facet_wrap(~grupo, scales = "free_y") +
     coord_flip() +
     theme_bw() +
-    labs(title = "Indice de Identificação por Espécie",
+    labs(title = "Reconhecimento do nome das especies por grupo taxonómico",
          fill = "Origem", x = "", y = "\nFrequencia relativa") +
     my_theme
 ```
@@ -700,26 +664,52 @@ t3b
 
 ### 4 - Os alunos reconhecem mais mamíferos do que os demais grupos taxonómicos.
 
-```{r, fig.width=6, fig.height=2.5}
-pos_gabarito$taxonomicos %>%
-    ggplot() + 
-    geom_boxplot(aes(x = grupo, y = value, fill = origem), show.legend = T) + 
-    scale_y_continuous(limits = c(0,1), labels = scales::percent) +
-    theme_bw() +
-    labs(title = "Boxplot de identificação de espécies por grupo taxonômico",
-         y = "Percentual de identificação", x = "") +
-    my_theme
+```{r, fig.width=8, fig.height=3}
+grid.arrange(
+    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_aves,
+                  pos_gabarito$percentual_acerto$p_nativa_aves,
+                  "Aves", "Média percentual de acertos\n",
+                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
+                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)),
+    
+    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_invertebrado,
+                  pos_gabarito$percentual_acerto$p_nativa_invertebrado,
+                  "Invertebrados", y = "",
+                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
+                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)),
+    
+    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_mamifero,
+                  pos_gabarito$percentual_acerto$p_nativa_mamifero,
+                  "Mamiferos", y = "",
+                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
+                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)), 
+    
+    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_peixe,
+                  pos_gabarito$percentual_acerto$p_nativa_peixe,
+                  "Peixes", y = "",
+                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
+                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)), 
+    
+    plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_reptil,
+                  pos_gabarito$percentual_acerto$p_nativa_reptil,
+                  "Répteis", y = "",
+                  mean(pos_gabarito$percentual_acerto$p_indice_exoticas),
+                  mean(pos_gabarito$percentual_acerto$p_indice_nativas)), 
+    ncol = 5,
+    top = textGrob("Niveis de reconhecimento por origem\n", 
+                   gp = gpar(fontsize = 20, font = 2)),
+    right = "\n"
+)
 ```
 
-```{r}
+
+```{r, warning=FALSE}
 tmp <- pos_gabarito$percentual_acerto %>%
     select(p_exotica_aves:p_nativa_reptil) %>%
     melt()
 
 tmp <- cbind(tmp, colsplit(tmp$variable, "_", c("p", "origem", "grupo"))) %>%
     select(origem, grupo, value)
-
-#print(tmp)
 ```
 
 ```{r}
@@ -734,6 +724,17 @@ TukeyHSD(aov(lm(value ~ origem * grupo, tmp)))
 ```
 
 **Agrupado por turmas**
+
+```{r, fig.width=6, fig.height=2.5}
+pos_gabarito$taxonomicos %>%
+    ggplot() + 
+    geom_boxplot(aes(x = grupo, y = value, fill = origem), show.legend = T) + 
+    scale_y_continuous(limits = c(0,1), labels = scales::percent) +
+    theme_bw() +
+    labs(title = "Boxplot de identificação de espécies por grupo taxonômico",
+         y = "Percentual de identificação", x = "") +
+    my_theme
+```
 
 ```{r, fig.width=8, fig.height=5}
 # Realizando Anova fatorial

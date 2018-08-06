@@ -146,6 +146,7 @@ validar_questionario_no_gabarito <- function(data) {
                 inc(resumo$nome_exoticas)
                 inc(grupoTipo[grupoTipo$tipo == gabarito_questao$grupo,]$exotica)
             }
+            inc(grupoEspecies[grupoEspecies$especie == gabarito_questao$especie,]$acertos)
         }
         if(acertouOrigemEspecie) {
             if(animalNativo) {
@@ -160,7 +161,6 @@ validar_questionario_no_gabarito <- function(data) {
             } else {
                 inc(resumo$nome_origem_exoticas)
             }
-            inc(grupoEspecies[grupoEspecies$especie == gabarito_questao$especie,]$acertos)
         }
     }
     
@@ -499,6 +499,12 @@ if(!exists("pos_gabarito")) {
     gravar_arquivo(pos_gabarito$proporcoes$por_turma, "dados.clean.csv")
     gravar_arquivo(pos_gabarito$taxonomicos, "dados.taxonomicos.csv")
 }
+
+
+
+# tbl_df(tbl_especies) %>% group_by(grupo, origem, modelo) %>% summarise(n = n(), esperado = sum(tot.modelo), acertos = sum(qtde.acertos), fr = acertos / esperado) %>% View
+# tbl_df(tbl_especies) %>% group_by(grupo, origem) %>% summarise(n = n(), esperado = sum(tot.modelo), acertos = sum(qtde.acertos), fr = acertos / esperado) %>% View
+
 
 # 
 # pos_gabarito$dados %>%
