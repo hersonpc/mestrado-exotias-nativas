@@ -79,8 +79,9 @@ importar_dados_ensino_medio <- function() {
     resultado <- merge(dados, 
                     questionario.descritivo %>% 
                        select(codigo, sexo, idade, temp.residencia, area, 
-                              bairro, nome.escola, frequencia, fez.aula, flona) %>%
-                       mutate(aula = ifelse(substr(fez.aula, 1, 1) == "S", "Sim", "Não") ), 
+                              bairro, nome.escola, frequencia, fez.aula, flona, nota) %>%
+                       mutate(aula = ifelse(substr(fez.aula, 1, 1) == "S", "Sim", "Não"),
+                              nota = as.numeric(str_replace_all(nota, ",", "."))), 
                     by = "codigo") %>%
                     tbl_df()
     
@@ -224,7 +225,7 @@ aplicar_gabarito_no_questionario <- function(dados) {
         percentual_acerto = 
             dados %>%
             mutate(total_acertos_esperado = 5,
-                   total_acertos_esperado_grupos_taxonomicos = 2,
+                   total_acertos_esperado_grupos_taxonomicos = 1,
                    p_nome_exoticas = (exoticas) / total_acertos_esperado,
                    p_nome_nativas = (nativas) / total_acertos_esperado,
                    p_origem_exoticas = (origem_exoticas) / total_acertos_esperado,
@@ -241,7 +242,8 @@ aplicar_gabarito_no_questionario <- function(dados) {
                    p_nativa_mamifero = nativa_mamifero / total_acertos_esperado_grupos_taxonomicos,
                    p_nativa_peixe = nativa_peixe / total_acertos_esperado_grupos_taxonomicos,
                    p_nativa_reptil = nativa_reptil / total_acertos_esperado_grupos_taxonomicos) %>%
-            select(codigo, municipio, turmas, area, sexo, frequencia, fez.aula, p_nome_exoticas:p_nativa_reptil) %>%
+            select(codigo, municipio, turmas, area, sexo, frequencia, 
+                   fez.aula, flona, nota, p_nome_exoticas:p_nativa_reptil) %>%
             tbl_df(),
         especies = tbl_df(tabela_especies)
     )

@@ -103,11 +103,11 @@
 17;"aves";"nativa";0,714285714285714
 1;"invertebrado";"nativa";0,285714285714286
 2;"invertebrado";"nativa";0,333333333333333
-3;"invertebrado";"nativa";0
+3;"invertebrado";"nativa";0,0555555555555556
 4;"invertebrado";"nativa";0,166666666666667
 5;"invertebrado";"nativa";0,4375
 6;"invertebrado";"nativa";0,407407407407407
-7;"invertebrado";"nativa";0
+7;"invertebrado";"nativa";0,0952380952380952
 8;"invertebrado";"nativa";0,037037037037037
 9;"invertebrado";"nativa";0,391304347826087
 10;"invertebrado";"nativa";0,0909090909090909
@@ -117,7 +117,7 @@
 14;"invertebrado";"nativa";0,0666666666666667
 15;"invertebrado";"nativa";0,48
 16;"invertebrado";"nativa";0,5
-17;"invertebrado";"nativa";0,142857142857143
+17;"invertebrado";"nativa";0,2
 1;"mamifero";"nativa";0,428571428571429
 2;"mamifero";"nativa";1
 3;"mamifero";"nativa";0,277777777777778
