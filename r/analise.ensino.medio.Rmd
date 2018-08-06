@@ -510,7 +510,9 @@ variancia %>%
 head(pos_gabarito$especies, 10)
 ```
 
-#### Indice de identificação por Origem
+#### Reconhecimento do nome das especies
+
+##### Por origem
 
 ```{r, fig.width=8, fig.height=6}
 pos_gabarito$especies %>% 
@@ -528,7 +530,7 @@ pos_gabarito$especies %>%
     my_theme
 ```
 
-#### Indice de identificação por Espécie
+##### Por espécie
 
 ```{r, fig.width=8, fig.height=6}
 pos_gabarito$especies %>% 
