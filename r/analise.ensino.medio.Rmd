@@ -126,7 +126,7 @@ ic.media <- function(vetorDados){
 plotAnaliseMedias <- function(vetorExoticas, vetorNativas, 
                               titulo = "", 
                               ytext = "Média percentual de acertos\n",
-                              mediaExoticas = 0, mediaNativas = 0) {
+                              mediaExoticas = -1, mediaNativas = -1) {
     tmp <- rbind(
         cbind(origem = "Exoticas", ic.media(vetorExoticas)),
         cbind(origem = "Nativas", ic.media(vetorNativas))#,
@@ -141,9 +141,6 @@ plotAnaliseMedias <- function(vetorExoticas, vetorNativas,
         geom_crossbar(aes(ymin = error.inferior, ymax = error.superior), width = 0.1) +
         geom_errorbar(aes(ymin = limite.inferior, ymax = limite.superior), width = 0.1) +
         geom_point(aes(origem, media)) +
-        geom_hline(yintercept = mediaExoticas, linetype = 2, colour="darkblue") +
-        geom_hline(yintercept = mediaNativas, linetype = 1, colour="red") +
-        scale_color_discrete(name = "Y series", labels = c("Y2", "Y1")) +
         scale_y_continuous(limits = limitesEscala, labels = scales::percent) +
         labs(title = titulo,
              x = "",
@@ -151,6 +148,14 @@ plotAnaliseMedias <- function(vetorExoticas, vetorNativas,
              color = 'Médias origens geral') + 
         my_theme + 
         theme(legend.position="none")
+    if(mediaExoticas > 0) {
+        p <- 
+            p +
+            geom_hline(yintercept = mediaExoticas, linetype = 2, colour="darkblue") +
+            geom_hline(yintercept = mediaNativas, linetype = 1, colour="red") +
+            scale_color_discrete(name = "Y series", labels = c("Y2", "Y1"))
+
+    }
     return(p)
 }
 # plotAnaliseMedias(pos_gabarito$percentual_acerto$p_nome_exoticas,
@@ -166,7 +171,7 @@ plotAnaliseMedias <- function(vetorExoticas, vetorNativas,
 
 Tabulação do número de acertos dos itens do jogo de imagens.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.width=8, fig.height=2}
 desc_colunas <- data.frame(
     "Coluna" = c("Exoticas", "Nativas"),
     "Descrição" = c("Número de acertos dentre todas as imagens exibidas do tipo exótica, valor experado é 5.",
@@ -328,37 +333,37 @@ Medindo as médias de acerto na identificação do nome das espécies
 
 
 ```{r fig.width=6, fig.height=1.5}
-barplot(tapply(
-    pos_gabarito$percentual_acerto$p_indice_exoticas, 
-    pos_gabarito$percentual_acerto$municipio,
-    mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
+# barplot(tapply(
+#     pos_gabarito$percentual_acerto$p_indice_exoticas, 
+#     pos_gabarito$percentual_acerto$municipio,
+#     mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
 ```
 
 ```{r fig.width=6, fig.height=1.5}
-barplot(tapply(
-    pos_gabarito$percentual_acerto$p_indice_exoticas, 
-    pos_gabarito$percentual_acerto$area,
-    mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
+# barplot(tapply(
+#     pos_gabarito$percentual_acerto$p_indice_exoticas, 
+#     pos_gabarito$percentual_acerto$area,
+#     mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
 ```
 ```{r fig.width=6, fig.height=1.5}
-barplot(tapply(
-    pos_gabarito$percentual_acerto$p_indice_nativas, 
-    pos_gabarito$percentual_acerto$area,
-    mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
+# barplot(tapply(
+#     pos_gabarito$percentual_acerto$p_indice_nativas, 
+#     pos_gabarito$percentual_acerto$area,
+#     mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
 ```
 
-```{r fig.width=6, fig.height=1.5}
+```{r fig.width=6, fig.height=1.8}
 barplot(tapply(
     pos_gabarito$percentual_acerto$p_indice_exoticas, 
     pos_gabarito$percentual_acerto$turmas,
-    mean), main = "Média de taxa de reconhecimento das origens exóticas por turmas")
+    mean), main = "\nMédia de taxa de reconhecimento das origens exóticas por turmas\n")
 ```
 
-```{r fig.width=6, fig.height=1.5}
+```{r fig.width=6, fig.height=1.8}
 barplot(tapply(
     pos_gabarito$percentual_acerto$p_indice_nativas, 
     pos_gabarito$percentual_acerto$turmas,
-    mean), main = "Média de taxa de reconhecimento das origens nativas por turmas")
+    mean), main = "\nMédia de taxa de reconhecimento das origens nativas por turmas\n")
 ```
 
 
