@@ -733,6 +733,8 @@ TukeyHSD(aov(lm(value ~ origem * grupo, tmp)))
 # adonis(value ~ origem * grupo, tmp, permutations=99)
 ```
 
+**Agrupado por turmas**
+
 ```{r, fig.width=8, fig.height=5}
 # Realizando Anova fatorial
 anova(lm(value ~ grupo * origem, pos_gabarito$taxonomicos))
