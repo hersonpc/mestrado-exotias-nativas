@@ -151,16 +151,59 @@ plotAnaliseMedias <- function(vetorExoticas, vetorNativas,
     if(mediaExoticas > 0) {
         p <- 
             p +
-            geom_hline(yintercept = mediaExoticas, linetype = 2, colour="darkblue") +
-            geom_hline(yintercept = mediaNativas, linetype = 1, colour="red") +
-            scale_color_discrete(name = "Y series", labels = c("Y2", "Y1"))
-
+            geom_hline(yintercept = mediaExoticas, linetype = 2,
+                       colour="darkblue") +
+            geom_hline(yintercept = mediaNativas, linetype = 2, 
+                       colour="red")
     }
     return(p)
 }
-# plotAnaliseMedias(pos_gabarito$percentual_acerto$p_nome_exoticas,
-#                   pos_gabarito$percentual_acerto$p_nome_nativas,
-#                   "Identificação dos nomes")
+
+plotAnaliseTaxonomicosGenovart <- function() {
+  
+  mediaExoticas <- mean(pos_gabarito$percentual_acerto$p_nome_exoticas)
+  mediaNativas <- mean(pos_gabarito$percentual_acerto$p_nome_nativas)
+  
+  tmp <- rbind(
+    cbind(grupo = "Aves", origem = "exotica", ic.media(pos_gabarito$percentual_acerto$p_exotica_aves)),
+    cbind(grupo = "Invertebrados", origem = "exotica", ic.media(pos_gabarito$percentual_acerto$p_exotica_invertebrado)),
+    cbind(grupo = "Mamíferos", origem = "exotica", ic.media(pos_gabarito$percentual_acerto$p_exotica_mamifero)),
+    cbind(grupo = "Peixes", origem = "exotica", ic.media(pos_gabarito$percentual_acerto$p_exotica_peixe)),
+    cbind(grupo = "Répteis", origem = "exotica", ic.media(pos_gabarito$percentual_acerto$p_exotica_reptil)),
+    
+    cbind(grupo = "Aves", origem = "nativa", ic.media(pos_gabarito$percentual_acerto$p_nativa_aves)),
+    cbind(grupo = "Invertebrados", origem = "nativa", ic.media(pos_gabarito$percentual_acerto$p_nativa_invertebrado)),
+    cbind(grupo = "Mamíferos", origem = "nativa", ic.media(pos_gabarito$percentual_acerto$p_nativa_mamifero)),
+    cbind(grupo = "Peixes", origem = "nativa", ic.media(pos_gabarito$percentual_acerto$p_nativa_peixe)),
+    cbind(grupo = "Répteis", origem = "nativa", ic.media(pos_gabarito$percentual_acerto$p_nativa_reptil))
+  )
+  limitesEscala <- c(0,1)
+  
+  p <- 
+    ggplot(tmp, aes(grupo, media, colour = origem)) +
+    geom_crossbar(aes(ymin = error.inferior, ymax = error.superior), width = 0.1) +
+    geom_errorbar(aes(ymin = limite.inferior, ymax = limite.superior), width = 0.1) +
+    geom_point(aes(grupo, media)) +
+    scale_y_continuous(limits = limitesEscala, labels = scales::percent) +
+    labs(title = "Reconhecimento das espécies",
+         x = "",
+         y = "\nTaxa de respostas corretas\n",
+         colour = 'Origem:') + 
+    my_theme #+ theme(legend.position="none")
+  if(mediaExoticas > 0) {
+    p <- 
+      p +
+      geom_hline(yintercept = mediaExoticas, linetype = 2,
+                 colour="orangered")
+  }
+  if(mediaNativas > 0) {
+    p <- 
+      p +
+      geom_hline(yintercept = mediaNativas, linetype = 2, 
+                 colour="darkblue")
+  }
+  return(p)
+}
 
 ```
 
@@ -672,6 +715,10 @@ t3b
 ### 4 - Os alunos reconhecem mais mamíferos do que os demais grupos taxonómicos.
 
 ```{r, fig.width=8, fig.height=3}
+plotAnaliseTaxonomicosGenovart()
+```
+
+```{r, fig.width=8, fig.height=3}
 grid.arrange(
     plotAnaliseMedias(pos_gabarito$percentual_acerto$p_exotica_aves,
                   pos_gabarito$percentual_acerto$p_nativa_aves,
@@ -710,43 +757,43 @@ grid.arrange(
 ```
 
 
-```{r, warning=FALSE}
+```{r, message=FALSE}
 tmp <- pos_gabarito$percentual_acerto %>%
     select(p_exotica_aves:p_nativa_reptil) %>%
     melt()
+# anova(lm(value ~ variable, tmp))
 
 tmp <- cbind(tmp, colsplit(tmp$variable, "_", c("p", "origem", "grupo"))) %>%
     select(origem, grupo, value)
 ```
 
 ```{r}
-anova(lm(value ~ origem * grupo, tmp))
-TukeyHSD(aov(lm(value ~ origem * grupo, tmp)))
+anova(lm(value ~ grupo * origem, tmp))
+tukey <- TukeyHSD(aov(lm(value ~ grupo * origem, tmp)))
+tukey
 ```
 
-```{r, fig.width=8, fig.height=5}
-# permanova
-# library(vegan)
-# adonis(value ~ origem * grupo, tmp, permutations=99)
-```
+```{r, fig.width=8, fig.height=8}
+tky <- as.data.frame(tukey$`grupo:origem`)
+tky <- tky %>%
+  mutate(pair = reorder(rownames(tky), `diff`),
+         signifcante = (`p adj` <= 0.05),
+         cor = ifelse(`p adj` <= 0.05, "red", "black"))
 
-**Agrupado por turmas**
-
-```{r, fig.width=6, fig.height=2.5}
-pos_gabarito$taxonomicos %>%
-    ggplot() + 
-    geom_boxplot(aes(x = grupo, y = value, fill = origem), show.legend = T) + 
-    scale_y_continuous(limits = c(0,1), labels = scales::percent) +
-    theme_bw() +
-    labs(title = "Boxplot de identificação de espécies por grupo taxonômico",
-         y = "Percentual de identificação", x = "") +
-    my_theme
-```
-
-```{r, fig.width=8, fig.height=5}
-# Realizando Anova fatorial
-anova(lm(value ~ grupo * origem, pos_gabarito$taxonomicos))
-TukeyHSD(aov(lm(value ~ grupo * origem, pos_gabarito$taxonomicos)))
+ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.05, 1), 
+                               label = c("Significante", "Não significante")))) +
+  geom_hline(yintercept=0, lty="11", colour="grey30") +
+  geom_errorbar(aes(pair, ymin=lwr, ymax=upr), width=0.5, size=1) +
+  geom_point(aes(pair, diff), size=3, shape=21) +
+  scale_color_manual(values = c("red", "black"))+
+  coord_flip() +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1, size = 10),
+        axis.text.y = element_text(size = 8), 
+        legend.position = "top") +
+  labs(title = "Grupo taxonómico x Origem das espécies",
+       subtitle = "Análise Tukey",
+       colour = "", x = "Comparação de grupos", y = "\nDiferença entre as médias")
 ```
 
 ### 5 - Estudantes que residem na Cidade 1 (com UC) identificam mais espécies nativas do que estudantes que residem na Cidade 2 (sem UC).
