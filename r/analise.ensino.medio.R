@@ -477,28 +477,26 @@ computar_grupos_taxonomicos <- function(lista_pos_gabarito) {
 
 # Aplicação do questionário no gabarito
 ## Processar o gabarito sobre cada uma das respostas dos alunos...
-if(!exists("pos_gabarito")) {
-    dados_importados <- importar_dados_ensino_medio()
-    pos_gabarito <- aplicar_gabarito_no_questionario(dados_importados$respostas)
-    pos_gabarito_bkp <- pos_gabarito
-    pos_gabarito$especiesBruto <- pos_gabarito$especies
-    pos_gabarito$especies <- computar_lista_especies(pos_gabarito)
-    pos_gabarito$proporcoes <- computar_proporcoes(pos_gabarito)
-    pos_gabarito$taxonomicos <- computar_grupos_taxonomicos(pos_gabarito)
-    pos_gabarito$raking_animais <- dados_importados$raking_animais
-    
-    # setwd("F:/gdrive/code/mestrados/mestrado-exoticas-nativas/r")
-    setwd("/Users/hersonmelo/Desktop/mestrado-exoticas-nativas/r")
-    # knit("analise.ensino.medio.Rmd", output = "README.md")
-    save(pos_gabarito, file = "dados.RData")
-    # para recuperar variavel do arquivo *.RData use: load("dados.RData")
-    
-    gravar_arquivo(pos_gabarito$dados, "dados.brutos.csv")
-    gravar_arquivo(pos_gabarito$percentual_acerto, "dados.acertos.csv")
-    gravar_arquivo(pos_gabarito$especie_comp, "dados.animais.csv")
-    gravar_arquivo(pos_gabarito$proporcoes$por_turma, "dados.clean.csv")
-    gravar_arquivo(pos_gabarito$taxonomicos, "dados.taxonomicos.csv")
-}
+dados_importados <- importar_dados_ensino_medio()
+pos_gabarito <- aplicar_gabarito_no_questionario(dados_importados$respostas)
+pos_gabarito_bkp <- pos_gabarito
+pos_gabarito$especiesBruto <- pos_gabarito$especies
+pos_gabarito$especies <- computar_lista_especies(pos_gabarito)
+pos_gabarito$proporcoes <- computar_proporcoes(pos_gabarito)
+pos_gabarito$taxonomicos <- computar_grupos_taxonomicos(pos_gabarito)
+pos_gabarito$raking_animais <- dados_importados$raking_animais
+
+# setwd("F:/gdrive/code/mestrados/mestrado-exoticas-nativas/r")
+setwd("/Users/hersonmelo/Desktop/mestrado-exoticas-nativas/r")
+# knit("analise.ensino.medio.Rmd", output = "README.md")
+save(pos_gabarito, file = "dados.RData")
+# para recuperar variavel do arquivo *.RData use: load("dados.RData")
+
+gravar_arquivo(pos_gabarito$dados, "dados.brutos.csv")
+gravar_arquivo(pos_gabarito$percentual_acerto, "dados.acertos.csv")
+gravar_arquivo(pos_gabarito$especie_comp, "dados.animais.csv")
+gravar_arquivo(pos_gabarito$proporcoes$por_turma, "dados.clean.csv")
+gravar_arquivo(pos_gabarito$taxonomicos, "dados.taxonomicos.csv")
 
 
 

@@ -246,7 +246,7 @@ print(pos_gabarito$percentual_acerto)
 
 Níveis de reconhecimento (acertos) por tipo de origem dos animais
 
-```{r, fig.width=8, fig.height=4}
+```{r, fig.width=8, fig.height=3}
 grid.arrange(
     plotAnaliseMedias(pos_gabarito$percentual_acerto$p_nome_exoticas,
                   pos_gabarito$percentual_acerto$p_nome_nativas,
@@ -714,7 +714,7 @@ t3b
 
 ### 4 - Os alunos reconhecem mais mamíferos do que os demais grupos taxonómicos.
 
-```{r, fig.width=8, fig.height=3}
+```{r, fig.width=8, fig.height=4}
 plotAnaliseTaxonomicosGenovart()
 ```
 
@@ -773,7 +773,7 @@ tukey <- TukeyHSD(aov(lm(value ~ grupo * origem, tmp)))
 tukey
 ```
 
-```{r, fig.width=8, fig.height=8}
+```{r, fig.width=6, fig.height=7}
 tky <- as.data.frame(tukey$`grupo:origem`)
 tky <- tky %>%
   mutate(pair = reorder(rownames(tky), `diff`),
@@ -788,8 +788,8 @@ ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.05, 1),
   scale_color_manual(values = c("red", "black"))+
   coord_flip() +
   theme_bw() +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1, size = 10),
-        axis.text.y = element_text(size = 8), 
+  theme(axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10), 
         legend.position = "top") +
   labs(title = "Grupo taxonómico x Origem das espécies",
        subtitle = "Análise Tukey",
@@ -950,31 +950,5 @@ grid.arrange(a3,
              top = textGrob("TOP 20 - Ranking das espécies citadas como exemplo para proteção\n", 
                             gp = gpar(fontsize = 20, font = 2))
 )
-```
-
-```{r, echo=FALSE, fig.width=6, fig.height=2}
-# normalidade(pos_gabarito$percentual_acerto$nota)
-# barplot(table(pos_gabarito$percentual_acerto$nota))
-# hist(pos_gabarito$percentual_acerto$nota)
-# hist(log(pos_gabarito$percentual_acerto$nota))
-
-
-## Anova por grupo de espécies
-
-# for(grp in unique(pos_gabarito$especie$grupo)) {
-#     message(grp)
-#     
-#     TukeyHSD(aov(lm(acertos ~ especie + grupo, tbl_especies1)))
-#     dados <- 
-#         pos_gabarito$especiesBruto %>% 
-#         filter(grupo == grp) %>% 
-#         mutate(value = fr, especie = factor(especie))
-#     #print(dados)
-#     #aggregate(value ~ grupo, dados,  FUN = function(x) shapiro.test(x)$p.value)
-#     
-#     shapiro.test(dados$fr)
-#     anova(lm(fr ~ especie, dados))
-#     TukeyHSD(aov(lm(fr ~ especie, dados)))
-# }
 ```
 
