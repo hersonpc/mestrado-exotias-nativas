@@ -765,10 +765,11 @@ tmp <- pos_gabarito$percentual_acerto %>%
 
 tmp <- cbind(tmp, colsplit(tmp$variable, "_", c("p", "origem", "grupo"))) %>%
     select(origem, grupo, value)
+
+anova(lm(value ~ grupo * origem, tmp))
 ```
 
 ```{r}
-anova(lm(value ~ grupo * origem, tmp))
 tukey <- TukeyHSD(aov(lm(value ~ grupo * origem, tmp)))
 tukey
 ```
