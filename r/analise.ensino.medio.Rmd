@@ -137,17 +137,31 @@ plotAnaliseMedias <- function(vetorExoticas, vetorNativas,
     limitesEscala <- c(0,1)
     
     p <- 
-        ggplot(tmp, aes(origem, media)) +
+        ggplot(tmp, aes(origem, media, colour = origem, shape = origem)) +
         geom_crossbar(aes(ymin = error.inferior, ymax = error.superior), width = 0.1) +
         geom_errorbar(aes(ymin = limite.inferior, ymax = limite.superior), width = 0.1) +
-        geom_point(aes(origem, media)) +
+        geom_point(aes(origem, media), size = 3, show.legend = F) +
+    # geom_point(aes(grupo, media, shape = origem), size = 6, show.legend = F) +
+        scale_shape_manual(values=c(15, 19))+
         scale_y_continuous(limits = limitesEscala, labels = scales::percent) +
         labs(title = titulo,
              x = "",
              y = ytext,
              color = 'Médias origens geral') + 
-        my_theme + 
-        theme(legend.position="none")
+        # my_theme + 
+        # theme(legend.position="none")
+        theme_bw() +
+        theme(axis.text.x = element_text(size = 12), 
+              axis.text.y = element_text(size = 12),
+              strip.text.x = element_text(size = 14, face = "bold"),
+              axis.line = element_line(colour = "black"),
+              panel.border = element_blank(),
+              panel.background = element_blank(),
+              panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(),
+              title = element_text(size = 16, face = "bold"),
+              legend.position = "none")
+
     if(mediaExoticas > 0) {
         p <- 
             p +
@@ -204,29 +218,11 @@ plotAnaliseTaxonomicosGenovart <- function() {
   }
   return(p)
 }
-
 ```
 
 ## Análise do Jogo de Imagens aplicadas no Ensino médio
 
-
 ### Amostra dos dados da pesquisa realizada
-
-Tabulação do número de acertos dos itens do jogo de imagens.
-
-```{r, echo=FALSE, fig.width=8, fig.height=2}
-desc_colunas <- data.frame(
-    "Coluna" = c("Exoticas", "Nativas"),
-    "Descrição" = c("Número de acertos dentre todas as imagens exibidas do tipo exótica, valor experado é 5.",
-                    "Número de acertos dentre todas as imagens exibidas do tipo nativa, valor experado é 5.")
-    )
-desc_colunas %>%
-  kable() %>%
-  kable_styling(c("striped", "bordered"), full_width = TRUE) %>%
-  column_spec(1, bold = TRUE)
-
-```
-
 
 ```{r}
 head(pos_gabarito$dados, 10)
@@ -266,37 +262,30 @@ grid.arrange(
 
 Diferença de acertos
 
-```{r, fig.width=7, fig.height=4}
+```{r, fig.width=7, fig.height=6}
 grid.arrange(
-    ggplot(pos_gabarito$dados, aes(exoticas - nativas)) +
-        geom_histogram(bins = 10) +
-        scale_y_continuous(limits = c(0,130)) +
-        scale_x_continuous(limits = c(-5,5)) +
-        labs(title = "Identificação dos nomes", y = "Total de acertos") +
-        my_theme,
-    ggplot(pos_gabarito$dados, aes(origem_exoticas - origem_nativas)) +
-        geom_histogram(bins = 10) +
-        #geom_density(fill = "red") +
-        scale_y_continuous(limits = c(0,130)) +
-        scale_x_continuous(limits = c(-5,5)) +
-        labs(title = "Identificação das origens", y = "") +
-        my_theme,
-    ggplot(pos_gabarito$dados, aes(indice_exoticas - indice_nativas)) +
-        geom_histogram(bins = 10, fill = "darkblue") +
-        scale_y_continuous(limits = c(0,130)) +
-        scale_x_continuous(limits = c(-5,5)) +
-        labs(title = "Taxa de reconhecimento", y = "") +
-        my_theme, 
-    ggtexttable(normalidade(pos_gabarito$dados$exoticas - pos_gabarito$dados$nativas),
-                rows = NULL, theme = ttheme(base_style = "mOrange", base_size = 9)),
-    ggtexttable(normalidade(pos_gabarito$dados$origem_exoticas - pos_gabarito$dados$origem_nativas),
-                rows = NULL, theme = ttheme(base_style = "mOrange", base_size = 9)),
-    ggtexttable(normalidade(pos_gabarito$dados$indice_exoticas - pos_gabarito$dados$indice_nativas),
-                rows = NULL, theme = ttheme(base_style = "mOrange", base_size = 9)),
-    ncol = 3,
-    top = textGrob("Histograma das diferenças Exoticas x Nativas\n", 
+    pos_gabarito$dados %>%
+        ggplot(aes(x = exoticas - nativas)) +
+        geom_histogram(binwidth = 1) +
+        labs(title = "Nomes das espécies", y = "Freq") +
+        my_theme +
+        theme(axis.text.x = element_text(angle = 0, hjust = .5, size = 12)),
+    pos_gabarito$dados %>%
+        ggplot(aes(x = origem_exoticas - origem_nativas)) +
+        geom_histogram(binwidth = 1) +
+        labs(title = "Origem das espécies", y = "Freq") +
+        my_theme +
+        theme(axis.text.x = element_text(angle = 0, hjust = .5, size = 12)),
+    pos_gabarito$dados %>%
+        ggplot(aes(x = indice_exoticas - indice_nativas)) +
+        geom_histogram(binwidth = 1) +
+        labs(title = "Taxa de reconhecimento", y = "Freq") +
+        my_theme +
+        theme(axis.text.x = element_text(angle = 0, hjust = .5, size = 12)),
+    ncol = 1,
+    top = textGrob("Histograma das diferenças Exoticas x Nativas\n",
                    gp = gpar(fontsize = 20, font = 2)),
-    heights=c(3/4, 1/4),
+    #heights=c(3/4, 1/4),
     right = "\n",
     bottom = "\n"
 )
@@ -336,64 +325,7 @@ rbind(
 
 ```
 
-
-```{r, fig.width=8, fig.height=3}
-cidade1 <- pos_gabarito$percentual_acerto[pos_gabarito$percentual_acerto$municipio == "Silvânia",]
-cidade2 <- pos_gabarito$percentual_acerto[pos_gabarito$percentual_acerto$municipio == "Bela Vista de Goiás",]
-grid.arrange(
-    plotAnaliseMedias(
-        cidade1$p_indice_exoticas,
-        cidade1$p_indice_nativas,
-        "Silvânia"),
-    plotAnaliseMedias(
-        cidade2$p_indice_exoticas,
-        cidade2$p_indice_nativas,
-        "Bela Vista de Goiás", ytext = ""),
-    ncol = 2,
-    top = textGrob("Niveis de reconhecimento por origem\n", 
-                   gp = gpar(fontsize = 20, font = 2)),
-    right = "\n"
-)
-```
-
 Medindo as médias de acerto na identificação do nome das espécies
-
-```{r fig.width=6, fig.height=3}
-# pos_gabarito$percentual_acerto %>%
-#     group_by(municipio) %>%
-#     summarise(exoticas = mean(p_indice_exoticas),
-#               nativas = mean(p_indice_nativas)) %>%
-#     ungroup() %>%
-#     melt(id = "municipio") %>%
-#     ggplot(aes(municipio, value, fill = variable)) +
-#     facet_wrap(~variable)+
-#     geom_point(show.legend = F) +
-#     geom_errorbar(aes(ymin = ic.media(variable)$error_inferior, ymax = ic.media(variable)$error_superior )) +
-#     labs(title = "Média de taxa de reconhecimento das origens exóticas por municipio\n",
-#          x = "", y = "Percentual médio de acerto\n") +
-#     my_theme
-```
-
-
-```{r fig.width=6, fig.height=1.5}
-# barplot(tapply(
-#     pos_gabarito$percentual_acerto$p_indice_exoticas, 
-#     pos_gabarito$percentual_acerto$municipio,
-#     mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
-```
-
-```{r fig.width=6, fig.height=1.5}
-# barplot(tapply(
-#     pos_gabarito$percentual_acerto$p_indice_exoticas, 
-#     pos_gabarito$percentual_acerto$area,
-#     mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
-```
-```{r fig.width=6, fig.height=1.5}
-# barplot(tapply(
-#     pos_gabarito$percentual_acerto$p_indice_nativas, 
-#     pos_gabarito$percentual_acerto$area,
-#     mean), main = "Média de taxa de reconhecimento das origens exóticas por areas")
-```
 
 ```{r fig.width=6, fig.height=1.8}
 barplot(tapply(
@@ -555,7 +487,7 @@ variancia %>%
 ### Analises descritivas
 
 ```{r}
-head(pos_gabarito$especies, 10)
+pos_gabarito$especies
 ```
 
 #### Reconhecimento do nome das especies
@@ -670,7 +602,7 @@ data.frame(
 ```
 
 
-### 1 - Os alunos itendificam mais os nomes dos animais de espécies exóticas que os animais de espécies nativas.
+### 1 - Estudantes têm maior proporção de acerto de espécies exóticas do que espécies nativas brasileiras
 
 Resultado do teste paramétrico
 
@@ -684,7 +616,7 @@ t1b
 ```
 
 
-### 2 - Os alunos identificam mais espécies de origem exótica que as de origem nativa.
+### 2 - Estudantes identificam mais origem das espécies exóticas
 
 Resultado do teste paramétrico
 
@@ -698,7 +630,7 @@ Resultado do teste não paramétrico
 t2b
 ```
 
-### 3 - Os alunos identificam mais as espécies exóticas (nome dos animais e origem) que espécies nativas.
+### 3 - Estudantes tem maior proporção de reconhecimento (nome e origem) de espécies exóticas do que espécies nativas brasileiras
 
 Resultado do teste paramétrico
 
@@ -712,7 +644,53 @@ Resultado do teste não paramétrico
 t3b
 ```
 
-### 4 - Os alunos reconhecem mais mamíferos do que os demais grupos taxonómicos.
+### 4 - Estudantes que residem em cidade próxima a UC têm maior proporção de acerto entre as espécies nativas brasileiras.
+
+```{r, fig.width=6, fig.height=3}
+tmp <- pos_gabarito$percentual_acerto %>%
+    select(municipio, p_nome_exoticas:p_indice_nativas)
+t.test(p_indice_nativas ~ municipio, tmp)
+```
+
+### 5 - Estudantes que residem em área rural tem maior proporção de acertos sobre espécies nativas brasileiras do que estudantes que residem na área urbana
+
+```{r, fig.width=6, fig.height=3}
+tmp <- pos_gabarito$percentual_acerto %>%
+    select(area, p_nome_exoticas:p_indice_nativas)
+t.test(p_indice_nativas ~ area, tmp)
+```
+
+```{r, fig.width=6, fig.height=2.5}
+tmp <- pos_gabarito$percentual_acerto %>%
+    select(area, p_nome_exoticas:p_indice_nativas) %>%
+    melt("area")
+tmp <-
+    cbind(tmp, colsplit(tmp$variable, "_", c("p", "indicador", "origem"))) %>%
+    select(area, indicador, origem, value)
+tmp %>%
+  ggplot() + 
+  geom_boxplot(aes(x = area, y = value, fill = origem), show.legend = T) + 
+  scale_y_continuous(limits = c(0,1), labels = scales::percent) +
+  facet_wrap(~indicador) +
+  theme_bw() +
+  labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
+       y = "Percentual de identificação", x = "") +
+  my_theme
+```
+
+### 6 - Estudantes que visitam a UC têm maior proporção de acerto de espécies nativas do que estudantes que não visitam
+
+```{r}
+tmp <- 
+    pos_gabarito$percentual_acerto %>%
+    filter(municipio == "Silvânia") %>%
+    select(flona, p_indice_nativas)
+#normalidade(tmp$p_indice_nativas)
+t.test(p_indice_nativas ~ flona, tmp)
+```
+
+
+### 7 - Estudantes tem maior proporção de acertos em relação aos grupos de maior porte e da fauna exótica do que espécies menores e nativas.
 
 ```{r, fig.width=8, fig.height=4}
 plotAnaliseTaxonomicosGenovart()
@@ -797,41 +775,8 @@ ggplot(tky, aes(colour = cut(`p adj`, c(0, 0.05, 1),
        colour = "", x = "Comparação de grupos", y = "\nDiferença entre as médias")
 ```
 
-### 5 - Estudantes que residem na Cidade 1 (com UC) identificam mais espécies nativas do que estudantes que residem na Cidade 2 (sem UC).
 
-```{r, fig.width=6, fig.height=3}
-tmp <- pos_gabarito$percentual_acerto %>%
-    select(municipio, p_nome_exoticas:p_indice_nativas)
-t.test(p_indice_nativas ~ municipio, tmp)
-```
-
-### 6 - Estudantes que residem em área rural tem maior conhecimento sobre as espécies nativas.
-
-```{r, fig.width=6, fig.height=3}
-tmp <- pos_gabarito$percentual_acerto %>%
-    select(area, p_nome_exoticas:p_indice_nativas)
-t.test(p_indice_nativas ~ area, tmp)
-```
-
-```{r, fig.width=6, fig.height=2.5}
-tmp <- pos_gabarito$percentual_acerto %>%
-    select(area, p_nome_exoticas:p_indice_nativas) %>%
-    melt("area")
-tmp <-
-    cbind(tmp, colsplit(tmp$variable, "_", c("p", "indicador", "origem"))) %>%
-    select(area, indicador, origem, value)
-tmp %>%
-  ggplot() + 
-  geom_boxplot(aes(x = area, y = value, fill = origem), show.legend = T) + 
-  scale_y_continuous(limits = c(0,1), labels = scales::percent) +
-  facet_wrap(~indicador) +
-  theme_bw() +
-  labs(title = "Boxplot de identificação de espécies Nativas nos critérios estabelecidos",
-       y = "Percentual de identificação", x = "") +
-  my_theme
-```
-
-### 7 - Frequencia de contato natureza
+### 8 - Estudantes que possuem maior frequência de contato com a natureza têm maior proporção de acertos das espécies nativas
 
 ```{r, fig.width=6, fig.height=2.5}
 tmp <- pos_gabarito$percentual_acerto %>%
@@ -858,7 +803,7 @@ anova(lm(value  ~ frequencia, data = tmp %>% filter(indicador == "indice")))
 #TukeyHSD(aov(lm(value  ~ frequencia, data = tmp %>% filter(indicador == "indice"))))
 ```
 
-### 8 - Fez aulas praticas
+### 9 - Estudantes que participam de aulas práticas tem maior proporção de acertos sobre as espécies nativas do que estudantes sem tais aulas
 
 ```{r, fig.width=6, fig.height=2.5}
 tmp <- pos_gabarito$percentual_acerto %>%
@@ -885,18 +830,8 @@ anova(lm(value  ~ fez.aula, data = tmp %>% filter(indicador == "indice")))
 #TukeyHSD(aov(lm(value  ~ frequencia, data = tmp %>% filter(indicador == "indice"))))
 ```
 
-### 9 - Estudantes de Silvania que visitam a UC tem maior proporção de acertos espécies nativas.
 
-```{r}
-tmp <- 
-    pos_gabarito$percentual_acerto %>%
-    filter(municipio == "Silvânia") %>%
-    select(flona, p_indice_nativas)
-#normalidade(tmp$p_indice_nativas)
-t.test(p_indice_nativas ~ flona, tmp)
-```
-
-### 10 - Ranking dos animais
+### 10 - Rankings das espécies citadas
 
 ```{r, fig.width=6, fig.height=4}
 a1 <- 
@@ -930,8 +865,6 @@ grid.arrange(a1, a2,
                             gp = gpar(fontsize = 20, font = 2))
 )
 ```
-
-### 11 - Ranking dos animais citados para proteção
 
 ```{r, fig.width=6, fig.height=2}
 a3 <- 
