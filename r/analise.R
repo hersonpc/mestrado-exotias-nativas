@@ -3,6 +3,7 @@
 ###
 library(lubridate)
 library(dplyr)
+library(tidyr)
 library(stringr)
 library(reshape2)
 library(ggplot2)
@@ -16,12 +17,12 @@ library(gridExtra)
 ###
 ## Preparando esup_dados dos formularios de consulta
 ###
-esup_dados <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqejm8BK7tvPHasgEcNu3BnlGmnT9HxDZlaBsiwuIb04zkKkaY6yrxd6TYTKkZO9jYkuaVFGzljPoH/pub?gid=718358497&single=true&output=csv', stringsAsFactors = FALSE)
-esup_gabarito <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqltencC-1KU1X4nz-CJsANjcne8yAu_9Y4D0aBbr_AA-FX1Y627CpsFEpLdBObmAKpsrITYutPrWg/pub?gid=0&single=true&output=csv', stringsAsFactors = FALSE)
+esup_dados <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSqejm8BK7tvPHasgEcNu3BnlGmnT9HxDZlaBsiwuIb04zkKkaY6yrxd6TYTKkZO9jYkuaVFGzljPoH/pub?gid=718358497&single=true&output=csv', stringsAsFactors = FALSE, encoding = "UTF-8") %>% tbl_df()
+esup_gabarito <- read.csv(file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQqltencC-1KU1X4nz-CJsANjcne8yAu_9Y4D0aBbr_AA-FX1Y627CpsFEpLdBObmAKpsrITYutPrWg/pub?gid=0&single=true&output=csv', stringsAsFactors = FALSE, encoding = "UTF-8") %>% tbl_df()
 
 ## Trocando o nome das colunas para facilitar o uso no R
 names(esup_dados) <- c('data', 'codigo', 'instituicao', 'curso', 'periodo', 'modelo', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 's1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9', 's10')
-names(esup_gabarito) <- c('modelo', 'q', 'r', 's', 'grupo')
+names(esup_gabarito) <- c('modelo', 'q', 'r', 's', 'grupo', 'especie')
 
 ## Padronizar o campo modelo dos esup_dados
 esup_dados$modelo <- esup_dados$modelo %>% str_replace('Modelo ', '') %>% as.integer()
@@ -39,7 +40,7 @@ esup_dados <- esup_dados[complete.cases(esup_dados),]
 
 ## Funcao para validar a resposta no esup_gabarito
 esup_valida_no_gabarito <- function(data) {
-    gabarito_do_modelo_prova <- (esup_gabarito %>% filter(modelo == data$modelo))
+    gabarito_do_modelo_prova <- esup_gabarito[esup_gabarito$modelo == data$modelo,]
     
     questoes <- data %>% select(q1:q10)
     acertosNativas <- 0
