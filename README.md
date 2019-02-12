@@ -43,7 +43,7 @@ ___
 #### Questionário
 
 1. Formulário do questionário ([Google Forms Link](https://docs.google.com/forms/d/1oeoftsk7mrmWgYaxzqn5qhUca1zupLfpKbHpTGZwSDw/edit))
-2. Tabulação das respostas dos questionários ([Google Spreadsheets Link](https://docs.google.com/spreadsheets/d/1qXSKB9V_4Tfw_xdh16FHR6ZSASdUmko6T6IkglkSCzQ/edit#gid=22182984))
+2. Tabulação das respostas dos questionários ([Google Spreadsheets Link](https://docs.google.com/spreadsheets/d/1tR8ue3f7w04-aAle3gqHCRlxbbhR2rXshrx2TJ2Ziws/edit#gid=1126355755))
 
 #### Jogo de imagens
 
