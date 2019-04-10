@@ -100,33 +100,140 @@ aplicar_gabarito <- function(dados) {
         #             select(codigo, variavel = especie, acertos)
         #     )
     }
-    return(resultado) 
     
-    
-    grupos <- resultado %>%
-        group_by(codigo, nativo_sn) %>%
-        summarise(acertos = sum(acertou.nome),
-                  p.acertos = acertos / 5) %>%
-        select(codigo, variavel = nativo_sn, acertos, p.acertos)
-    
-    
+    # Identifica turmas
     turmas <- dados$jogo %>%
-        mutate(turma = group_indices_(dados$jogo, .dots=c("instituicao", "curso", "periodo")) ) %>%
-        select(codigo, turma)
+      mutate(turma = group_indices_(dados$jogo, .dots=c("instituicao", "curso", "periodo")) ) %>%
+      select(codigo, turma)
     
+    # Junta a informação das turmas com o resultado
+    resultado <- merge(turmas, resultado, by = "codigo") %>% tbl_df
     
-    merge(turmas, resultado, by = "codigo") %>%
-        mutate(nome = ifelse(nativo_sn == "Sim", "nativo", "exotico")) %>%
-        group_by(turma, nome) %>%
-        summarise(alunos = n_distinct(codigo),
-                  acertos = sum(acertou.nome),
-                  acertos.esperados = (alunos*5),
-                  p.acertos = acertos / acertos.esperados)
+    return(resultado) 
 }
 
+extratifica_pesquisa <- function(resultado) {
+  extrato_por_aluno <- 
+    resultado %>% 
+    mutate(ponto.nome.nativo = ifelse(nativo_sn == "Sim" & acertou.nome == 1, 1, 0),
+           ponto.nome.exotico = ifelse(nativo_sn == "Não" & acertou.nome == 1, 1, 0),
+           ponto.origem.nativo = ifelse(nativo_sn == "Sim" & acertou.origem == 1, 1, 0),
+           ponto.origem.exotico = ifelse(nativo_sn == "Não" & acertou.origem == 1, 1, 0),
+           ponto.indice.nativo = ifelse(ponto.nome.nativo == 1 & ponto.origem.nativo == 1, 1, 0),
+           ponto.indice.exotico = ifelse(ponto.nome.exotico == 1 & ponto.origem.exotico == 1, 1, 0)
+    ) %>%
+    select(-grupo, -especie) %>% 
+    group_by(turma, codigo) %>%
+    summarise(t.nome.nativo = sum(ponto.nome.nativo),
+              t.nome.exotico = sum(ponto.nome.exotico),
+              t.origem.nativo = sum(ponto.origem.nativo),
+              t.origem.exotico = sum(ponto.origem.exotico),
+              t.indice.nativo = sum(ponto.indice.nativo),
+              t.indice.exotico = sum(ponto.indice.exotico)
+    ) %>%
+    tbl_df
+  
+  extrato_por_turma <- 
+    extrato_por_aluno %>%
+    group_by(turma) %>%
+    summarise(alunos = n(),
+              acertos.esperados = (alunos * 5), # tanto para nome quanto para origem são 5 acertos por aluno
+              tg.nome.nativo = sum(t.nome.nativo),
+              tg.nome.exotico = sum(t.nome.exotico),
+              tg.origem.nativo = sum(t.origem.nativo),
+              tg.origem.exotico = sum(t.origem.exotico),
+              tg.indice.nativo = sum(t.indice.nativo),
+              tg.indice.exotico = sum(t.indice.exotico),
+              p.nome.nativo = tg.nome.nativo / acertos.esperados,
+              p.nome.exotico = tg.nome.exotico / acertos.esperados,
+              p.origem.nativo = tg.origem.nativo / acertos.esperados,
+              p.origem.exotico = tg.origem.exotico / acertos.esperados,
+              p.indice.nativo = tg.indice.nativo / acertos.esperados,
+              p.indice.exotico = tg.indice.exotico / acertos.esperados
+    ) %>%
+    tbl_df
+  
+  return(list(
+    por_aluno = extrato_por_aluno,
+    por_turma = extrato_por_turma
+  ))
+}
+
+############################################################################################################################################
+## Processando os dados
+############################################################################################################################################
 dados <- carregarDados()
+resultado.pesquisa <- aplicar_gabarito(dados)
+extrato.pesquisa <- extratifica_pesquisa(resultado.pesquisa)
 
-names(dados$jogo)
+############################################################################################################################################
+## exportando os dados...
+############################################################################################################################################
+write.csv2(extrato.pesquisa$por_aluno, "extrato.por.aluno.csv", fileEncoding = "UTF-8", row.names = FALSE)
+write.csv2(extrato.pesquisa$por_turma, "extrato.por.turma.csv", fileEncoding = "UTF-8", row.names = FALSE)
 
 
 
+
+############################################################################################################################################
+# testando normalidade    
+############################################################################################################################################
+
+normalidade(extrato.pesquisa$por_turma$p.nome.nativo)
+normalidade(extrato.pesquisa$por_turma$p.nome.exotico)
+normalidade(extrato.pesquisa$por_turma$p.origem.nativo)
+normalidade(extrato.pesquisa$por_turma$p.origem.exotico)
+normalidade(extrato.pesquisa$por_turma$p.indice.nativo)
+normalidade(extrato.pesquisa$por_turma$p.indice.exotico)
+
+
+############################################################################################################################################
+############################################################################################################################################
+############################################################################################################################################
+
+## Teste de hipotese 1
+hipotese1 <- list(
+  parametrico =
+    t.test(extrato.pesquisa$por_turma$p.nome.exotico,
+           extrato.pesquisa$por_turma$p.nome.nativo, 
+           alternative = "two.sided", paired = TRUE, conf.level = .95),
+  nao.parametrico =
+    wilcox.test(
+      extrato.pesquisa$por_turma$p.nome.exotico, 
+      extrato.pesquisa$por_turma$p.nome.nativo, 
+      alternative = "two.sided", paired = TRUE)
+)
+
+## Teste de hipotese 2
+hipotese2 <- list(
+  parametrico =
+    t.test(extrato.pesquisa$por_turma$p.origem.exotico,
+           extrato.pesquisa$por_turma$p.origem.nativo, 
+           alternative = "two.sided", paired = TRUE, conf.level = .95),
+  nao.parametrico =
+    wilcox.test(
+      extrato.pesquisa$por_turma$p.origem.exotico, 
+      extrato.pesquisa$por_turma$p.origem.nativo, 
+      alternative = "two.sided", paired = TRUE)
+)
+## Teste de hipotese 3
+hipotese3 <- list(
+  parametrico =
+    t.test(extrato.pesquisa$por_turma$p.indice.exotico,
+           extrato.pesquisa$por_turma$p.indice.nativo, 
+           alternative = "two.sided", paired = TRUE, conf.level = .95),
+  nao.parametrico =
+    wilcox.test(
+      extrato.pesquisa$por_turma$p.indice.exotico, 
+      extrato.pesquisa$por_turma$p.indice.nativo, 
+      alternative = "two.sided", paired = TRUE)
+)
+
+
+print(hipotese1)
+print(hipotese2)
+print(hipotese3)
+
+############################################################################################################################################
+############################################################################################################################################
+############################################################################################################################################
